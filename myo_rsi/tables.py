@@ -1,10 +1,12 @@
 """Normalize run artifacts without treating seeds as independent episodes."""
 
 import csv
+import hashlib
 import json
 import math
 
 SCHEMAS = {
+    "checkpoint_manifest": "run_id task_id method training_seed final_checkpoint sha256 source_checkpoint_id bank_hash actor_params trainable_actor_params train_steps projection_fraction projection_mae",
     "train_progress": "task_id method training_seed checkpoint_id environment_steps ppo_iteration train_return eval_success_n eval_episodes elapsed_wall_s gpu_hours",
     "eval_episodes": "task_id method training_seed checkpoint_id eval_seed episode_id body_variant success episode_return episode_length terminal_reason split goal_hash reset_obs_hash",
     "bank_metrics": "bank_id bank_hash source_task source_training_seeds K num_muscles num_actions_fit nmf_train_recon nmf_val_recon excitation_clip_fraction actuator_order_hash",
@@ -104,6 +106,7 @@ def collect(root, results):
         )
     goals = {}
     seen_banks = set()
+    effective_runs = {}
     for meta_file in sorted((root / "checkpoints").glob("*/*/*/run.json")):
         meta = read_json(meta_file)
         if meta.get("status") != "COMPLETE":
@@ -115,12 +118,44 @@ def collect(root, results):
         tag = meta["run_id"]
         if meta["bank_hash"]:
             seen_banks.add(meta["bank_hash"])
+        cfg = read_json(run / "ppo.json")
+        cfg.update(seed=seed, logger="tensorboard", save_interval=10**9)
+        effective_runs[tag] = dict(
+            runner_config=cfg,
+            train_iterations=meta["budget_iterations"],
+            parallel_envs=meta["num_envs"],
+            source_checkpoint_id=meta["source_checkpoint_id"],
+            bank_hash=meta["bank_hash"],
+            device="cuda:0",
+        )
         points = read_json(run / "points.json")
         final = points[-1]
         total = final["environment_steps"]
+        checkpoint = run / f"policy_{meta['budget_iterations']}.pt"
+        with checkpoint.open("rb") as stream:
+            sha = hashlib.file_digest(stream, "sha256").hexdigest()
+        data["checkpoint_manifest"].append(
+            dict(
+                run_id=tag,
+                task_id=task,
+                method=method,
+                training_seed=seed,
+                final_checkpoint=checkpoint.relative_to(root).as_posix(),
+                sha256=sha,
+                source_checkpoint_id=meta["source_checkpoint_id"],
+                bank_hash=meta["bank_hash"],
+                actor_params=meta["actor_params"],
+                trainable_actor_params=meta["trainable_actor_params"],
+                train_steps=total,
+                projection_fraction=meta["projection_fraction"],
+                projection_mae=meta["projection_mae"],
+            )
+        )
         cost.append(
             dict(
-                stage="adapt_train" if task == "T3" else "train",
+                stage=("frozen_setup" if meta["code"] == "C0" else "adapt_train")
+                if task == "T3"
+                else "train",
                 task_id=task,
                 method=method,
                 seed=seed,
@@ -258,8 +293,8 @@ def collect(root, results):
                     t3_after=rate("T3", last),
                     t1_before=rate("T1", 0),
                     t1_after=rate("T1", last),
-                    time_s=meta["wall_s"],
-                    gpu_hours=meta["wall_s"] / 3600,
+                    time_s=0.0 if meta["code"] == "C0" else meta["wall_s"],
+                    gpu_hours=0.0 if meta["code"] == "C0" else meta["wall_s"] / 3600,
                     status="RUN",
                 )
             )
@@ -303,6 +338,19 @@ def collect(root, results):
                 source_run_id=",".join(r["run_id"] for r in bank["source_runs"]),
             )
         )
+    (results / "experiment_config.json").write_text(
+        json.dumps(
+            dict(
+                runs=effective_runs,
+                evaluation_mode="deterministic",
+                validation_seeds=list(range(20_000, 20_100)),
+                final_seeds=list(range(40_000, 40_100)),
+            ),
+            indent=2,
+        )
+        + "\n",
+        encoding="utf8",
+    )
     for name, schema in SCHEMAS.items():
         path = (
             results / (name + ".csv")

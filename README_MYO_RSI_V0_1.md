@@ -9,7 +9,7 @@ The Windows setup uses CPython 3.13 and an NVIDIA GPU. These PowerShell commands
 ```powershell
 python -m venv .venv-gpu
 .\.venv-gpu\Scripts\python -m pip install --index-url https://download.pytorch.org/whl/cu130 torch==2.14.1+cu130 torchvision==0.29.1+cu130
-.\.venv-gpu\Scripts\python -m pip install -r requirements-win-cu130.txt
+.\.venv-gpu\Scripts\python -m pip install -c results/runtime-packages.txt -r requirements-win-cu130.txt
 .\.venv-gpu\Scripts\python -X utf8 -m unittest discover -s tests -v
 .\.venv-gpu\Scripts\python -X utf8 -m myo_rsi.probe --backend both --results-dir results
 ```
@@ -20,6 +20,8 @@ Reach success is the final-step L2 error over the five stacked fingertip positio
 
 The experiment uses MyoSuite [v3.1.0](https://github.com/MyoHub/myosuite/tree/d914c4aa1eea568dd45bcc3d760a83dc9362c093). The release includes the source for the [training CLI](https://github.com/MyoHub/myosuite/blob/d914c4aa1eea568dd45bcc3d760a83dc9362c093/scripts/train_mjlab.py) and [evaluation CLI](https://github.com/MyoHub/myosuite/blob/d914c4aa1eea568dd45bcc3d760a83dc9362c093/scripts/eval_mjlab_policy.py).
 
+The official smoke used `myoHandReachRandom-v0 --env.scene.num-envs 32 --agent.seed 11 --agent.max-iterations 2 --agent.run-name myo_rsi_smoke --agent.logger tensorboard --stop-on-success False` with the pinned `scripts/train_mjlab.py` and the default GPU selection. It completed 1,536 transitions. The two upstream CLI help commands loaded in the installed environment.
+
 ## Training and evaluation
 
 After both checks pass, run the matrix serially on the local GPU. It skips finished runs, evaluates the saved checkpoints, and stops if the direct or synergy Reach policy fails to improve its three-seed mean validation success over initialization. A bank fit requires all three direct Reach runs. A failed, partial training directory is preserved for inspection.
@@ -27,14 +29,18 @@ After both checks pass, run the matrix serially on the local GPU. It skips finis
 ```powershell
 $env:MUJOCO_GL = 'glfw'
 .\.venv-gpu\Scripts\python -X utf8 -u -m myo_rsi.run --stage all
+.\.venv-gpu\Scripts\python -X utf8 -m myo_rsi.record
 .\.venv-gpu\Scripts\python -X utf8 scripts/make_figures.py --results-dir results
+.\.venv-gpu\Scripts\python -X utf8 scripts/audit_v01.py
 ```
 
 Individual stages accept `--stage A`, `--stage B` or `--stage C`. Individual cells use `python -m myo_rsi.train T1 A 11` and `python -m myo_rsi.evaluate T1 A 11`. A/B train for 256 × 24 × 256 transitions per seed. C1/C2 receive 256 × 24 × 64 additional transitions. All use the upstream actor/critic and PPO hyperparameters. Checkpoints are saved at initialization and every quarter budget. The validation curve uses 100 episodes at each checkpoint. The final table uses a separate list of 100 seeds. Each lane is individually reset to its assigned seed before running the deterministic mean-action policy.
 
 The bank builder samples measured excitations in eight lanes every eight steps during the final quarter of each direct Reach training run. Each sample carries a run, unique lane/episode ID, timestep, raw action, applied control, activation, post-step observation, joint position and goal. Terminal autorestarts are excluded. An episode-level split separates NMF fitting and reconstruction validation. Each column of W has unit maximum. The decoder uses 0.15 × softplus(raw latent) as the nonnegative recruitment, projects Wc into the physical excitation interval, and sends its inverse through the native action term. PPO uses the Gaussian likelihood of the original 8D sample. C2 adds a zero-initialized-output residual to the raw mean, freezes the original actor, its observation statistics and action variance, and trains the critic and residual.
 
-Checkpoints and training datasets are stored locally. The plotting command can also regenerate published figures from the CSVs and bank artifact in a standalone checkout. The resource ledger counts the bank source trajectories during A-Reach training. The unit tests generate synthetic arrays in temporary directories. The results report only consumes run logs.
+The diagnostic recorder saves one prespecified complete episode per final checkpoint with per-step native rewards, terminal signals, kinematics, raw action, applied excitation and activation. These episodes use a separate seed and never enter the bank or headline success rates. The audit compares C2's frozen base tensors with the corresponding B-Reach actor, verifies the actual checkpoint and source dataset hashes, checks held-out goal fingerprints and checks every episode denominator.
+
+Checkpoints and training datasets are stored locally. The final checkpoint index and hashes are in `results/tables/checkpoint_manifest.csv`. The effective runner configurations, seeds and budgets are in `results/experiment_config.json`. The plotting command can also regenerate published figures from the CSVs and bank artifact in a standalone checkout. The resource ledger counts the bank source trajectories during A-Reach training. The unit tests generate synthetic arrays in temporary directories. The results report only consumes run logs.
 
 ## Outputs
 

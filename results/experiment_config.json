@@ -1,0 +1,2099 @@
+{
+  "runs": {
+    "T3-C0-11": {
+      "runner_config": {
+        "seed": 11,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 0,
+      "parallel_envs": 256,
+      "source_checkpoint_id": "T1-B-11/policy_256.pt",
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T3-C0-29": {
+      "runner_config": {
+        "seed": 29,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 0,
+      "parallel_envs": 256,
+      "source_checkpoint_id": "T1-B-29/policy_256.pt",
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T3-C0-47": {
+      "runner_config": {
+        "seed": 47,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 0,
+      "parallel_envs": 256,
+      "source_checkpoint_id": "T1-B-47/policy_256.pt",
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T3-C1-11": {
+      "runner_config": {
+        "seed": 11,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 64,
+      "parallel_envs": 256,
+      "source_checkpoint_id": "T1-B-11/policy_256.pt",
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T3-C1-29": {
+      "runner_config": {
+        "seed": 29,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 64,
+      "parallel_envs": 256,
+      "source_checkpoint_id": "T1-B-29/policy_256.pt",
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T3-C1-47": {
+      "runner_config": {
+        "seed": 47,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 64,
+      "parallel_envs": 256,
+      "source_checkpoint_id": "T1-B-47/policy_256.pt",
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T3-C2-11": {
+      "runner_config": {
+        "seed": 11,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 64,
+      "parallel_envs": 256,
+      "source_checkpoint_id": "T1-B-11/policy_256.pt",
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T3-C2-29": {
+      "runner_config": {
+        "seed": 29,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 64,
+      "parallel_envs": 256,
+      "source_checkpoint_id": "T1-B-29/policy_256.pt",
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T3-C2-47": {
+      "runner_config": {
+        "seed": 47,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 64,
+      "parallel_envs": 256,
+      "source_checkpoint_id": "T1-B-47/policy_256.pt",
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T2-A-11": {
+      "runner_config": {
+        "seed": 11,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_pose",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 256,
+      "parallel_envs": 256,
+      "source_checkpoint_id": null,
+      "bank_hash": null,
+      "device": "cuda:0"
+    },
+    "T2-A-29": {
+      "runner_config": {
+        "seed": 29,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_pose",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 256,
+      "parallel_envs": 256,
+      "source_checkpoint_id": null,
+      "bank_hash": null,
+      "device": "cuda:0"
+    },
+    "T2-A-47": {
+      "runner_config": {
+        "seed": 47,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_pose",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 256,
+      "parallel_envs": 256,
+      "source_checkpoint_id": null,
+      "bank_hash": null,
+      "device": "cuda:0"
+    },
+    "T1-A-11": {
+      "runner_config": {
+        "seed": 11,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 256,
+      "parallel_envs": 256,
+      "source_checkpoint_id": null,
+      "bank_hash": null,
+      "device": "cuda:0"
+    },
+    "T1-A-29": {
+      "runner_config": {
+        "seed": 29,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 256,
+      "parallel_envs": 256,
+      "source_checkpoint_id": null,
+      "bank_hash": null,
+      "device": "cuda:0"
+    },
+    "T1-A-47": {
+      "runner_config": {
+        "seed": 47,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 256,
+      "parallel_envs": 256,
+      "source_checkpoint_id": null,
+      "bank_hash": null,
+      "device": "cuda:0"
+    },
+    "T2-B-11": {
+      "runner_config": {
+        "seed": 11,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_pose",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 256,
+      "parallel_envs": 256,
+      "source_checkpoint_id": null,
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T2-B-29": {
+      "runner_config": {
+        "seed": 29,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_pose",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 256,
+      "parallel_envs": 256,
+      "source_checkpoint_id": null,
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T2-B-47": {
+      "runner_config": {
+        "seed": 47,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_pose",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 256,
+      "parallel_envs": 256,
+      "source_checkpoint_id": null,
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T1-B-11": {
+      "runner_config": {
+        "seed": 11,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 256,
+      "parallel_envs": 256,
+      "source_checkpoint_id": null,
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T1-B-29": {
+      "runner_config": {
+        "seed": 29,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 256,
+      "parallel_envs": 256,
+      "source_checkpoint_id": null,
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    },
+    "T1-B-47": {
+      "runner_config": {
+        "seed": 47,
+        "num_steps_per_env": 24,
+        "max_iterations": 1000,
+        "obs_groups": {
+          "actor": [
+            "actor"
+          ],
+          "critic": [
+            "critic"
+          ]
+        },
+        "save_interval": 1000000000,
+        "experiment_name": "myo_hand_reach",
+        "run_name": "",
+        "logger": "tensorboard",
+        "wandb_project": "mjlab",
+        "wandb_tags": [],
+        "resume": false,
+        "load_run": ".*",
+        "load_checkpoint": "model_.*.pt",
+        "clip_actions": null,
+        "upload_model": true,
+        "class_name": "OnPolicyRunner",
+        "actor": {
+          "hidden_dims": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": {
+            "class_name": "myosuite.envs.myo.backends.mjlab.tasks.distribution:ProjectedGaussianDistribution",
+            "init_std": 0.5,
+            "std_type": "scalar",
+            "std_range": [
+              0.05,
+              1.0
+            ]
+          },
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "critic": {
+          "hidden_dims": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "activation": "elu",
+          "obs_normalization": true,
+          "cnn_cfg": null,
+          "distribution_cfg": null,
+          "rnn_type": null,
+          "rnn_hidden_dim": 256,
+          "rnn_num_layers": 1,
+          "class_name": "MLPModel"
+        },
+        "algorithm": {
+          "num_learning_epochs": 8,
+          "num_mini_batches": 8,
+          "learning_rate": 0.0003,
+          "schedule": "adaptive",
+          "gamma": 0.97,
+          "lam": 0.95,
+          "entropy_coef": 0.001,
+          "desired_kl": 0.01,
+          "max_grad_norm": 1.0,
+          "value_loss_coef": 1.0,
+          "use_clipped_value_loss": true,
+          "clip_param": 0.3,
+          "normalize_advantage_per_mini_batch": false,
+          "optimizer": "adam",
+          "share_cnn_encoders": false,
+          "class_name": "PPO"
+        }
+      },
+      "train_iterations": 256,
+      "parallel_envs": 256,
+      "source_checkpoint_id": null,
+      "bank_hash": "0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce",
+      "device": "cuda:0"
+    }
+  },
+  "evaluation_mode": "deterministic",
+  "validation_seeds": [
+    20000,
+    20001,
+    20002,
+    20003,
+    20004,
+    20005,
+    20006,
+    20007,
+    20008,
+    20009,
+    20010,
+    20011,
+    20012,
+    20013,
+    20014,
+    20015,
+    20016,
+    20017,
+    20018,
+    20019,
+    20020,
+    20021,
+    20022,
+    20023,
+    20024,
+    20025,
+    20026,
+    20027,
+    20028,
+    20029,
+    20030,
+    20031,
+    20032,
+    20033,
+    20034,
+    20035,
+    20036,
+    20037,
+    20038,
+    20039,
+    20040,
+    20041,
+    20042,
+    20043,
+    20044,
+    20045,
+    20046,
+    20047,
+    20048,
+    20049,
+    20050,
+    20051,
+    20052,
+    20053,
+    20054,
+    20055,
+    20056,
+    20057,
+    20058,
+    20059,
+    20060,
+    20061,
+    20062,
+    20063,
+    20064,
+    20065,
+    20066,
+    20067,
+    20068,
+    20069,
+    20070,
+    20071,
+    20072,
+    20073,
+    20074,
+    20075,
+    20076,
+    20077,
+    20078,
+    20079,
+    20080,
+    20081,
+    20082,
+    20083,
+    20084,
+    20085,
+    20086,
+    20087,
+    20088,
+    20089,
+    20090,
+    20091,
+    20092,
+    20093,
+    20094,
+    20095,
+    20096,
+    20097,
+    20098,
+    20099
+  ],
+  "final_seeds": [
+    40000,
+    40001,
+    40002,
+    40003,
+    40004,
+    40005,
+    40006,
+    40007,
+    40008,
+    40009,
+    40010,
+    40011,
+    40012,
+    40013,
+    40014,
+    40015,
+    40016,
+    40017,
+    40018,
+    40019,
+    40020,
+    40021,
+    40022,
+    40023,
+    40024,
+    40025,
+    40026,
+    40027,
+    40028,
+    40029,
+    40030,
+    40031,
+    40032,
+    40033,
+    40034,
+    40035,
+    40036,
+    40037,
+    40038,
+    40039,
+    40040,
+    40041,
+    40042,
+    40043,
+    40044,
+    40045,
+    40046,
+    40047,
+    40048,
+    40049,
+    40050,
+    40051,
+    40052,
+    40053,
+    40054,
+    40055,
+    40056,
+    40057,
+    40058,
+    40059,
+    40060,
+    40061,
+    40062,
+    40063,
+    40064,
+    40065,
+    40066,
+    40067,
+    40068,
+    40069,
+    40070,
+    40071,
+    40072,
+    40073,
+    40074,
+    40075,
+    40076,
+    40077,
+    40078,
+    40079,
+    40080,
+    40081,
+    40082,
+    40083,
+    40084,
+    40085,
+    40086,
+    40087,
+    40088,
+    40089,
+    40090,
+    40091,
+    40092,
+    40093,
+    40094,
+    40095,
+    40096,
+    40097,
+    40098,
+    40099
+  ]
+}
