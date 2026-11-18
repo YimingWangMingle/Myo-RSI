@@ -1,0 +1,575 @@
+{
+  "reconstruction": {
+    "K": 8,
+    "nmf_seed": 29,
+    "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+    "source_sha256": "7268818df55aa885ade5904659dd6dbbc44d9ad8b75c35b262c9f0bfa7b44ef2",
+    "data_train_sha256": "2cd873aabe0824549124d05b3f7dc06db62a05ad948a67765edc8fb646dc5a58",
+    "file_sha256": "e5cf33520509ccd4181553a6d3254fdb77a4c2bbdac8a26dcaeed7d71a067ebc",
+    "nmf_iter": 118,
+    "convergence_warnings": [],
+    "fit_frames": 64000,
+    "holdout_frames": 20000,
+    "fit_relative": 0.2759830951690674,
+    "holdout_relative": 0.2841760814189911,
+    "holdout_mae": 0.07166729867458344,
+    "clipped_fraction": 0.06515384615384616,
+    "mean_clip_excess": 0.002082466762964504,
+    "max_column_cosine": 0.5425733327865601,
+    "dead_columns": 0,
+    "fit_wall_s": 0.6329415999352932
+  },
+  "muscles": [
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "ECRL_r",
+      "holdout_mae": 0.10571164637804031
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "ECRB_r",
+      "holdout_mae": 0.12381717562675476
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "ECU_r",
+      "holdout_mae": 0.07209239155054092
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "FCR_r",
+      "holdout_mae": 0.012935725040733814
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "FCU_r",
+      "holdout_mae": 0.07518330216407776
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "PL_r",
+      "holdout_mae": 0.12389381974935532
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "PT_r",
+      "holdout_mae": 0.0997914969921112
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "PQ_r",
+      "holdout_mae": 0.07976514101028442
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "FDS5_r",
+      "holdout_mae": 0.07490794360637665
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "FDS4_r",
+      "holdout_mae": 0.05821743234992027
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "FDS3_r",
+      "holdout_mae": 0.03720492497086525
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "FDS2_r",
+      "holdout_mae": 0.06701547652482986
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "FDP5_r",
+      "holdout_mae": 0.10149701684713364
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "FDP4_r",
+      "holdout_mae": 0.04438990354537964
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "FDP3_r",
+      "holdout_mae": 0.025983670726418495
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "FDP2_r",
+      "holdout_mae": 0.01963028497993946
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "EDC5_r",
+      "holdout_mae": 0.10290265083312988
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "EDC4_r",
+      "holdout_mae": 0.08759885281324387
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "EDC3_r",
+      "holdout_mae": 0.09809226542711258
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "EDC2_r",
+      "holdout_mae": 0.07027141004800797
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "EDM_r",
+      "holdout_mae": 0.000866777787450701
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "EIP_r",
+      "holdout_mae": 0.12461318075656891
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "EPL_r",
+      "holdout_mae": 0.044554632157087326
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "EPB_r",
+      "holdout_mae": 0.0736495852470398
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "FPL_r",
+      "holdout_mae": 0.009733100421726704
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "APL_r",
+      "holdout_mae": 0.12163662165403366
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "OP_r",
+      "holdout_mae": 0.06530000269412994
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "RI2_r",
+      "holdout_mae": 0.05421687662601471
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "LU_RB2_r",
+      "holdout_mae": 0.09349717944860458
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "UI_UB2_r",
+      "holdout_mae": 0.06734588742256165
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "RI3_r",
+      "holdout_mae": 0.07542432099580765
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "LU_RB3_r",
+      "holdout_mae": 0.0987749993801117
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "UI_UB3_r",
+      "holdout_mae": 0.09295661747455597
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "RI4_r",
+      "holdout_mae": 0.02206059731543064
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "LU_RB4_r",
+      "holdout_mae": 0.05343082919716835
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "UI_UB4_r",
+      "holdout_mae": 0.10434785485267639
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "RI5_r",
+      "holdout_mae": 0.06826869398355484
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "LU_RB5_r",
+      "holdout_mae": 0.039770081639289856
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "muscle": "UI_UB5_r",
+      "holdout_mae": 0.10367710888385773
+    }
+  ],
+  "outcome": [
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "outcome": "near_success",
+      "n": 1800,
+      "relative_error": 0.2556251883506775
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "outcome": "success",
+      "n": 18200,
+      "relative_error": 0.28690725564956665
+    }
+  ],
+  "decoder": [
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "source": "teacher",
+      "n_values": 780000,
+      "mean_excitation": 0.23646113777883793,
+      "fraction_clipped": 0.0,
+      "frac_at_low": 0.057183333333333336,
+      "frac_at_high": 0.0711948717948718,
+      "histogram": [
+        318158,
+        64143,
+        39756,
+        29196,
+        21852,
+        18069,
+        16444,
+        16242,
+        15366,
+        14660,
+        13591,
+        12088,
+        11537,
+        10665,
+        9824,
+        8531,
+        8403,
+        8032,
+        7382,
+        7285,
+        6808,
+        6874,
+        6762,
+        6804,
+        7087,
+        7440,
+        7722,
+        7668,
+        7722,
+        63889
+      ]
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "source": "heldout_NNLS",
+      "n_values": 780000,
+      "mean_excitation": 0.24306012229371216,
+      "fraction_clipped": 0.06515384615384616,
+      "frac_at_low": 0.03502564102564103,
+      "frac_at_high": 0.030137179487179488,
+      "histogram": [
+        185215,
+        88447,
+        72039,
+        52088,
+        38577,
+        31828,
+        26644,
+        22257,
+        18350,
+        15546,
+        15826,
+        14170,
+        13462,
+        14006,
+        13370,
+        11785,
+        9907,
+        8870,
+        8477,
+        8139,
+        8556,
+        8238,
+        8285,
+        8205,
+        9005,
+        8782,
+        8702,
+        9267,
+        9230,
+        32727
+      ]
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "source": "legacy_zero",
+      "n_values": 39,
+      "mean_excitation": 0.11313201239664708,
+      "fraction_clipped": 0.0,
+      "frac_at_low": 0.0,
+      "frac_at_high": 0.0,
+      "histogram": [
+        3,
+        10,
+        5,
+        7,
+        2,
+        4,
+        3,
+        3,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "source": "calibrated_zero",
+      "n_values": 39,
+      "mean_excitation": 0.0005527786369235998,
+      "fraction_clipped": 1.0,
+      "frac_at_low": 1.0,
+      "frac_at_high": 0.0,
+      "histogram": [
+        39,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "source": "legacy_normal",
+      "n_values": 319488,
+      "mean_excitation": 0.131304056392626,
+      "fraction_clipped": 1.2520032051282051e-05,
+      "frac_at_low": 1.2520032051282051e-05,
+      "frac_at_high": 0.0,
+      "histogram": [
+        48153,
+        61629,
+        43875,
+        31116,
+        25611,
+        22678,
+        19647,
+        16563,
+        13511,
+        10775,
+        8306,
+        5905,
+        4190,
+        2846,
+        1928,
+        1148,
+        729,
+        421,
+        227,
+        124,
+        63,
+        23,
+        9,
+        9,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "K": 8,
+      "nmf_seed": 29,
+      "bank_hash": "428f9dbac476d84a4d345d6eb821293f5457d2ab45d1c0c6b392e34e3eff0cf6",
+      "source": "calibrated_normal",
+      "n_values": 319488,
+      "mean_excitation": 0.2638064911254947,
+      "fraction_clipped": 0.18715882912660256,
+      "frac_at_low": 0.10288336338141026,
+      "frac_at_high": 0.08428172576121795,
+      "histogram": [
+        86756,
+        26744,
+        20596,
+        16876,
+        14850,
+        12843,
+        11459,
+        10176,
+        9022,
+        8344,
+        7428,
+        6729,
+        6266,
+        5662,
+        5040,
+        4714,
+        4346,
+        3924,
+        3669,
+        3388,
+        3095,
+        2963,
+        2800,
+        2630,
+        2359,
+        2261,
+        2100,
+        1905,
+        1867,
+        28676
+      ]
+    }
+  ]
+}

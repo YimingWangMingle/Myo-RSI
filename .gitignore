@@ -4,8 +4,13 @@ __pycache__/
 *.py[cod]
 logs/
 checkpoints/
-datasets/
+datasets/*
+!datasets/v0_1r/
+datasets/v0_1r/*
+!datasets/v0_1r/rollouts_train.npz
+!datasets/v0_1r/rollouts_val.npz
 artifacts/*
+!artifacts/v0_1r/
 !artifacts/synergy_bank_k8.npz
 !artifacts/nmf.json
 .ruff_cache/

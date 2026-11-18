@@ -1,0 +1,12 @@
+stage,hardware,simulated_transitions,wall_seconds,gpu_active_seconds,scope,comment
+External teacher pretraining,external,,,,shared,Upstream does not provide train steps or compute.
+Environment probe cpu,cpu,48,,,shared,No phase timer.
+Environment probe mjlab,mjlab,1300,,,shared,No phase timer.
+Teacher validation,GPU,20000,18.05219419999048,,shared,
+Teacher data,GPU,100000,33.21095020021312,,shared,
+NMF and offline diagnostics,CPU,0,29.069946999894455,,shared,Sum of candidate timers through fit and reconstruction; excludes file output and later decoder summaries.
+Bank development original,GPU,10000,2.4625586001202464,,shared,
+Bank development projected,GPU + CPU,120000,38.43671979987994,,shared,"CPU projection total 12.74 s, included."
+Independent solver validation,GPU + CPU,120000,116.22529039997607,,shared,"CPU projection total 67.08 s, included."
+Matched one-step response,GPU + CPU,1300,,,shared,No phase timer.
+"Downstream PPO, BC and adaptation",GPU,0,0,,shared,Gate closed.

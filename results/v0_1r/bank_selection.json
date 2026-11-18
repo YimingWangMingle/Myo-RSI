@@ -1,0 +1,10 @@
+{
+  "status": "BANK_INADEQUATE",
+  "selected": null,
+  "teacher_successes": 95,
+  "cohort": [
+    25000,
+    25099
+  ],
+  "rule": "Smallest K with at least 2/3 initializations reaching 0.75 of the matched original teacher, held-out relative Frobenius <= 0.5 and mean physical clipping excess <= 0.05. Of passing seeds choose nearest the median success for that K, then lower seed."
+}

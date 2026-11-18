@@ -1,0 +1,57 @@
+{
+  "base_commit": "9d43a66721f83d45eaca8263741fed57f4b25542",
+  "upstream_code": "d914c4aa1eea568dd45bcc3d760a83dc9362c093",
+  "hf_repo": "myohub/myosuite-3-baselines",
+  "hf_tag": "v3.1.0",
+  "hf_sha": "d6ed512bd329c018ecc373a351d00916cd552d34",
+  "device": "cuda:0",
+  "validation": [
+    20000,
+    20099
+  ],
+  "final": [
+    40000,
+    40099
+  ],
+  "teacher_required": 80,
+  "dataset": [
+    1000,
+    1999
+  ],
+  "dataset_validation_rule": "seed % 5 == 0; complete episode and target",
+  "near_success_reach_m": 0.078125,
+  "fit_sampling": "at most 20 evenly spaced observations in each 25-step phase per target; retain full raw trajectory",
+  "bank_dev": [
+    25000,
+    25099
+  ],
+  "bank_sizes": [
+    4,
+    8,
+    12,
+    16
+  ],
+  "nmf_seeds": [
+    11,
+    29,
+    47
+  ],
+  "relative_success_min": 0.75,
+  "bank_selection": "Smallest K with at least 2/3 initializations reaching 0.75 of the matched original teacher, held-out relative Frobenius <= 0.5 and mean physical clipping excess <= 0.05. Of passing seeds choose nearest the median success for that K, then lower seed.",
+  "ppo_seeds": [
+    11,
+    29,
+    47
+  ],
+  "pilot_iterations": [
+    256,
+    512,
+    1000,
+    2000
+  ],
+  "adaptation_validation_min": 0.5,
+  "final_access": "single evaluation per frozen controller after model selection; seeds were used previously in v0.1",
+  "decoder": "legacy 0.15*softplus(z); calibrated q95(train NNLS coefficients)*relu(z); compare zeros and a fixed N(0,1) probe, seed 701",
+  "projection": "lambda=0; batched accelerated NNLS initializer then local clipped projected gradient; report convergence and latency",
+  "ppo_pilot_rule": "fixed dev seed 73; checkpoint at 256,512,1000; extend to 2000 only if validation success at 1000 <50% or gains by >=10pp from 512. Freeze final budget after pilot."
+}

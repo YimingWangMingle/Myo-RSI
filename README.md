@@ -1,5 +1,7 @@
 # Myo-RSI
 
+**v0.1r rerun.** The official Reach teacher passed local validation (89/100). Across 12 NMF banks the best projected teacher achieved 30/100 against 95/100 on matched targets. The experiment stopped at the prespecified functional gate. [Measured report and figures](results/v0_1r/RESULTS_REPORT.md) · [Run protocol](results/v0_1r/preflight.md) · [Audit](results/v0_1r/verification.json)
+
 Myo-RSI v0.1 compares direct muscle control with a fixed NMF synergy bank on MyoSuite random hand reach and pose, then tests how the Reach policy adapts to reduced muscle strength. The experiment uses mjlab on CUDA and RSL-RL PPO.
 
 The three-seed final success rates on random Reach were 3.0% for direct PPO and 5.3% for synergy PPO. Both methods recorded zero final successes on random Pose. On sarcopenic Reach, frozen, full and local adaptation reached 4.7%, 5.3% and 2.3% respectively. Each final policy was evaluated on 100 held-out episodes per task and seed.

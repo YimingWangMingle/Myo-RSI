@@ -1,0 +1,575 @@
+{
+  "reconstruction": {
+    "K": 8,
+    "nmf_seed": 47,
+    "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+    "source_sha256": "7268818df55aa885ade5904659dd6dbbc44d9ad8b75c35b262c9f0bfa7b44ef2",
+    "data_train_sha256": "2cd873aabe0824549124d05b3f7dc06db62a05ad948a67765edc8fb646dc5a58",
+    "file_sha256": "3eaf90d25a5d6961c4853c3f2f72c7a56d6b75132e400540e1f6835d951c7a52",
+    "nmf_iter": 144,
+    "convergence_warnings": [],
+    "fit_frames": 64000,
+    "holdout_frames": 20000,
+    "fit_relative": 0.27598315477371216,
+    "holdout_relative": 0.2841959595680237,
+    "holdout_mae": 0.07167462259531021,
+    "clipped_fraction": 0.06528076923076923,
+    "mean_clip_excess": 0.0020834876227678583,
+    "max_column_cosine": 0.5406795740127563,
+    "dead_columns": 0,
+    "fit_wall_s": 0.7171966000460088
+  },
+  "muscles": [
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "ECRL_r",
+      "holdout_mae": 0.10575047880411148
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "ECRB_r",
+      "holdout_mae": 0.12389595806598663
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "ECU_r",
+      "holdout_mae": 0.07206599414348602
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "FCR_r",
+      "holdout_mae": 0.012936579994857311
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "FCU_r",
+      "holdout_mae": 0.07521218061447144
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "PL_r",
+      "holdout_mae": 0.12386956810951233
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "PT_r",
+      "holdout_mae": 0.09981802850961685
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "PQ_r",
+      "holdout_mae": 0.07974442839622498
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "FDS5_r",
+      "holdout_mae": 0.07488757371902466
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "FDS4_r",
+      "holdout_mae": 0.05821683257818222
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "FDS3_r",
+      "holdout_mae": 0.037263449281454086
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "FDS2_r",
+      "holdout_mae": 0.06703279167413712
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "FDP5_r",
+      "holdout_mae": 0.10149018466472626
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "FDP4_r",
+      "holdout_mae": 0.04443149268627167
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "FDP3_r",
+      "holdout_mae": 0.026072949171066284
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "FDP2_r",
+      "holdout_mae": 0.019661536440253258
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "EDC5_r",
+      "holdout_mae": 0.10293298214673996
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "EDC4_r",
+      "holdout_mae": 0.08786238729953766
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "EDC3_r",
+      "holdout_mae": 0.09825330972671509
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "EDC2_r",
+      "holdout_mae": 0.07027321308851242
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "EDM_r",
+      "holdout_mae": 0.0008667692309245467
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "EIP_r",
+      "holdout_mae": 0.12461824715137482
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "EPL_r",
+      "holdout_mae": 0.04455805569887161
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "EPB_r",
+      "holdout_mae": 0.07367680221796036
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "FPL_r",
+      "holdout_mae": 0.009736868552863598
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "APL_r",
+      "holdout_mae": 0.12159352749586105
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "OP_r",
+      "holdout_mae": 0.0652935728430748
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "RI2_r",
+      "holdout_mae": 0.05419987067580223
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "LU_RB2_r",
+      "holdout_mae": 0.09361817687749863
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "UI_UB2_r",
+      "holdout_mae": 0.06732256710529327
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "RI3_r",
+      "holdout_mae": 0.07547078281641006
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "LU_RB3_r",
+      "holdout_mae": 0.0987241119146347
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "UI_UB3_r",
+      "holdout_mae": 0.09295845031738281
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "RI4_r",
+      "holdout_mae": 0.022057661786675453
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "LU_RB4_r",
+      "holdout_mae": 0.0534038208425045
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "UI_UB4_r",
+      "holdout_mae": 0.10419297963380814
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "RI5_r",
+      "holdout_mae": 0.06823106855154037
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "LU_RB5_r",
+      "holdout_mae": 0.03942257538437843
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "muscle": "UI_UB5_r",
+      "holdout_mae": 0.1036967858672142
+    }
+  ],
+  "outcome": [
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "outcome": "near_success",
+      "n": 1800,
+      "relative_error": 0.255718469619751
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "outcome": "success",
+      "n": 18200,
+      "relative_error": 0.2869204878807068
+    }
+  ],
+  "decoder": [
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "source": "teacher",
+      "n_values": 780000,
+      "mean_excitation": 0.23646113777883793,
+      "fraction_clipped": 0.0,
+      "frac_at_low": 0.057183333333333336,
+      "frac_at_high": 0.0711948717948718,
+      "histogram": [
+        318158,
+        64143,
+        39756,
+        29196,
+        21852,
+        18069,
+        16444,
+        16242,
+        15366,
+        14660,
+        13591,
+        12088,
+        11537,
+        10665,
+        9824,
+        8531,
+        8403,
+        8032,
+        7382,
+        7285,
+        6808,
+        6874,
+        6762,
+        6804,
+        7087,
+        7440,
+        7722,
+        7668,
+        7722,
+        63889
+      ]
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "source": "heldout_NNLS",
+      "n_values": 780000,
+      "mean_excitation": 0.24304872281706,
+      "fraction_clipped": 0.06528076923076923,
+      "frac_at_low": 0.03514358974358974,
+      "frac_at_high": 0.030147435897435897,
+      "histogram": [
+        185170,
+        88476,
+        72102,
+        52277,
+        38447,
+        31763,
+        26608,
+        22260,
+        18303,
+        15595,
+        15817,
+        14183,
+        13425,
+        13989,
+        13412,
+        11772,
+        9896,
+        8891,
+        8495,
+        8139,
+        8543,
+        8247,
+        8271,
+        8203,
+        9034,
+        8728,
+        8711,
+        9245,
+        9260,
+        32738
+      ]
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "source": "legacy_zero",
+      "n_values": 39,
+      "mean_excitation": 0.11289757493182556,
+      "fraction_clipped": 0.0,
+      "frac_at_low": 0.0,
+      "frac_at_high": 0.0,
+      "histogram": [
+        3,
+        10,
+        5,
+        7,
+        2,
+        4,
+        3,
+        3,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "source": "calibrated_zero",
+      "n_values": 39,
+      "mean_excitation": 0.0005527786369235998,
+      "fraction_clipped": 1.0,
+      "frac_at_low": 1.0,
+      "frac_at_high": 0.0,
+      "histogram": [
+        39,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "source": "legacy_normal",
+      "n_values": 319488,
+      "mean_excitation": 0.13107681138355787,
+      "fraction_clipped": 9.390024038461539e-06,
+      "frac_at_low": 9.390024038461539e-06,
+      "frac_at_high": 0.0,
+      "histogram": [
+        48314,
+        61432,
+        43456,
+        31400,
+        26093,
+        22723,
+        19855,
+        16444,
+        13494,
+        10699,
+        8044,
+        5915,
+        4286,
+        2875,
+        1819,
+        1125,
+        653,
+        401,
+        234,
+        107,
+        73,
+        24,
+        9,
+        7,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "K": 8,
+      "nmf_seed": 47,
+      "bank_hash": "b08b50a5016dd56c8263610b4cdae062928be104349c99c6e11a15a10c3bb2c3",
+      "source": "calibrated_normal",
+      "n_values": 319488,
+      "mean_excitation": 0.26262475547969855,
+      "fraction_clipped": 0.18480506310096154,
+      "frac_at_low": 0.10177534054487179,
+      "frac_at_high": 0.08305163261217949,
+      "histogram": [
+        86857,
+        26646,
+        20682,
+        17206,
+        14851,
+        13073,
+        11539,
+        10216,
+        9078,
+        8245,
+        7395,
+        6650,
+        6224,
+        5530,
+        5043,
+        4666,
+        4297,
+        3983,
+        3560,
+        3345,
+        3205,
+        2964,
+        2767,
+        2581,
+        2447,
+        2276,
+        2040,
+        1952,
+        1874,
+        28296
+      ]
+    }
+  ]
+}

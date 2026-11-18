@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "environment_probes": 8,
+  "teacher_episodes": 200,
+  "unique_dataset_goals": 1000,
+  "audited_frames": 100000,
+  "fit_frames_after_phase_cap": 64000,
+  "verified_banks": 12,
+  "refit": "K4 seed11 reproduced within rtol=1e-4 and atol=1e-5",
+  "original_and_projected_episodes": 1300,
+  "independent_solver_episodes": 1200,
+  "reused_final_seed_ids_in_this_rerun": 0,
+  "selection": "BANK_INADEQUATE"
+}

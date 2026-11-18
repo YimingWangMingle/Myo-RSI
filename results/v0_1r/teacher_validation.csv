@@ -1,0 +1,3 @@
+task,successes,episodes,fraction,wilson95_low,wilson95_high,mean_terminal_error,error_unit,valid_steps,simulated_steps,wall_s,gate,model,sha256,local_contract,contract_matches,published_external_percent
+T1,89,100,0.89,0.8136870349691969,0.9374580364293543,0.04534208284690976,m,10000,10000,9.437849099980667,PASS,model_1912.pt,7268818df55aa885ade5904659dd6dbbc44d9ad8b75c35b262c9f0bfa7b44ef2,18d75c770f18,True,96.9
+T2,37,100,0.37,0.28182360534324524,0.4677947041905709,0.8687389227747917,rad,10000,10000,8.614345100009814,CONTEXT,model_24999.pt,69591398bd729be81b283cb8b8def7b46c2f17e188f0aece718d0a053dad6a3d,a72989d9dc6d,True,35.9

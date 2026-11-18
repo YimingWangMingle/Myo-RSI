@@ -1,0 +1,46 @@
+{
+  "gate": "PASS",
+  "splits": [
+    {
+      "split": "train",
+      "episodes": 800,
+      "goals": 800,
+      "frames": 80000,
+      "success": 759,
+      "near_success": 37,
+      "other_failure": 4,
+      "ctrl_min": 0.000552778656128794,
+      "ctrl_max": 0.9241418242454529,
+      "mapping_max_abs": 1.1920928955078125e-07,
+      "bytes": 91518280,
+      "sha256": "2cd873aabe0824549124d05b3f7dc06db62a05ad948a67765edc8fb646dc5a58"
+    },
+    {
+      "split": "val",
+      "episodes": 200,
+      "goals": 200,
+      "frames": 20000,
+      "success": 182,
+      "near_success": 18,
+      "other_failure": 0,
+      "ctrl_min": 0.000552778656128794,
+      "ctrl_max": 0.9241418242454529,
+      "mapping_max_abs": 1.1920928955078125e-07,
+      "bytes": 22939085,
+      "sha256": "9ad11017da857f02a7fa08509183b0ff83f600e185792770452c5b5749455581"
+    }
+  ],
+  "env_id": "myoHandReachRandom-v0",
+  "teacher_sha256": "7268818df55aa885ade5904659dd6dbbc44d9ad8b75c35b262c9f0bfa7b44ef2",
+  "body_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+  "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+  "reward_terms": [
+    "reach",
+    "bonus",
+    "penalty"
+  ],
+  "goal_overlap": 0,
+  "timestep_convention": "obs and raw/native action at decision; ctrl, act, qpos, qvel and task error after step; goal hashes identify complete target instances",
+  "simulated_steps": 100000,
+  "wall_s": 33.21095020021312
+}

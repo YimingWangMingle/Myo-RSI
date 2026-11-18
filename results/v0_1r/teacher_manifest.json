@@ -1,0 +1,120 @@
+[
+  {
+    "task": "T1",
+    "env_id": "myoHandReachRandom-v0",
+    "model": "model_1912.pt",
+    "hf_tag": "v3.1.0",
+    "hf_revision": "d6ed512bd329c018ecc373a351d00916cd552d34",
+    "model_sha256": "7268818df55aa885ade5904659dd6dbbc44d9ad8b75c35b262c9f0bfa7b44ef2",
+    "manifest_sha256": "5422f8c06a770761ea3da66825c7dc3c9885ec07eb24644912855cb4d1317cd5",
+    "upstream_manifest": {
+      "schema": 1,
+      "env_id": "myoHandReachRandom-v0",
+      "contract": {
+        "obs_shape": [
+          115
+        ],
+        "action_shape": [
+          39
+        ],
+        "ctrl_dt": 0.02,
+        "obs_keys": [
+          "qpos",
+          "qvel",
+          "tip_pos",
+          "reach_err",
+          "act"
+        ]
+      },
+      "contract_hash": "18d75c770f18",
+      "myosuite_version": "3.0.0",
+      "myosuite_commit": "665c8087496079e9ebb5d64cf7a249e1033c3166",
+      "created": "2026-10-08",
+      "success_percent": 96.9,
+      "train_steps": null,
+      "files": [
+        "model_1912.pt"
+      ],
+      "note": null
+    },
+    "current_contract": {
+      "obs_shape": [
+        115
+      ],
+      "action_shape": [
+        39
+      ],
+      "ctrl_dt": 0.02,
+      "obs_keys": [
+        "qpos",
+        "qvel",
+        "tip_pos",
+        "reach_err",
+        "act"
+      ]
+    },
+    "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+    "body_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+    "normalizer": "EmpiricalNormalization",
+    "actor": "MLP(\n  (0): Linear(in_features=115, out_features=128, bias=True)\n  (1): ELU(alpha=1.0)\n  (2): Linear(in_features=128, out_features=128, bias=True)\n  (3): ELU(alpha=1.0)\n  (4): Linear(in_features=128, out_features=128, bias=True)\n  (5): ELU(alpha=1.0)\n  (6): Linear(in_features=128, out_features=128, bias=True)\n  (7): ELU(alpha=1.0)\n  (8): Linear(in_features=128, out_features=39, bias=True)\n)",
+    "deterministic_mean": true
+  },
+  {
+    "task": "T2",
+    "env_id": "myoHandPoseRandom-v0",
+    "model": "model_24999.pt",
+    "hf_tag": "v3.1.0",
+    "hf_revision": "d6ed512bd329c018ecc373a351d00916cd552d34",
+    "model_sha256": "69591398bd729be81b283cb8b8def7b46c2f17e188f0aece718d0a053dad6a3d",
+    "manifest_sha256": "75075634c42178d673e05a8c0a0100327937c9fdf0e0c7222f57ef7aaca9c915",
+    "upstream_manifest": {
+      "schema": 1,
+      "env_id": "myoHandPoseRandom-v0",
+      "contract": {
+        "obs_shape": [
+          108
+        ],
+        "action_shape": [
+          39
+        ],
+        "ctrl_dt": 0.02,
+        "obs_keys": [
+          "qpos",
+          "qvel",
+          "pose_err",
+          "act"
+        ]
+      },
+      "contract_hash": "a72989d9dc6d",
+      "myosuite_version": "3.0.0",
+      "myosuite_commit": "665c8087496079e9ebb5d64cf7a249e1033c3166",
+      "created": "2026-10-08",
+      "success_percent": 35.9,
+      "train_steps": null,
+      "files": [
+        "model_24999.pt"
+      ],
+      "note": null
+    },
+    "current_contract": {
+      "obs_shape": [
+        108
+      ],
+      "action_shape": [
+        39
+      ],
+      "ctrl_dt": 0.02,
+      "obs_keys": [
+        "qpos",
+        "qvel",
+        "pose_err",
+        "act"
+      ]
+    },
+    "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+    "body_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+    "normalizer": "EmpiricalNormalization",
+    "actor": "MLP(\n  (0): Linear(in_features=108, out_features=128, bias=True)\n  (1): ELU(alpha=1.0)\n  (2): Linear(in_features=128, out_features=128, bias=True)\n  (3): ELU(alpha=1.0)\n  (4): Linear(in_features=128, out_features=128, bias=True)\n  (5): ELU(alpha=1.0)\n  (6): Linear(in_features=128, out_features=128, bias=True)\n  (7): ELU(alpha=1.0)\n  (8): Linear(in_features=128, out_features=39, bias=True)\n)",
+    "deterministic_mean": true
+  }
+]

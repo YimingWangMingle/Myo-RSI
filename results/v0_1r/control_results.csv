@@ -1,0 +1,5 @@
+task,arm,status,reason,successes,episodes,training_steps
+T1,Direct PPO,NOT_RUN,P2 BANK_INADEQUATE,,,0
+T1,Synergy PPO,NOT_RUN,P2 BANK_INADEQUATE,,,0
+T2,Direct PPO,NOT_RUN,P2 BANK_INADEQUATE,,,0
+T2,Synergy PPO,NOT_RUN,P2 BANK_INADEQUATE,,,0
