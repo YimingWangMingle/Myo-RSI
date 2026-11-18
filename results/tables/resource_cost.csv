@@ -1,0 +1,37 @@
+stage,task_id,method,seed,environment_steps,sim_search_steps,eval_steps,wall_s,gpu_hours,source_run_id
+probe,T0,cpu,701,12,0,0,,,cpu_probe
+probe,T1,cpu,701,12,0,0,,,cpu_probe
+probe,T2,cpu,701,12,0,0,,,cpu_probe
+probe,T3,cpu,701,12,0,0,,,cpu_probe
+probe,T0,cpu,701,12,0,0,,,strict_probe
+probe,T1,cpu,701,12,0,0,,,strict_probe
+probe,T2,cpu,701,12,0,0,,,strict_probe
+probe,T3,cpu,701,12,0,0,,,strict_probe
+probe,T0,mjlab,701,12,0,0,,,strict_probe
+probe,T1,mjlab,701,12,0,0,,,strict_probe
+probe,T2,mjlab,701,12,0,0,,,strict_probe
+probe,T3,mjlab,701,12,0,0,,,strict_probe
+probe,T0,cpu,701,12,0,0,,,physical_probe
+probe,T1,cpu,701,12,0,0,,,physical_probe
+probe,T2,cpu,701,12,0,0,,,physical_probe
+probe,T3,cpu,701,12,0,0,,,physical_probe
+probe,T0,mjlab,701,64,0,0,,,physical_probe
+probe,T1,mjlab,701,412,0,0,,,physical_probe
+probe,T2,mjlab,701,412,0,0,,,physical_probe
+probe,T3,mjlab,701,412,0,0,,,physical_probe
+ppo_smoke,T1,Direct PPO,11,1536,0,0,3,0.0008333333333333334,upstream_smoke
+train,T2,Direct PPO,11,1572864,0,0,185.43696169997565,0.051510267138882126,T2-A-11
+evaluate,T2,Direct PPO,11,0,0,60000,9.2296487998683,0.00256379133329675,T2-A-11
+train,T2,Direct PPO,29,1572864,0,0,183.5172383999452,0.050977010666651446,T2-A-29
+evaluate,T2,Direct PPO,29,0,0,60000,9.185300400014967,0.002551472333337491,T2-A-29
+train,T2,Direct PPO,47,1572864,0,0,186.34863459994085,0.05176350961109468,T2-A-47
+evaluate,T2,Direct PPO,47,0,0,60000,9.30645880009979,0.002585127444472164,T2-A-47
+train,T1,Direct PPO,11,1572864,0,0,225.29676379985176,0.06258243438884771,T1-A-11
+evaluate,T1,Direct PPO,11,0,0,60000,13.540977099910378,0.003761382527752883,T1-A-11
+train,T1,Direct PPO,29,1572864,0,0,225.81476110010408,0.06272632252780669,T1-A-29
+evaluate,T1,Direct PPO,29,0,0,60000,13.421465400140733,0.0037281848333724256,T1-A-29
+train,T1,Direct PPO,47,1572864,0,0,228.66671819984913,0.06351853283329142,T1-A-47
+evaluate,T1,Direct PPO,47,0,0,60000,13.51248350017704,0.003753467638938067,T1-A-47
+train,T1,Synergy PPO,11,1572864,0,0,227.83333890000358,0.06328703858333433,T1-B-11
+evaluate,T1,Synergy PPO,11,0,0,60000,13.564197999890894,0.0037678327777474706,T1-B-11
+nmf_cpu,T1,NMF,,0,0,0,0.2702192000579089,0,"T1-A-11,T1-A-29,T1-A-47"

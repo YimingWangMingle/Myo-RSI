@@ -1,0 +1,5 @@
+task_id,method,training_seeds,episodes_per_seed,mean_success,seed_sd,final_steps_per_seed,mean_gpu_hours,status
+T1,Direct PPO,3,100,0.03,0.034641016151377546,1572864,0.0629424299166486,RUN
+T1,Synergy PPO,1,100,0.06,,1572864,0.06328703858333433,PARTIAL
+T2,Direct PPO,3,100,0.0,0.0,1572864,0.051416929138876084,RUN
+T2,Synergy PPO,0,,,,,,NOT_RUN

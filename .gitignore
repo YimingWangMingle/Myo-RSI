@@ -5,5 +5,8 @@ __pycache__/
 logs/
 checkpoints/
 datasets/
-artifacts/
+artifacts/*
+!artifacts/synergy_bank_k8.npz
+!artifacts/nmf.json
+.ruff_cache/
 .wandb/

@@ -3,7 +3,14 @@ import unittest
 import numpy as np
 
 from myo_rsi.actions import excitation, native_action
-from myo_rsi.protocol import FINAL_SEEDS, K, PROBE_SEED, TASKS, TRAIN_SEEDS, VALIDATION_SEEDS
+from myo_rsi.protocol import (
+    FINAL_SEEDS,
+    PROBE_SEED,
+    TASKS,
+    TRAIN_SEEDS,
+    VALIDATION_SEEDS,
+    K,
+)
 
 
 class ProtocolTests(unittest.TestCase):
@@ -27,6 +34,8 @@ class ProtocolTests(unittest.TestCase):
     def test_disjoint_seeds(self):
         self.assertEqual(len(FINAL_SEEDS), 100)
         self.assertEqual(len(set(TRAIN_SEEDS)), 3)
-        self.assertTrue(set(FINAL_SEEDS).isdisjoint((*TRAIN_SEEDS, *VALIDATION_SEEDS, PROBE_SEED)))
+        self.assertTrue(
+            set(FINAL_SEEDS).isdisjoint((*TRAIN_SEEDS, *VALIDATION_SEEDS, PROBE_SEED))
+        )
         self.assertEqual(K, 8)
         self.assertEqual(len(set(TASKS.values())), 4)

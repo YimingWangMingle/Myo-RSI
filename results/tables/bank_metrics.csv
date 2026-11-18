@@ -1,0 +1,2 @@
+bank_id,bank_hash,source_task,source_training_seeds,K,num_muscles,num_actions_fit,nmf_train_recon,nmf_val_recon,excitation_clip_fraction,actuator_order_hash
+T1-K8,0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce,T1,"[11, 29, 47]",8,39,3652,0.49791006816472255,0.5007773997061508,0.031155836033884814,6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd

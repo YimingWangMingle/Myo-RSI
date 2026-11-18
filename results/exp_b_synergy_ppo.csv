@@ -1,0 +1,2 @@
+task_id,method,seed,checkpoint_id,bank_hash,environment_steps,gpu_hours,success_n,episodes,success_rate,wilson_low,wilson_high
+T1,Synergy PPO,11,T1-B-11/policy_256.pt,0982a133cc1b8c5430c326e6321804c0fd8f3aa1978c4096fb84d1031de6ffce,1572864,0.06328703858333433,6,100,0.06,0.027786123963188192,0.1247681544589592

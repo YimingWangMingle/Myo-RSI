@@ -1,0 +1,11 @@
+{
+  "task_id": "T1",
+  "env_id": "myoHandReachRandom-v0",
+  "seed": 11,
+  "hardware": "local RTX 4060",
+  "num_envs": 32,
+  "rsl_iterations": 2,
+  "transitions": 1536,
+  "logged_train_wall_s": 3,
+  "used_for_bank": false
+}

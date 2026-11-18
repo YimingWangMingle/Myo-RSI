@@ -1,0 +1,1031 @@
+{
+  "host": {
+    "python": "3.13.17",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "gpu": "NVIDIA GeForce RTX 4060, 8188 MiB, 621.01",
+    "packages": {
+      "myosuite": "3.1.0",
+      "myo-sim": "0.2.5",
+      "gymnasium": "1.2.3",
+      "numpy": "2.5.5",
+      "mujoco": "3.11.0",
+      "mjlab": "1.6.1",
+      "mujoco-warp": "3.11.0",
+      "warp-lang": "1.19.0",
+      "rsl-rl-lib": "5.4.2",
+      "torch": "2.14.1+cu130"
+    },
+    "myosuite_release_reference": "d914c4aa1eea568dd45bcc3d760a83dc9362c093"
+  },
+  "normal_gate": false,
+  "adaptation_gate": false,
+  "rows": [
+    {
+      "task_id": "T0",
+      "env_id": "myoHandReachFixed-v0",
+      "backend": "cpu",
+      "model_hash": "dc74a4ca3eb70b0db2b7c4cd46915e2f40bc4059ee86e5146b76d164cd9630e3",
+      "hand_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+      "actuator_order": [
+        "ECRL_r",
+        "ECRB_r",
+        "ECU_r",
+        "FCR_r",
+        "FCU_r",
+        "PL_r",
+        "PT_r",
+        "PQ_r",
+        "FDS5_r",
+        "FDS4_r",
+        "FDS3_r",
+        "FDS2_r",
+        "FDP5_r",
+        "FDP4_r",
+        "FDP3_r",
+        "FDP2_r",
+        "EDC5_r",
+        "EDC4_r",
+        "EDC3_r",
+        "EDC2_r",
+        "EDM_r",
+        "EIP_r",
+        "EPL_r",
+        "EPB_r",
+        "FPL_r",
+        "APL_r",
+        "OP_r",
+        "RI2_r",
+        "LU_RB2_r",
+        "UI_UB2_r",
+        "RI3_r",
+        "LU_RB3_r",
+        "UI_UB3_r",
+        "RI4_r",
+        "LU_RB4_r",
+        "UI_UB4_r",
+        "RI5_r",
+        "LU_RB5_r",
+        "UI_UB5_r"
+      ],
+      "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+      "native_action_dim": 39,
+      "policy_action_dim": 39,
+      "nq": 23,
+      "nv": 23,
+      "na": 39,
+      "physics_dt": 0.002,
+      "peak_force": [
+        337.3,
+        252.2,
+        192.9,
+        407.9,
+        479.8,
+        101.0,
+        557.2,
+        284.7,
+        75.3,
+        171.2,
+        258.8,
+        162.5,
+        236.8,
+        172.9,
+        212.4,
+        197.3,
+        139.4,
+        109.2,
+        94.4,
+        48.8,
+        72.4,
+        47.3,
+        88.3,
+        46.0,
+        201.0,
+        116.7,
+        180.0,
+        61.2,
+        61.2,
+        61.2,
+        61.2,
+        98.0,
+        98.0,
+        97.0,
+        76.9,
+        76.9,
+        59.9,
+        47.9,
+        47.9
+      ],
+      "episode_horizon": 100,
+      "control_dt": 0.02,
+      "reward_components": {
+        "reach": 1.0,
+        "bonus": 4.0,
+        "penalty": 50
+      },
+      "observation_terms": [
+        "qpos",
+        "qvel",
+        "tip_pos",
+        "reach_err",
+        "act"
+      ],
+      "success_key": "info.solved",
+      "success_criterion": "L2 stacked tip error < 0.0625 m",
+      "goal_ranges": {
+        "THtip_r": [
+          [
+            -0.165,
+            -0.537,
+            1.495
+          ],
+          [
+            -0.165,
+            -0.537,
+            1.495
+          ]
+        ],
+        "IFtip_r": [
+          [
+            -0.151,
+            -0.547,
+            1.455
+          ],
+          [
+            -0.151,
+            -0.547,
+            1.455
+          ]
+        ],
+        "MFtip_r": [
+          [
+            -0.146,
+            -0.547,
+            1.447
+          ],
+          [
+            -0.146,
+            -0.547,
+            1.447
+          ]
+        ],
+        "RFtip_r": [
+          [
+            -0.148,
+            -0.543,
+            1.445
+          ],
+          [
+            -0.148,
+            -0.543,
+            1.445
+          ]
+        ],
+        "LFtip_r": [
+          [
+            -0.148,
+            -0.528,
+            1.434
+          ],
+          [
+            -0.148,
+            -0.528,
+            1.434
+          ]
+        ]
+      },
+      "far_distance": 0.21999999999999997,
+      "termination_terms": [
+        "far tip error after two control steps",
+        "time limit"
+      ],
+      "obs_dim": 115,
+      "probe_seed": 701,
+      "steps_per_trace": 6,
+      "probe_transitions": 12,
+      "probe_samples": [
+        {
+          "step": 1,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.0005494083305484549,
+          "act_max": 0.7860039831500272,
+          "ctrl_act_max_gap": 0.1381378410954257
+        },
+        {
+          "step": 2,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.0028008587098716452,
+          "act_max": 0.7858253299999951,
+          "ctrl_act_max_gap": 0.18829681481412652
+        },
+        {
+          "step": 3,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.013296079432811695,
+          "act_max": 0.7851985368102131,
+          "ctrl_act_max_gap": 0.24960149080460786
+        },
+        {
+          "step": 4,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.05038446063454571,
+          "act_max": 0.7838566895995572,
+          "ctrl_act_max_gap": 0.24959148139729764
+        },
+        {
+          "step": 5,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.09769617193963082,
+          "act_max": 0.7843654586680774,
+          "ctrl_act_max_gap": 0.24955342452713158
+        },
+        {
+          "step": 6,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.11099091889536561,
+          "act_max": 0.7851517956101981,
+          "ctrl_act_max_gap": 0.249431628215587
+        }
+      ],
+      "repeat_obs_max_diff": 0.0,
+      "mapping_max_error": 2.6485455273395075e-08,
+      "verification_status": "PASS",
+      "verified_force_ratio_to_T1": 1
+    },
+    {
+      "task_id": "T1",
+      "env_id": "myoHandReachRandom-v0",
+      "backend": "cpu",
+      "model_hash": "dc74a4ca3eb70b0db2b7c4cd46915e2f40bc4059ee86e5146b76d164cd9630e3",
+      "hand_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+      "actuator_order": [
+        "ECRL_r",
+        "ECRB_r",
+        "ECU_r",
+        "FCR_r",
+        "FCU_r",
+        "PL_r",
+        "PT_r",
+        "PQ_r",
+        "FDS5_r",
+        "FDS4_r",
+        "FDS3_r",
+        "FDS2_r",
+        "FDP5_r",
+        "FDP4_r",
+        "FDP3_r",
+        "FDP2_r",
+        "EDC5_r",
+        "EDC4_r",
+        "EDC3_r",
+        "EDC2_r",
+        "EDM_r",
+        "EIP_r",
+        "EPL_r",
+        "EPB_r",
+        "FPL_r",
+        "APL_r",
+        "OP_r",
+        "RI2_r",
+        "LU_RB2_r",
+        "UI_UB2_r",
+        "RI3_r",
+        "LU_RB3_r",
+        "UI_UB3_r",
+        "RI4_r",
+        "LU_RB4_r",
+        "UI_UB4_r",
+        "RI5_r",
+        "LU_RB5_r",
+        "UI_UB5_r"
+      ],
+      "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+      "native_action_dim": 39,
+      "policy_action_dim": 39,
+      "nq": 23,
+      "nv": 23,
+      "na": 39,
+      "physics_dt": 0.002,
+      "peak_force": [
+        337.3,
+        252.2,
+        192.9,
+        407.9,
+        479.8,
+        101.0,
+        557.2,
+        284.7,
+        75.3,
+        171.2,
+        258.8,
+        162.5,
+        236.8,
+        172.9,
+        212.4,
+        197.3,
+        139.4,
+        109.2,
+        94.4,
+        48.8,
+        72.4,
+        47.3,
+        88.3,
+        46.0,
+        201.0,
+        116.7,
+        180.0,
+        61.2,
+        61.2,
+        61.2,
+        61.2,
+        98.0,
+        98.0,
+        97.0,
+        76.9,
+        76.9,
+        59.9,
+        47.9,
+        47.9
+      ],
+      "episode_horizon": 100,
+      "control_dt": 0.02,
+      "reward_components": {
+        "reach": 1.0,
+        "bonus": 4.0,
+        "penalty": 50
+      },
+      "observation_terms": [
+        "qpos",
+        "qvel",
+        "tip_pos",
+        "reach_err",
+        "act"
+      ],
+      "success_key": "info.solved",
+      "success_criterion": "L2 stacked tip error < 0.0625 m",
+      "goal_ranges": {
+        "THtip_r": [
+          [
+            -0.185,
+            -0.5770000000000001,
+            1.455
+          ],
+          [
+            -0.125,
+            -0.517,
+            1.5350000000000001
+          ]
+        ],
+        "IFtip_r": [
+          [
+            -0.191,
+            -0.5670000000000001,
+            1.445
+          ],
+          [
+            -0.11099999999999999,
+            -0.527,
+            1.465
+          ]
+        ],
+        "MFtip_r": [
+          [
+            -0.186,
+            -0.5670000000000001,
+            1.437
+          ],
+          [
+            -0.10599999999999998,
+            -0.527,
+            1.457
+          ]
+        ],
+        "RFtip_r": [
+          [
+            -0.188,
+            -0.5630000000000001,
+            1.435
+          ],
+          [
+            -0.10799999999999998,
+            -0.523,
+            1.455
+          ]
+        ],
+        "LFtip_r": [
+          [
+            -0.188,
+            -0.548,
+            1.424
+          ],
+          [
+            -0.10799999999999998,
+            -0.508,
+            1.444
+          ]
+        ]
+      },
+      "far_distance": 0.375,
+      "termination_terms": [
+        "far tip error after two control steps",
+        "time limit"
+      ],
+      "obs_dim": 115,
+      "probe_seed": 701,
+      "steps_per_trace": 6,
+      "probe_transitions": 12,
+      "probe_samples": [
+        {
+          "step": 1,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.0005494083305484549,
+          "act_max": 0.7860039831500272,
+          "ctrl_act_max_gap": 0.1381378410954257
+        },
+        {
+          "step": 2,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.0028008587098716452,
+          "act_max": 0.7858253299999951,
+          "ctrl_act_max_gap": 0.18829681481412652
+        },
+        {
+          "step": 3,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.013296079432811695,
+          "act_max": 0.7851985368102131,
+          "ctrl_act_max_gap": 0.24960149080460786
+        },
+        {
+          "step": 4,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.05038446063454571,
+          "act_max": 0.7838566895995572,
+          "ctrl_act_max_gap": 0.24959148139729764
+        },
+        {
+          "step": 5,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.09769617193963082,
+          "act_max": 0.7843654586680774,
+          "ctrl_act_max_gap": 0.24955342452713158
+        },
+        {
+          "step": 6,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.11099091889536561,
+          "act_max": 0.7851517956101981,
+          "ctrl_act_max_gap": 0.249431628215587
+        }
+      ],
+      "repeat_obs_max_diff": 0.0,
+      "mapping_max_error": 2.6485455273395075e-08,
+      "verification_status": "PASS"
+    },
+    {
+      "task_id": "T2",
+      "env_id": "myoHandPoseRandom-v0",
+      "backend": "cpu",
+      "model_hash": "dc74a4ca3eb70b0db2b7c4cd46915e2f40bc4059ee86e5146b76d164cd9630e3",
+      "hand_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+      "actuator_order": [
+        "ECRL_r",
+        "ECRB_r",
+        "ECU_r",
+        "FCR_r",
+        "FCU_r",
+        "PL_r",
+        "PT_r",
+        "PQ_r",
+        "FDS5_r",
+        "FDS4_r",
+        "FDS3_r",
+        "FDS2_r",
+        "FDP5_r",
+        "FDP4_r",
+        "FDP3_r",
+        "FDP2_r",
+        "EDC5_r",
+        "EDC4_r",
+        "EDC3_r",
+        "EDC2_r",
+        "EDM_r",
+        "EIP_r",
+        "EPL_r",
+        "EPB_r",
+        "FPL_r",
+        "APL_r",
+        "OP_r",
+        "RI2_r",
+        "LU_RB2_r",
+        "UI_UB2_r",
+        "RI3_r",
+        "LU_RB3_r",
+        "UI_UB3_r",
+        "RI4_r",
+        "LU_RB4_r",
+        "UI_UB4_r",
+        "RI5_r",
+        "LU_RB5_r",
+        "UI_UB5_r"
+      ],
+      "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+      "native_action_dim": 39,
+      "policy_action_dim": 39,
+      "nq": 23,
+      "nv": 23,
+      "na": 39,
+      "physics_dt": 0.002,
+      "peak_force": [
+        337.3,
+        252.2,
+        192.9,
+        407.9,
+        479.8,
+        101.0,
+        557.2,
+        284.7,
+        75.3,
+        171.2,
+        258.8,
+        162.5,
+        236.8,
+        172.9,
+        212.4,
+        197.3,
+        139.4,
+        109.2,
+        94.4,
+        48.8,
+        72.4,
+        47.3,
+        88.3,
+        46.0,
+        201.0,
+        116.7,
+        180.0,
+        61.2,
+        61.2,
+        61.2,
+        61.2,
+        98.0,
+        98.0,
+        97.0,
+        76.9,
+        76.9,
+        59.9,
+        47.9,
+        47.9
+      ],
+      "episode_horizon": 100,
+      "control_dt": 0.02,
+      "reward_components": {
+        "pose": 1.0,
+        "bonus": 4.0,
+        "act_reg": 1.0,
+        "penalty": 50
+      },
+      "observation_terms": [
+        "qpos",
+        "qvel",
+        "pose_err",
+        "act"
+      ],
+      "success_key": "info.solved",
+      "success_criterion": "L2 joint error < 0.7 rad",
+      "goal_ranges": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          -0.147495,
+          0.28272
+        ],
+        [
+          0.0248,
+          0.6392
+        ],
+        [
+          -0.7854,
+          0.01569
+        ],
+        [
+          -1.309,
+          -0.0262045
+        ],
+        [
+          0.366605,
+          1.30045
+        ],
+        [
+          -0.006982,
+          0.010473
+        ],
+        [
+          0.128305,
+          1.45492
+        ],
+        [
+          0.111722,
+          0.998897
+        ],
+        [
+          0.39275,
+          1.48459
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.18852,
+          1.45318
+        ],
+        [
+          0.117825,
+          1.44532
+        ],
+        [
+          0.306345,
+          1.571
+        ],
+        [
+          -0.204204,
+          -0.010472
+        ],
+        [
+          0.0,
+          1.52387
+        ],
+        [
+          0.06284,
+          1.45318
+        ],
+        [
+          0.21994,
+          1.48459
+        ],
+        [
+          -0.2618,
+          -0.068068
+        ],
+        [
+          0.18852,
+          1.571
+        ],
+        [
+          0.01571,
+          1.571
+        ]
+      ],
+      "termination_terms": [
+        "far pose error",
+        "time limit"
+      ],
+      "obs_dim": 108,
+      "probe_seed": 701,
+      "steps_per_trace": 6,
+      "probe_transitions": 12,
+      "probe_samples": [
+        {
+          "step": 1,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.0005494083305484549,
+          "act_max": 0.7860039831500272,
+          "ctrl_act_max_gap": 0.1381378410954257
+        },
+        {
+          "step": 2,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.0028008587098716452,
+          "act_max": 0.7858253299999951,
+          "ctrl_act_max_gap": 0.18829681481412652
+        },
+        {
+          "step": 3,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.013296079432811695,
+          "act_max": 0.7851985368102131,
+          "ctrl_act_max_gap": 0.24960149080460786
+        },
+        {
+          "step": 4,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.05038446063454571,
+          "act_max": 0.7838566895995572,
+          "ctrl_act_max_gap": 0.24959148139729764
+        },
+        {
+          "step": 5,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.09769617193963082,
+          "act_max": 0.7843654586680774,
+          "ctrl_act_max_gap": 0.24955342452713158
+        },
+        {
+          "step": 6,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.11099091889536561,
+          "act_max": 0.7851517956101981,
+          "ctrl_act_max_gap": 0.249431628215587
+        }
+      ],
+      "repeat_obs_max_diff": 0.0,
+      "mapping_max_error": 2.6485455273395075e-08,
+      "verification_status": "PASS",
+      "verified_force_ratio_to_T1": 1
+    },
+    {
+      "task_id": "T3",
+      "env_id": "myoSarcHandReachRandom-v0",
+      "backend": "cpu",
+      "model_hash": "18a063182b18450307ed674cd42e33d0b04cfca6b6d19f0fd609d52c462ebd8d",
+      "hand_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+      "actuator_order": [
+        "ECRL_r",
+        "ECRB_r",
+        "ECU_r",
+        "FCR_r",
+        "FCU_r",
+        "PL_r",
+        "PT_r",
+        "PQ_r",
+        "FDS5_r",
+        "FDS4_r",
+        "FDS3_r",
+        "FDS2_r",
+        "FDP5_r",
+        "FDP4_r",
+        "FDP3_r",
+        "FDP2_r",
+        "EDC5_r",
+        "EDC4_r",
+        "EDC3_r",
+        "EDC2_r",
+        "EDM_r",
+        "EIP_r",
+        "EPL_r",
+        "EPB_r",
+        "FPL_r",
+        "APL_r",
+        "OP_r",
+        "RI2_r",
+        "LU_RB2_r",
+        "UI_UB2_r",
+        "RI3_r",
+        "LU_RB3_r",
+        "UI_UB3_r",
+        "RI4_r",
+        "LU_RB4_r",
+        "UI_UB4_r",
+        "RI5_r",
+        "LU_RB5_r",
+        "UI_UB5_r"
+      ],
+      "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+      "native_action_dim": 39,
+      "policy_action_dim": 39,
+      "nq": 23,
+      "nv": 23,
+      "na": 39,
+      "physics_dt": 0.002,
+      "peak_force": [
+        168.65,
+        126.1,
+        96.45,
+        203.95,
+        239.9,
+        50.5,
+        278.6,
+        142.35,
+        37.65,
+        85.6,
+        129.4,
+        81.25,
+        118.4,
+        86.45,
+        106.2,
+        98.65,
+        69.7,
+        54.6,
+        47.2,
+        24.4,
+        36.2,
+        23.65,
+        44.15,
+        23.0,
+        100.5,
+        58.35,
+        90.0,
+        30.6,
+        30.6,
+        30.6,
+        30.6,
+        49.0,
+        49.0,
+        48.5,
+        38.45,
+        38.45,
+        29.95,
+        23.95,
+        23.95
+      ],
+      "episode_horizon": 100,
+      "control_dt": 0.02,
+      "reward_components": {
+        "reach": 1.0,
+        "bonus": 4.0,
+        "penalty": 50
+      },
+      "observation_terms": [
+        "qpos",
+        "qvel",
+        "tip_pos",
+        "reach_err",
+        "act"
+      ],
+      "success_key": "info.solved",
+      "success_criterion": "L2 stacked tip error < 0.0625 m",
+      "goal_ranges": {
+        "THtip_r": [
+          [
+            -0.185,
+            -0.5770000000000001,
+            1.455
+          ],
+          [
+            -0.125,
+            -0.517,
+            1.5350000000000001
+          ]
+        ],
+        "IFtip_r": [
+          [
+            -0.191,
+            -0.5670000000000001,
+            1.445
+          ],
+          [
+            -0.11099999999999999,
+            -0.527,
+            1.465
+          ]
+        ],
+        "MFtip_r": [
+          [
+            -0.186,
+            -0.5670000000000001,
+            1.437
+          ],
+          [
+            -0.10599999999999998,
+            -0.527,
+            1.457
+          ]
+        ],
+        "RFtip_r": [
+          [
+            -0.188,
+            -0.5630000000000001,
+            1.435
+          ],
+          [
+            -0.10799999999999998,
+            -0.523,
+            1.455
+          ]
+        ],
+        "LFtip_r": [
+          [
+            -0.188,
+            -0.548,
+            1.424
+          ],
+          [
+            -0.10799999999999998,
+            -0.508,
+            1.444
+          ]
+        ]
+      },
+      "far_distance": 0.375,
+      "termination_terms": [
+        "far tip error after two control steps",
+        "time limit"
+      ],
+      "obs_dim": 115,
+      "probe_seed": 701,
+      "steps_per_trace": 6,
+      "probe_transitions": 12,
+      "probe_samples": [
+        {
+          "step": 1,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.0005494083305484549,
+          "act_max": 0.7860039831500272,
+          "ctrl_act_max_gap": 0.1381378410954257
+        },
+        {
+          "step": 2,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.0028008587098716452,
+          "act_max": 0.7858253299999951,
+          "ctrl_act_max_gap": 0.18829681481412652
+        },
+        {
+          "step": 3,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.013296079432811695,
+          "act_max": 0.7851985368102131,
+          "ctrl_act_max_gap": 0.24960149080460786
+        },
+        {
+          "step": 4,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.05038446063454571,
+          "act_max": 0.7838566895995572,
+          "ctrl_act_max_gap": 0.24959148139729764
+        },
+        {
+          "step": 5,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.09769617193963082,
+          "act_max": 0.7843654586680774,
+          "ctrl_act_max_gap": 0.24955342452713158
+        },
+        {
+          "step": 6,
+          "ctrl_min": 0.000552778597921133,
+          "ctrl_max": 0.9241418242454529,
+          "act_min": 0.11099091889536561,
+          "act_max": 0.7851517956101981,
+          "ctrl_act_max_gap": 0.249431628215587
+        }
+      ],
+      "repeat_obs_max_diff": 0.0,
+      "mapping_max_error": 2.6485455273395075e-08,
+      "verification_status": "PASS",
+      "verified_force_ratio_to_T1": 0.5
+    },
+    {
+      "task_id": "T0",
+      "env_id": "myoHandReachFixed-v0",
+      "backend": "mjlab",
+      "verification_status": "BLOCKED",
+      "error": "AssertionError: \nNot equal to tolerance rtol=1e-05, atol=2e-05\n\nMismatched elements: 121 / 805 (15%)\nFirst 5 mismatches are at indices:\n [3, 25]: 0.12263783067464828 (ACTUAL), 0.12261024862527847 (DESIRED)\n [4, 1]: 0.19544008374214172 (ACTUAL), 0.19526158273220062 (DESIRED)\n [4, 2]: 0.22784385085105896 (ACTUAL), 0.22765885293483734 (DESIRED)\n [4, 5]: 0.023019053041934967 (ACTUAL), 0.022992657497525215 (DESIRED)\n [4, 6]: -0.11376506835222244 (ACTUAL), -0.11382773518562317 (DESIRED)\nMax absolute difference among violations: 0.0012444\nMax relative difference among violations: 0.1825\n ACTUAL: array([[ 0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,\n         0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,\n         0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,...\n DESIRED: array([[ 0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,\n         0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,\n         0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,..."
+    },
+    {
+      "task_id": "T1",
+      "env_id": "myoHandReachRandom-v0",
+      "backend": "mjlab",
+      "verification_status": "BLOCKED",
+      "error": "AssertionError: \nNot equal to tolerance rtol=1e-05, atol=2e-05\n\nMismatched elements: 154 / 805 (19.1%)\nFirst 5 mismatches are at indices:\n [3, 24]: 0.054649628698825836 (ACTUAL), 0.05461731180548668 (DESIRED)\n [3, 25]: 0.12261024862527847 (ACTUAL), 0.1226704940199852 (DESIRED)\n [3, 30]: 0.035995014011859894 (ACTUAL), 0.035958919674158096 (DESIRED)\n [3, 31]: 0.05174894258379936 (ACTUAL), 0.05177317559719086 (DESIRED)\n [3, 34]: 0.1080591082572937 (ACTUAL), 0.1080293357372284 (DESIRED)\nMax absolute difference among violations: 0.00198288\nMax relative difference among violations: 0.18579301\n ACTUAL: array([[ 0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,\n         0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,\n         0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,...\n DESIRED: array([[ 0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,\n         0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,\n         0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,..."
+    },
+    {
+      "task_id": "T2",
+      "env_id": "myoHandPoseRandom-v0",
+      "backend": "mjlab",
+      "verification_status": "BLOCKED",
+      "error": "AssertionError: \nNot equal to tolerance rtol=1e-05, atol=2e-05\n\nMismatched elements: 88 / 756 (11.6%)\nFirst 5 mismatches are at indices:\n [5, 1]: 0.032467205077409744 (ACTUAL), 0.03262210264801979 (DESIRED)\n [5, 2]: -0.31353873014450073 (ACTUAL), -0.3137035071849823 (DESIRED)\n [5, 4]: 0.13680382072925568 (ACTUAL), 0.1368393748998642 (DESIRED)\n [5, 5]: 0.09805866330862045 (ACTUAL), 0.0980001837015152 (DESIRED)\n [5, 7]: 0.7789621353149414 (ACTUAL), 0.7790364623069763 (DESIRED)\nMax absolute difference among violations: 0.00113304\nMax relative difference among violations: 1.0218322\n ACTUAL: array([[-4.941308e-02, -1.578327e-01, -4.503048e-01,  1.146429e-01,\n         2.150234e-01,  1.032410e-01, -1.090642e+00,  2.744899e-01,\n         2.421295e-01,  3.049364e-02,  5.530064e-01,  5.141358e-01,...\n DESIRED: array([[-4.941308e-02, -1.578327e-01, -4.503048e-01,  1.146429e-01,\n         2.150234e-01,  1.032410e-01, -1.090642e+00,  2.744899e-01,\n         2.421295e-01,  3.049364e-02,  5.530064e-01,  5.141358e-01,..."
+    },
+    {
+      "task_id": "T3",
+      "env_id": "myoSarcHandReachRandom-v0",
+      "backend": "mjlab",
+      "verification_status": "BLOCKED",
+      "error": "AssertionError: \nNot equal to tolerance rtol=1e-05, atol=2e-05\n\nMismatched elements: 70 / 805 (8.7%)\nFirst 5 mismatches are at indices:\n [4, 1]: 0.15491752326488495 (ACTUAL), 0.15497592091560364 (DESIRED)\n [4, 2]: 0.18744440376758575 (ACTUAL), 0.18738953769207 (DESIRED)\n [4, 8]: 0.103195421397686 (ACTUAL), 0.1031632199883461 (DESIRED)\n [4, 11]: 0.24779970943927765 (ACTUAL), 0.24782361090183258 (DESIRED)\n [4, 12]: 0.09973589330911636 (ACTUAL), 0.09970373660326004 (DESIRED)\nMax absolute difference among violations: 0.00053382\nMax relative difference among violations: 0.23822385\n ACTUAL: array([[ 0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,\n         0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,\n         0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,...\n DESIRED: array([[ 0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,\n         0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,\n         0.000000e+00,  0.000000e+00,  0.000000e+00,  0.000000e+00,..."
+    }
+  ]
+}
