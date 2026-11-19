@@ -106,7 +106,7 @@ def smoke(seed):
                     w.max(0).values, torch.ones(w.shape[1], device=w.device)
                 )
                 head = RecruitmentHead(base, expand).to(env.device)
-                opt = torch.optim.Adam(head.head.parameters(), lr=0.0003)
+                opt = torch.optim.SGD(head.head.parameters(), lr=1.0)
                 before = physical(head(x), w, scale, expand)
                 initial = float((before - old).abs().max().detach())
                 if expand and initial > 2e-6:
@@ -121,10 +121,40 @@ def smoke(seed):
                     grad = float(head.head.weight.grad.norm())
                     if it == 0:
                         first_grad = grad
-                    opt.step()
-                    trace.append(float(loss.detach()))
-                if first_grad <= 0 or min(trace[1:]) >= trace[0]:
-                    raise ValueError("New head has no measured useful gradient")
+                    original_loss = float(loss.detach())
+                    if it == 0:
+                        trace.append(original_loss)
+                    with torch.no_grad():
+                        old_parameters = [v.clone() for v in head.head.parameters()]
+                        rate = 1.0
+                        for _ in range(24):
+                            opt.param_groups[0]["lr"] = rate
+                            opt.step()
+                            prediction = physical(head(x), w, scale, expand)
+                            trial_loss = float((prediction - target).square().mean())
+                            if trial_loss < original_loss:
+                                trace.append(trial_loss)
+                                break
+                            for v, previous in zip(
+                                head.head.parameters(), old_parameters, strict=True
+                            ):
+                                v.copy_(previous)
+                            rate *= 0.5
+                        else:
+                            break
+                write(
+                    loc / (op + "_fit.json"),
+                    dict(
+                        first_gradient=first_grad,
+                        initial_loss=trace[0],
+                        achieved_loss=trace[-1],
+                        accepted_updates=len(trace) - 1,
+                    ),
+                )
+                if first_grad <= 0 or trace[-1] >= trace[0]:
+                    raise ValueError(
+                        f"{op} head failed physical gradient or objective test"
+                    )
                 archive = loc / (op + ".pt")
                 torch.save(
                     dict(
