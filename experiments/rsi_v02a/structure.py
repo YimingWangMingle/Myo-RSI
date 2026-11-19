@@ -55,10 +55,16 @@ class RecruitmentHead(nn.Module):
 
 
 def physical(z, w, q, expand):
-    # clamp_min has derivative 1 at exactly zero, unlike ReLU. Check that
-    # this derivative reaches a physical muscle channel in the actual decoder.
+    # Choose the nonnegative branch at zero so its right derivative reaches
+    # a physical muscle channel on this pinned PyTorch build.
     c = (
-        torch.cat([z[:, :-1].relu(), z[:, -1:].clamp_min(0)], dim=1)
+        torch.cat(
+            [
+                z[:, :-1].relu(),
+                torch.where(z[:, -1:] >= 0, z[:, -1:], torch.zeros_like(z[:, -1:])),
+            ],
+            dim=1,
+        )
         if expand
         else z.relu()
     ) * q
