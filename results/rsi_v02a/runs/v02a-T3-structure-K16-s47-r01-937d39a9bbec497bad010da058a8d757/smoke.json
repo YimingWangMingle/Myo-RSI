@@ -1,0 +1,30 @@
+[
+  {
+    "operation": "reshape",
+    "k": 16,
+    "candidate_source": "bounded alternating-weight edit to column 1",
+    "initial_excitation_delta_max": 0.0007644221186637878,
+    "parent_column_linf": 0.0005446281284093857,
+    "first_grad": 2.7962940293946303e-05,
+    "first_loss": 8.901294812346805e-09,
+    "last_loss": 8.253207894881598e-09,
+    "parent_success": 16,
+    "smoke_success": 16,
+    "n": 20,
+    "archive_sha256": "777a8f032254b1dd0cd8b235f0017a7c903c50118140cbf9e68e920e0784da9a"
+  },
+  {
+    "operation": "expand",
+    "k": 17,
+    "candidate_source": "unit-vector interface fixture",
+    "initial_excitation_delta_max": 0.0,
+    "parent_column_linf": 0.0,
+    "first_grad": 0.0014634695835411549,
+    "first_loss": 2.4871753794286633e-06,
+    "last_loss": 1.3700294232421584e-09,
+    "parent_success": 16,
+    "smoke_success": 16,
+    "n": 20,
+    "archive_sha256": "c4e65ced074b7b3596bd5f9cbae8c05fa10b2cb259b9f676b313730bf9902149"
+  }
+]

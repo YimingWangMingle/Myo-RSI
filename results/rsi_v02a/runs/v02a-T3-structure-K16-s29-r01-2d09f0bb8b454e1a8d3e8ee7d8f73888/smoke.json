@@ -1,0 +1,30 @@
+[
+  {
+    "operation": "reshape",
+    "k": 16,
+    "candidate_source": "bounded alternating-weight edit to column 1",
+    "initial_excitation_delta_max": 0.0012581273913383484,
+    "parent_column_linf": 0.0005446281284093857,
+    "first_grad": 5.3120998927624896e-05,
+    "first_loss": 2.7205349084624686e-08,
+    "last_loss": 2.5122444569092295e-08,
+    "parent_success": 17,
+    "smoke_success": 17,
+    "n": 20,
+    "archive_sha256": "cdec7ccaefd83baeb3d13cc903f1a3511e9cb8c2116d494c579e322f41f3b9d1"
+  },
+  {
+    "operation": "expand",
+    "k": 17,
+    "candidate_source": "verified full-action correction",
+    "initial_excitation_delta_max": 0.0,
+    "parent_column_linf": 0.0,
+    "first_grad": 0.004656011704355478,
+    "first_loss": 8.161505320458673e-06,
+    "last_loss": 9.23356680004872e-09,
+    "parent_success": 17,
+    "smoke_success": 17,
+    "n": 20,
+    "archive_sha256": "b3a82c7083220b4675d08324f9ccd6b8913e0c2c4df187403e885a4a9a7187c0"
+  }
+]

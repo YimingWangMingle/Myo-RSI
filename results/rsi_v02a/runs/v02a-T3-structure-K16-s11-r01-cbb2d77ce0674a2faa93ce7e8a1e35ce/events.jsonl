@@ -1,0 +1,4 @@
+{"stage": "start", "transitions": 0, "wall_s": null, "time_unix": 1795081629.794175}
+{"stage": "normal_source", "transitions": 2000, "wall_s": 2.614674699958414, "time_unix": 1795081634.7534297, "device": "cuda:0"}
+{"stage": "calibration", "transitions": 2000, "wall_s": 2.553414500085637, "time_unix": 1795081637.5465133, "device": "cuda:0"}
+{"stage": "end", "transitions": 0, "wall_s": 8.348931200103834, "time_unix": 1795081638.0292723, "status": "FAILED"}
