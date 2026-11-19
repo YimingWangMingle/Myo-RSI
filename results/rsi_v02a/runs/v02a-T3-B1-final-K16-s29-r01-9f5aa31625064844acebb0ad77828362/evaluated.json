@@ -1,0 +1,10 @@
+[
+  {
+    "iteration": 100,
+    "ppo": 1200000,
+    "diagnosis": 0,
+    "total": 1200000,
+    "uri": "checkpoints/rsi_v02a/v02a-T3-B1-K16-s29-r01/policy_100.pt",
+    "sha256": "ae4ce3bf2b55326c8a10e9985d8edd597bc1448dbbff1e12a02d6dc6faa0e8b6"
+  }
+]

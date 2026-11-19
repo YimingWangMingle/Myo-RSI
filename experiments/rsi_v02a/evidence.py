@@ -1,9 +1,10 @@
 """Supporting verification: source lineage, rejected branches, paired errors and costs."""
 
 import shutil
+
 import numpy as np
 
-from .registry import ROOT, PROTOCOL, completed, read, sha, table, write
+from .registry import PROTOCOL, ROOT, completed, read, sha, table, write
 from .report import rows
 
 

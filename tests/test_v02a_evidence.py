@@ -7,8 +7,8 @@ from unittest.mock import patch
 import numpy as np
 
 from experiments.rsi_v02a import publish
-from experiments.rsi_v02a.report import cohort
 from experiments.rsi_v02a.registry import ROOT, completed, read
+from experiments.rsi_v02a.report import cohort
 
 
 class PublishedRepairEvidence(unittest.TestCase):

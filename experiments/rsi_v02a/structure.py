@@ -6,9 +6,10 @@ import numpy as np
 import torch
 from torch import nn
 
+from myo_rsi.bank_study import HIGH, LOW
+
 from .measurement import controller, episodes, metadata, paired, td
-from .registry import PROTOCOL, attempt, completed, read, write, sha
-from myo_rsi.bank_study import LOW, HIGH
+from .registry import PROTOCOL, attempt, completed, read, sha, write
 
 
 def new_bank(w, operation, directions):

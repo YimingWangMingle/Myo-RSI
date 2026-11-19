@@ -9,7 +9,9 @@ from tensordict import TensorDict
 
 from experiments.synergy_budget.ppo import setup
 from myo_rsi.probe import describe_model, versions
-from myo_rsi.rerun_v01r import cpu, sha as hash_bytes
+from myo_rsi.rerun_v01r import cpu
+from myo_rsi.rerun_v01r import sha as hash_bytes
+
 from .registry import event, source, table
 
 

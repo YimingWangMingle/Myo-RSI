@@ -4,6 +4,7 @@ Diagnostic-only: these new samples cannot contribute demonstrations to B3.
 """
 
 import csv
+
 import numpy as np
 import torch
 import warp as wp
@@ -22,8 +23,9 @@ def contact_audit(seed):
         data = {k: f[k] for k in f.files}
     with attempt("contact-replay", seed, {"diagnosis": parent.name}) as (loc, m):
         with controller(active_gate()[0], seed, 100) as (env, runner):
-            from .measurement import metadata, reset
             import time
+
+            from .measurement import metadata, reset
 
             m["environment"] = metadata(env)
             raw = env.unwrapped

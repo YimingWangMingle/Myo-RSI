@@ -10,8 +10,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-from .registry import ROOT, PROTOCOL, cohorts, completed, read, sha, table, write
 from myo_rsi.tables import wilson
+
+from .registry import PROTOCOL, ROOT, cohorts, completed, read, sha, table, write
 
 SEEDS = read(PROTOCOL)["source_seeds"]
 ARMS = ["B0", "B1", "B2", "B3"]
@@ -257,6 +258,7 @@ def diagnostics():
         ylabel="Terminal error (m)",
         title="Matched search and source-policy continuation",
     )
+    ax.set_xlim(-0.5, 1.5)
     fig_save(fig, "04_search")
     return sums, agg
 
@@ -465,23 +467,42 @@ def report():
     if sm:
         table(ROOT / "structure_smoke.csv", sm)
         stage["P5"] = "complete" if len(sm) == 6 else "partial"
-        fig, axes = plt.subplots(1, 2, figsize=(8, 3.7))
         import torch
 
-        for ax, op in zip(axes, ["reshape", "expand"]):
+        fig, axes = plt.subplots(2, 3, figsize=(9.5, 6.7))
+        # Show the one measured full-muscle witness direction if available.
+        seed = next(
+            (
+                r["seed"]
+                for r in sm
+                if r["candidate_source"] == "verified full-action correction"
+            ),
+            SEEDS[0],
+        )
+        with np.load("artifacts/v0_1r/banks/reach_only/K16/seed11/bank.npz") as f:
+            prior = f["W"]
+        for ax, op in zip(axes, ["reshape", "expand"], strict=True):
             z = torch.load(
-                completed("structure", SEEDS[0]) / (op + ".pt"),
+                completed("structure", seed) / (op + ".pt"),
                 map_location="cpu",
                 weights_only=True,
             )
             w = z["W"].numpy()
-            with np.load("artifacts/v0_1r/banks/reach_only/K16/seed11/bank.npz") as f:
-                prior = f["W"]
             delta = w.copy()
             delta[:, :16] -= prior
-            im = ax.imshow(delta, aspect="auto", cmap="coolwarm")
-            ax.set(title=op + " change", xlabel="Component", ylabel="Muscle")
-            fig.colorbar(im, ax=ax)
+            for axes_, v, lab in zip(
+                ax, [prior, w, delta], ["Source", "Edited", "Change"], strict=True
+            ):
+                if lab == "Change":
+                    scale = max(float(np.abs(v).max()), 1e-9)
+                    im = axes_.imshow(
+                        v, aspect="auto", cmap="coolwarm", vmin=-scale, vmax=scale
+                    )
+                else:
+                    im = axes_.imshow(v, aspect="auto", cmap="viridis", vmin=0, vmax=1)
+                axes_.set(title=op + " · " + lab, xlabel="Component", ylabel="Muscle")
+                fig.colorbar(im, ax=axes_, shrink=0.7)
+        fig.suptitle(f"Source seed {seed}: normalized bank weights and changes")
         fig_save(fig, "08_structure")
     dcost = {
         stage: sum(c["transitions"] for c in costs if c["stage"] == stage)

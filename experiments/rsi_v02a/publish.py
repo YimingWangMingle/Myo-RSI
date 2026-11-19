@@ -1,6 +1,8 @@
 """Validation of launch, report completeness and deterministic artifacts."""
 
-from .registry import ROOT, PROTOCOL, cohorts, completed, read, sha, table, write
+import json
+
+from .registry import PROTOCOL, ROOT, cohorts, completed, read, sha, table, write
 
 
 def ready():
@@ -47,7 +49,8 @@ def publish():
     if final["cohort"] != cohorts()["final"]:
         raise ValueError("Final test lock mismatch")
     import numpy as np
-    from .report import rows, bootstrap
+
+    from .report import bootstrap, rows
 
     contrasts = []
     site = "S2" if not read(ROOT / "screen_gate.json")["degradation"] else "T3"
@@ -179,6 +182,41 @@ def publish():
         ]
     text += [
         "[预定示例中两种体模的轨迹首次偏离](exemplar_body_divergence.csv) · [阶段命令和复现说明](../../experiments/rsi_v02a/README.md) · [源模型与体模](source_manifest.json) · [记录字段](data_contract.json)"
+    ]
+    frozen = next(r for r in summary if r["method"] == "B0")
+    screen_gap = read(ROOT / "S2_gate.json")["gap_pp"]
+    final_gap = float(frozen["normal_mean_pct"]) - float(frozen["weak_mean_pct"])
+    text += [
+        "",
+        f"筛查队列上的 S2 差距为 {screen_gap:.1f} 个百分点；独立最终队列上的冻结策略差距为 {final_gap:.1f} 个百分点。两批目标的结果应分开解读。B1 和 B2 相对冻结策略的弱手恢复区间均覆盖零。",
+    ]
+    failures = [z for z in rows(ROOT / "failure_manifest.csv") if z["success"] == "0"]
+    from collections import Counter
+
+    tip_counts = Counter(int(z["worst_tip"]) for z in failures)
+    tip_idx, tip_n = tip_counts.most_common(1)[0]
+    names = read(completed("B0-final", 11) / "manifest.json")["environment"][site][
+        "tip_sites"
+    ]
+    text += [
+        "",
+        f"在 300 个诊断回合中有 {len(failures)} 个失败。末端误差最大的指尖最常为 {names[tip_idx - 1]}，占 {tip_n}/{len(failures)} 个失败；这项描述不能归因为单一肌肉病因。[逐回合定位](failure_manifest.csv)",
+        "",
+    ]
+    for arm in ("B1", "B2"):
+        mins = []
+        for ss in read(PROTOCOL)["source_seeds"]:
+            loc = completed(arm, ss)
+            ev = [
+                json.loads(v) for v in (loc / "events.jsonl").read_text().splitlines()
+            ]
+            mins.append(sum(e["wall_s"] for e in ev if e["stage"] == "ppo_update") / 60)
+        text.append(
+            f"{arm} 每种子 120 万步的平均 PPO 实测用时为 {np.mean(mins):.2f} 分钟（三种子标准差 {np.std(mins, ddof=1):.2f} 分钟）。"
+        )
+    text += [
+        "",
+        "B3 实际 BC 梯度步数和 PPO 交互均为 0。两次未成功的结构冒烟尝试及一次筛查接口错误均保留在运行索引和总成本中。结构重试采用回溯步长训练募集头，并通过显式选择零点的右侧梯度使新通道能在保持初始输出的同时被训练。[成本分类](resource_ledger.csv) · [轨迹时序与解码精度核验](trajectory_integrity.csv)",
     ]
     with (ROOT / "RESULTS_REPORT.md").open("a", encoding="utf8") as f:
         f.write("\n".join(text) + "\n")

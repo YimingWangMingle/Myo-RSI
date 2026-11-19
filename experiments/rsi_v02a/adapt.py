@@ -7,12 +7,11 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from .weakness import active_gate
 from .adapters import install
 from .measurement import controller, episodes, metadata, td
 from .registry import (
-    ROOT,
     PROTOCOL,
+    ROOT,
     attempt,
     cohorts,
     completed,
@@ -21,6 +20,7 @@ from .registry import (
     sha,
     write,
 )
+from .weakness import active_gate
 
 
 def frozen_digest(actor):
@@ -139,7 +139,6 @@ def train(seed, method):
                 bc_fit(actor, diag / "corrections.npz", loc)
             env.unwrapped.reset(seed=200000 + seed)
             torch.manual_seed(200000 + seed)
-            it0 = 0
             history = []
 
             def checkpoint(it):

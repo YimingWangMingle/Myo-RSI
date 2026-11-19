@@ -1,8 +1,9 @@
 import unittest
 from unittest.mock import patch
+
 from experiments.rsi_v02a.adapt import check_budget
-from experiments.rsi_v02a.registry import cohorts, source
 from experiments.rsi_v02a.diagnosis import selected
+from experiments.rsi_v02a.registry import cohorts, source
 
 
 class RepairContract(unittest.TestCase):

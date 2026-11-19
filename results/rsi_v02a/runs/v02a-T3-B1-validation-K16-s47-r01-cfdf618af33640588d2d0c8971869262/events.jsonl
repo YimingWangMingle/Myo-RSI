@@ -1,0 +1,8 @@
+{"stage": "start", "transitions": 0, "wall_s": null, "time_unix": 1795082071.1103094}
+{"stage": "T1_240000", "transitions": 10000, "wall_s": 2.5629718001000583, "time_unix": 1795082075.2144723, "device": "cuda:0"}
+{"stage": "T1_600000", "transitions": 10000, "wall_s": 2.6173223999794573, "time_unix": 1795082079.0279176, "device": "cuda:0"}
+{"stage": "T1_1200000", "transitions": 10000, "wall_s": 2.474943600129336, "time_unix": 1795082082.7449403, "device": "cuda:0"}
+{"stage": "S2_240000", "transitions": 10000, "wall_s": 2.613872200017795, "time_unix": 1795082087.0274909, "device": "cuda:0"}
+{"stage": "S2_600000", "transitions": 10000, "wall_s": 2.682400899939239, "time_unix": 1795082091.0577862, "device": "cuda:0"}
+{"stage": "S2_1200000", "transitions": 10000, "wall_s": 2.5178336000535637, "time_unix": 1795082094.8282506, "device": "cuda:0"}
+{"stage": "end", "transitions": 0, "wall_s": 23.82624169997871, "time_unix": 1795082094.829367, "status": "COMPLETED"}

@@ -6,9 +6,9 @@ from collections import defaultdict
 import numpy as np
 import torch
 
-from .weakness import active_gate
 from .measurement import controller, cpu, episodes, metadata, reset, tips
 from .registry import PROTOCOL, attempt, cohorts, completed, event, read, table, write
+from .weakness import active_gate
 
 
 def selected(rows):
@@ -128,7 +128,7 @@ def profile(env, runner, seed, goal, data, lane, start, loc):
             val[i, j] += sgn * d
     lower = cpu((val < 0).any(1))
     pre = (val.relu() * env.scale) @ env.W.T
-    from myo_rsi.bank_study import LOW, HIGH
+    from myo_rsi.bank_study import HIGH, LOW
 
     saturated = cpu(((pre < LOW) | (pre > HIGH)).any(1))
     native = env.native(val)

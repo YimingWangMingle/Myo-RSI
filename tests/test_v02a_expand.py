@@ -1,5 +1,6 @@
-import torch
 import unittest
+
+import torch
 
 from experiments.rsi_v02a.structure import physical
 

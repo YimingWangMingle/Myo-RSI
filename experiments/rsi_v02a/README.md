@@ -26,7 +26,7 @@ python -X utf8 -m experiments.rsi_v02a.adapt final
 python -X utf8 -m experiments.rsi_v02a.publish
 ```
 
-The release includes all completed and failed attempts. Repeating a stage in its published folder reuses completed attempts. To run a fresh repetition, start from an isolated checkout of the same code with a new empty `results/rsi_v02a` and `checkpoints/rsi_v02a` output location. The input directories in the previous studies must stay accessible. A new attempt receives the next available ID within the output root. A failed PPO process restarts as a new attempt with a fresh simulator and optimizer. The archived attempt remains in the cost ledger.
+The single entry point `python -m experiments.rsi_v02a.run` dispatches the same gated sequence. The release includes all completed and failed attempts. Repeating a stage in its published folder reuses completed attempts. To run a fresh repetition, start from an isolated checkout of the same code with a new empty `results/rsi_v02a` and `checkpoints/rsi_v02a` output location. The input directories in the previous studies must stay accessible. A new attempt receives the next available ID within the output root. A failed PPO process restarts as a new attempt with a fresh simulator and optimizer. The archived attempt remains in the cost ledger.
 
 The weak-body ID T3 in the run names identifies the task family. Each screen and measurement explicitly records the environment or compiled body. The active adaptation site in this release is S2. It uses the native weak configuration with a further force multiplier of 0.75 applied before compiling. All three seeds have the same 39 ordered actuators and a distinct body from normal Reach.
 

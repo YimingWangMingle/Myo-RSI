@@ -7,10 +7,12 @@ import torch
 from mjlab.envs import ManagerBasedRlEnv
 from mjlab.tasks.registry import load_env_cfg
 from myosuite.core.muscle_conditions import apply_sarcopenia_to_spec
+
+from experiments.synergy_budget.ppo import RecruitmentEnv
 from myo_rsi.probe import describe_model, versions
 from myo_rsi.train import agent
-from experiments.synergy_budget.ppo import RecruitmentEnv
-from .registry import ROOT, PROTOCOL, read
+
+from .registry import PROTOCOL, ROOT, read
 
 
 def secondary(k, seed, n):
@@ -54,7 +56,7 @@ def active_gate():
 
 if __name__ == "__main__":
     from .measurement import controller, episodes, metadata
-    from .registry import attempt, completed, cohorts, write
+    from .registry import attempt, cohorts, completed, write
 
     first = read(ROOT / "screen_gate.json")
     if first["degradation"] or not first["competent"]:
