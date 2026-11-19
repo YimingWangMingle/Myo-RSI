@@ -7,6 +7,7 @@ from collections import defaultdict
 import numpy as np
 import torch
 
+from .weakness import active_gate
 from .measurement import controller, cpu, episodes, metadata, reset, tips
 from .registry import PROTOCOL,ROOT,attempt,cohorts,completed,event,read,table,write,sha
 
@@ -21,7 +22,7 @@ def selected(rows):
 
 def fulltrace(loc,seed):
     goals=cohorts()["diagnosis"]
-    with controller("T3",seed,len(goals)) as (env,runner):
+    with controller(active_gate()[0],seed,len(goals)) as (env,runner):
         m=metadata(env)
         rows=episodes(env,runner,goals,loc,"failure_traces",record=True)
     table(loc/"failure_episodes.csv",rows)
@@ -192,7 +193,7 @@ def shooting(env,runner,goal,seed,data,lane,start,loc,source_success):
 
 
 def diagnose(seed):
-    gate=read(ROOT/"screen_gate.json")
+    site,gate=active_gate()
     if not all(gate[k] for k in ("competent","degradation","viable")):
         raise ValueError("G0 not qualified")
     with attempt("diagnose",seed) as (loc,m):
@@ -200,7 +201,7 @@ def diagnose(seed):
         profiles,trials,targets,directions=[],[],[],[]
         checks={}
         for mode,n in [("profile",100),("search",400)]:
-            with controller("T3",seed,n) as (env,runner):
+            with controller(active_gate()[0],seed,n) as (env,runner):
                 env.unwrapped.cfg.auto_reset=False
                 runner.alg.get_policy().eval()
                 for j,i in enumerate(keys):

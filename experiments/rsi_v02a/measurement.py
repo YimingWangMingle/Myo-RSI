@@ -16,7 +16,8 @@ from .adapters import install
 
 @contextmanager
 def controller(task,seed,n,k=16):
-    env,runner=setup(task,k,seed,n)
+    from .weakness import secondary
+    env,runner=secondary(k,seed,n) if task=="S2" else setup(task,k,seed,n)
     try:
         parent=source(seed,k)
         info=runner.load(parent["uri"],load_cfg={"actor":True,"critic":True})
