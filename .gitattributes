@@ -1,3 +1,5 @@
 datasets/v0_1r/rollouts_train.npz filter=lfs diff=lfs merge=lfs -text
 datasets/v0_1r/rollouts_val.npz filter=lfs diff=lfs merge=lfs -text
 checkpoints/synergy_budget/T[12]-K*-s*/policy_*.pt filter=lfs diff=lfs merge=lfs -text
+checkpoints/rsi_v02a/**/policy_*.pt filter=lfs diff=lfs merge=lfs -text
+results/rsi_v02a/runs/**/failure_traces.npz filter=lfs diff=lfs merge=lfs -text

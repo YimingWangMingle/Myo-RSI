@@ -16,3 +16,11 @@ artifacts/*
 !artifacts/nmf.json
 .ruff_cache/
 .wandb/
+
+# Only explicitly named V0.2a policy milestones are new checkpoint artifacts.
+!checkpoints/
+checkpoints/*
+!checkpoints/rsi_v02a/
+checkpoints/rsi_v02a/**/*
+!checkpoints/rsi_v02a/**/
+!checkpoints/rsi_v02a/**/policy_*.pt
