@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "valid_primary_training_runs": 18,
+  "verified_policy_checkpoints": 144,
+  "matched_test_records": 1800,
+  "matched_validation_records": 14400,
+  "train_transitions": 324000000,
+  "reused_expert_final_goal_overlap": 0,
+  "per_task_common_targets": 100,
+  "all_main_simulator_restart_schedules_match": true
+}

@@ -1,0 +1,26 @@
+{
+  "task": "T2",
+  "arms": [
+    39,
+    8,
+    16
+  ],
+  "iterations": 1500,
+  "decisions": [
+    {
+      "K": 39,
+      "gain_pp": 0.0,
+      "error_reduction": 0.1145698043862522
+    },
+    {
+      "K": 8,
+      "gain_pp": 0.0,
+      "error_reduction": 0.016912980951836243
+    },
+    {
+      "K": 16,
+      "gain_pp": 0.0,
+      "error_reduction": 0.043765299488543685
+    }
+  ]
+}

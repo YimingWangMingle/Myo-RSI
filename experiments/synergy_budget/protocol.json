@@ -1,0 +1,65 @@
+{
+  "base_commit": "48aea8abd7cdba21ad2802542cc5aabbb4089be1",
+  "tasks": [
+    "T1",
+    "T2"
+  ],
+  "training_seeds": [
+    11,
+    29,
+    47
+  ],
+  "nmf_seeds": [
+    11,
+    29,
+    47
+  ],
+  "policy_bank_seed": 11,
+  "k": [
+    8,
+    16,
+    24,
+    32
+  ],
+  "primary_actions": [
+    39,
+    8,
+    16
+  ],
+  "n_envs": 500,
+  "horizon": 24,
+  "iterations": [
+    0,
+    84,
+    250,
+    500,
+    750,
+    1000
+  ],
+  "extension": [
+    1250,
+    1500
+  ],
+  "validation": [
+    61000,
+    61099
+  ],
+  "test": [
+    71000,
+    71099
+  ],
+  "projection_dev": [
+    25000,
+    25099
+  ],
+  "decoder": "fixed W, coefficients=q95_train * relu(raw Gaussian recruitment); native actions from clipped excitation. Direct native clip [-1,1].",
+  "first_divergence": "First of three consecutive 20 ms steps with joint trajectory RMS >=0.02 rad; excitation threshold RMS >=0.05 for three consecutive steps. Censor if never reached; differences only over simultaneous first episodes.",
+  "identity_gate": "On development cohort, max same-state excitation error <2e-6; number of paired terminal outcome differences <=max(3, repeat baseline differences + 1). The raw identity projection solver is also verified on held-out commands.",
+  "extension_rule": "Extend all arms of a task equally to 18M if any primary arm gains >=5 pp mean success or reduces mean terminal error >=10% between 6M and 12M on validation. One bounded extension; plateau is descriptive only.",
+  "extra_k_rule": "Add one larger scratch arm on Reach and Pose if at 12M mean Reach K16 is >10 percentage points behind direct and the larger seed-11 bank improves projected development success by >=15 points over K16. Choose smallest passing K among 24,32.",
+  "near_final_margin_pp": 5,
+  "efficiency": "Normalized trapezoidal validation success AUC, plus first checkpoint attaining 25% and 50%; paired final differences per seed versus direct.",
+  "budgets": "1.008M,3M,6M,9M,12M training transitions; conditional 15M and 18M. Validation and final rollouts separate.",
+  "exclusions": "Scratch primary comparison only. Optional BC and PCA/ICA omitted in this stage; all banks use the identical Reach teacher dataset, including Pose controllers.",
+  "cost_scope": "Each arm shares historical demonstration and bank costs as appropriate; count once. Compare interaction efficiency and expose teacher prior separately."
+}

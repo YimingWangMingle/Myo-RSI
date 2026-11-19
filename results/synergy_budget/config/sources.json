@@ -1,0 +1,200 @@
+{
+  "base_commit": "48aea8abd7cdba21ad2802542cc5aabbb4089be1",
+  "protocol_sha256": "f1469577711ef422e5f1b81f29982d2e3eac5f35c9dbc0bb75da5a55d710e79f",
+  "study_source_sha256": {
+    "capacity.py": "df68a872fea3c58bf593eef274ff96b1ea69a62eb754044405f8815eec4d91b8",
+    "common.py": "cd85faa541187ce9d057874a54d93f1377724d4bd55a5eda42e8dd640f26a279",
+    "controller_gap.py": "e002d14fb2502470acf8f9c36dd02a16006762ba691df6c9a3c3218d346e7c2a",
+    "matrix.py": "c7559d6b7d9fc715dddc213646657ac5397b1abbe9a72ae44ffbc2b15468f4c8",
+    "onset.py": "97977bd62937ca98e1c34c8dc6bb12b9275af5a36f761a87fbf8d3078a6078cb",
+    "pose_reference.py": "ec441a4a3bb1300b92abb68d8104c45ce9a7844d005e9f2c442d0ead788112f2",
+    "ppo.py": "1f71d866a63474b9236a3afeba2412e9541a80845e3dfe6f3fbc62d49c27872a",
+    "provenance.py": "b83e3f6d5000c06e8068475d44275bc37988ce543569d5f8eba0d4d92befcdb1",
+    "report.py": "280729bcc010db4f21e4fb3786b47f0c585e6250aa5a8fdb4d976ad5b3a0c8ff",
+    "study.py": "40a0416cbe6a239e5d954925f5d927e7f8de6516e469fd376fffd7a560d3f45b"
+  },
+  "environment_yaml_sha256": {
+    "T1_training.yaml": "f8218512ffb15109790d87e2cb744974dc7b1b5ae90f64d4a4e210aeb04a3b34",
+    "T2_training.yaml": "9c65b4370853c37e2cc711fd66ad6882b8831cbd47c94fcf7c6db0da473edb75"
+  },
+  "frozen_teacher_sources": [
+    {
+      "task": "T1",
+      "env_id": "myoHandReachRandom-v0",
+      "model": "model_1912.pt",
+      "hf_tag": "v3.1.0",
+      "hf_revision": "d6ed512bd329c018ecc373a351d00916cd552d34",
+      "model_sha256": "7268818df55aa885ade5904659dd6dbbc44d9ad8b75c35b262c9f0bfa7b44ef2",
+      "manifest_sha256": "5422f8c06a770761ea3da66825c7dc3c9885ec07eb24644912855cb4d1317cd5",
+      "upstream_manifest": {
+        "schema": 1,
+        "env_id": "myoHandReachRandom-v0",
+        "contract": {
+          "obs_shape": [
+            115
+          ],
+          "action_shape": [
+            39
+          ],
+          "ctrl_dt": 0.02,
+          "obs_keys": [
+            "qpos",
+            "qvel",
+            "tip_pos",
+            "reach_err",
+            "act"
+          ]
+        },
+        "contract_hash": "18d75c770f18",
+        "myosuite_version": "3.0.0",
+        "myosuite_commit": "665c8087496079e9ebb5d64cf7a249e1033c3166",
+        "created": "2026-10-08",
+        "success_percent": 96.9,
+        "train_steps": null,
+        "files": [
+          "model_1912.pt"
+        ],
+        "note": null
+      },
+      "current_contract": {
+        "obs_shape": [
+          115
+        ],
+        "action_shape": [
+          39
+        ],
+        "ctrl_dt": 0.02,
+        "obs_keys": [
+          "qpos",
+          "qvel",
+          "tip_pos",
+          "reach_err",
+          "act"
+        ]
+      },
+      "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+      "body_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+      "normalizer": "EmpiricalNormalization",
+      "actor": "MLP(\n  (0): Linear(in_features=115, out_features=128, bias=True)\n  (1): ELU(alpha=1.0)\n  (2): Linear(in_features=128, out_features=128, bias=True)\n  (3): ELU(alpha=1.0)\n  (4): Linear(in_features=128, out_features=128, bias=True)\n  (5): ELU(alpha=1.0)\n  (6): Linear(in_features=128, out_features=128, bias=True)\n  (7): ELU(alpha=1.0)\n  (8): Linear(in_features=128, out_features=39, bias=True)\n)",
+      "deterministic_mean": true
+    },
+    {
+      "task": "T2",
+      "env_id": "myoHandPoseRandom-v0",
+      "model": "model_24999.pt",
+      "hf_tag": "v3.1.0",
+      "hf_revision": "d6ed512bd329c018ecc373a351d00916cd552d34",
+      "model_sha256": "69591398bd729be81b283cb8b8def7b46c2f17e188f0aece718d0a053dad6a3d",
+      "manifest_sha256": "75075634c42178d673e05a8c0a0100327937c9fdf0e0c7222f57ef7aaca9c915",
+      "upstream_manifest": {
+        "schema": 1,
+        "env_id": "myoHandPoseRandom-v0",
+        "contract": {
+          "obs_shape": [
+            108
+          ],
+          "action_shape": [
+            39
+          ],
+          "ctrl_dt": 0.02,
+          "obs_keys": [
+            "qpos",
+            "qvel",
+            "pose_err",
+            "act"
+          ]
+        },
+        "contract_hash": "a72989d9dc6d",
+        "myosuite_version": "3.0.0",
+        "myosuite_commit": "665c8087496079e9ebb5d64cf7a249e1033c3166",
+        "created": "2026-10-08",
+        "success_percent": 35.9,
+        "train_steps": null,
+        "files": [
+          "model_24999.pt"
+        ],
+        "note": null
+      },
+      "current_contract": {
+        "obs_shape": [
+          108
+        ],
+        "action_shape": [
+          39
+        ],
+        "ctrl_dt": 0.02,
+        "obs_keys": [
+          "qpos",
+          "qvel",
+          "pose_err",
+          "act"
+        ]
+      },
+      "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+      "body_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+      "normalizer": "EmpiricalNormalization",
+      "actor": "MLP(\n  (0): Linear(in_features=108, out_features=128, bias=True)\n  (1): ELU(alpha=1.0)\n  (2): Linear(in_features=128, out_features=128, bias=True)\n  (3): ELU(alpha=1.0)\n  (4): Linear(in_features=128, out_features=128, bias=True)\n  (5): ELU(alpha=1.0)\n  (6): Linear(in_features=128, out_features=128, bias=True)\n  (7): ELU(alpha=1.0)\n  (8): Linear(in_features=128, out_features=39, bias=True)\n)",
+      "deterministic_mean": true
+    }
+  ],
+  "historical_data": {
+    "gate": "PASS",
+    "splits": [
+      {
+        "split": "train",
+        "episodes": 800,
+        "goals": 800,
+        "frames": 80000,
+        "success": 759,
+        "near_success": 37,
+        "other_failure": 4,
+        "ctrl_min": 0.000552778656128794,
+        "ctrl_max": 0.9241418242454529,
+        "mapping_max_abs": 1.1920928955078125e-07,
+        "bytes": 91518280,
+        "sha256": "2cd873aabe0824549124d05b3f7dc06db62a05ad948a67765edc8fb646dc5a58"
+      },
+      {
+        "split": "val",
+        "episodes": 200,
+        "goals": 200,
+        "frames": 20000,
+        "success": 182,
+        "near_success": 18,
+        "other_failure": 0,
+        "ctrl_min": 0.000552778656128794,
+        "ctrl_max": 0.9241418242454529,
+        "mapping_max_abs": 1.1920928955078125e-07,
+        "bytes": 22939085,
+        "sha256": "9ad11017da857f02a7fa08509183b0ff83f600e185792770452c5b5749455581"
+      }
+    ],
+    "env_id": "myoHandReachRandom-v0",
+    "teacher_sha256": "7268818df55aa885ade5904659dd6dbbc44d9ad8b75c35b262c9f0bfa7b44ef2",
+    "body_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+    "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+    "reward_terms": [
+      "reach",
+      "bonus",
+      "penalty"
+    ],
+    "goal_overlap": 0,
+    "timestep_convention": "obs and raw/native action at decision; ctrl, act, qpos, qvel and task error after step; goal hashes identify complete target instances",
+    "simulated_steps": 100000,
+    "wall_s": 33.21095020021312
+  },
+  "environment_notes": "Training YAML is the registered seed-11 configuration. Each other cell overrides only seed. Evaluation uses 100 lanes, explicit manual terminal reset, and per-target reset seeds.",
+  "analysis_versions": {
+    "myosuite": "3.1.0",
+    "mjlab": "1.6.1",
+    "mujoco": "3.11.0",
+    "mujoco-warp": "3.11.0",
+    "rsl-rl-lib": "5.4.2",
+    "torch": "2.14.1+cu130",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "threadpoolctl": "3.8.0",
+    "matplotlib": "3.11.2"
+  }
+}

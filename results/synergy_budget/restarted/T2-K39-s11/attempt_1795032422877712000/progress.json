@@ -1,0 +1,6 @@
+{
+  "iteration": 1000,
+  "transitions": 12000000,
+  "train_wall_s": 1085.4554534999188,
+  "learning_rate": 1e-05
+}

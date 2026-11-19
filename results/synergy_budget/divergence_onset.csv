@@ -1,0 +1,6 @@
+K,episodes,diverged,median_first_joint_step,most_frequent_joint,episodes_with_that_joint,simulated_steps,wall_s
+0,100,0,,,0,10000,5.366076099919155
+8,100,100,2.0,flexion_r,48,10000,6.606154900044203
+16,100,100,2.0,cmc_flexion_r,51,10000,6.750439400086179
+24,100,100,3.0,cmc_flexion_r,46,10000,6.8353589999023825
+32,100,100,9.0,pm3_flexion_r,30,10000,6.888173700077459

@@ -1,0 +1,248 @@
+stage,task,K,seed,shared,transitions,wall_s,source,note
+PPO training,T1,39,11,False,18000000,1794.1968903001398,local,optimizer and rollout wall time through checkpoint
+PPO validation,T1,39,11,False,10000,5.0635031999554485,local,checkpoint 0
+PPO validation,T1,39,11,False,10000,4.99696970009245,local,checkpoint 84
+PPO validation,T1,39,11,False,10000,5.166440999833867,local,checkpoint 250
+PPO validation,T1,39,11,False,10000,2.354488299926743,local,checkpoint 500
+PPO validation,T1,39,11,False,10000,2.183144899783656,local,checkpoint 750
+PPO validation,T1,39,11,False,10000,2.137885799864307,local,checkpoint 1000
+PPO validation,T1,39,11,False,10000,2.1982855000533164,local,checkpoint 1250
+PPO validation,T1,39,11,False,10000,2.1920062000863254,local,checkpoint 1500
+PPO test,T1,39,11,False,10000,2.22589120012708,local,checkpoint 1500
+PPO training,T1,39,29,False,18000000,1741.1321852002293,local,optimizer and rollout wall time through checkpoint
+PPO validation,T1,39,29,False,10000,2.169319499982521,local,checkpoint 0
+PPO validation,T1,39,29,False,10000,2.109346400015056,local,checkpoint 84
+PPO validation,T1,39,29,False,10000,2.123187700053677,local,checkpoint 250
+PPO validation,T1,39,29,False,10000,2.139354499988258,local,checkpoint 500
+PPO validation,T1,39,29,False,10000,2.1113376999273896,local,checkpoint 750
+PPO validation,T1,39,29,False,10000,2.1051088999956846,local,checkpoint 1000
+PPO validation,T1,39,29,False,10000,2.1728336000815034,local,checkpoint 1250
+PPO validation,T1,39,29,False,10000,2.1365806001704186,local,checkpoint 1500
+PPO test,T1,39,29,False,10000,2.382458900101483,local,checkpoint 1500
+PPO training,T1,39,47,False,18000000,1745.7338155999314,local,optimizer and rollout wall time through checkpoint
+PPO validation,T1,39,47,False,10000,2.155482199974358,local,checkpoint 0
+PPO validation,T1,39,47,False,10000,2.0862555999774486,local,checkpoint 84
+PPO validation,T1,39,47,False,10000,2.113060100004077,local,checkpoint 250
+PPO validation,T1,39,47,False,10000,2.0915429999586195,local,checkpoint 500
+PPO validation,T1,39,47,False,10000,2.095214399974793,local,checkpoint 750
+PPO validation,T1,39,47,False,10000,2.100867300061509,local,checkpoint 1000
+PPO validation,T1,39,47,False,10000,2.164719499880448,local,checkpoint 1250
+PPO validation,T1,39,47,False,10000,2.122852599946782,local,checkpoint 1500
+PPO test,T1,39,47,False,10000,2.298831900116056,local,checkpoint 1500
+PPO training,T1,8,11,False,18000000,1713.1055254999083,local,optimizer and rollout wall time through checkpoint
+PPO validation,T1,8,11,False,10000,2.1427815998904407,local,checkpoint 0
+PPO validation,T1,8,11,False,10000,2.135046200128272,local,checkpoint 84
+PPO validation,T1,8,11,False,10000,2.124689099844545,local,checkpoint 250
+PPO validation,T1,8,11,False,10000,2.1250754999928176,local,checkpoint 500
+PPO validation,T1,8,11,False,10000,2.1774612001609057,local,checkpoint 750
+PPO validation,T1,8,11,False,10000,2.1852327999658883,local,checkpoint 1000
+PPO validation,T1,8,11,False,10000,2.1763836999889463,local,checkpoint 1250
+PPO validation,T1,8,11,False,10000,2.1121068000793457,local,checkpoint 1500
+PPO test,T1,8,11,False,10000,2.192747199907899,local,checkpoint 1500
+PPO training,T1,8,29,False,18000000,1730.2661141999997,local,optimizer and rollout wall time through checkpoint
+PPO validation,T1,8,29,False,10000,2.1547705999109894,local,checkpoint 0
+PPO validation,T1,8,29,False,10000,2.1133520000148565,local,checkpoint 84
+PPO validation,T1,8,29,False,10000,2.1376608998980373,local,checkpoint 250
+PPO validation,T1,8,29,False,10000,2.1339398000855,local,checkpoint 500
+PPO validation,T1,8,29,False,10000,2.134201900102198,local,checkpoint 750
+PPO validation,T1,8,29,False,10000,2.1437713000923395,local,checkpoint 1000
+PPO validation,T1,8,29,False,10000,2.1940958998166025,local,checkpoint 1250
+PPO validation,T1,8,29,False,10000,2.1354621001519263,local,checkpoint 1500
+PPO test,T1,8,29,False,10000,2.182231199927628,local,checkpoint 1500
+PPO training,T1,8,47,False,18000000,1734.3053024997935,local,optimizer and rollout wall time through checkpoint
+PPO validation,T1,8,47,False,10000,2.1785897000227123,local,checkpoint 0
+PPO validation,T1,8,47,False,10000,2.1513978999573737,local,checkpoint 84
+PPO validation,T1,8,47,False,10000,2.131146299885586,local,checkpoint 250
+PPO validation,T1,8,47,False,10000,2.1219279998913407,local,checkpoint 500
+PPO validation,T1,8,47,False,10000,2.138900399906561,local,checkpoint 750
+PPO validation,T1,8,47,False,10000,2.138782699825242,local,checkpoint 1000
+PPO validation,T1,8,47,False,10000,2.209033800056204,local,checkpoint 1250
+PPO validation,T1,8,47,False,10000,2.122522799996659,local,checkpoint 1500
+PPO test,T1,8,47,False,10000,2.194650099845603,local,checkpoint 1500
+PPO training,T1,16,11,False,18000000,1730.856366199907,local,optimizer and rollout wall time through checkpoint
+PPO validation,T1,16,11,False,10000,2.2608335001859814,local,checkpoint 0
+PPO validation,T1,16,11,False,10000,2.1562310999725014,local,checkpoint 84
+PPO validation,T1,16,11,False,10000,2.185754500096664,local,checkpoint 250
+PPO validation,T1,16,11,False,10000,2.1424388999585062,local,checkpoint 500
+PPO validation,T1,16,11,False,10000,2.106191199971363,local,checkpoint 750
+PPO validation,T1,16,11,False,10000,2.15433119982481,local,checkpoint 1000
+PPO validation,T1,16,11,False,10000,2.1914246999658644,local,checkpoint 1250
+PPO validation,T1,16,11,False,10000,2.1326681999489665,local,checkpoint 1500
+PPO test,T1,16,11,False,10000,2.1718353000469506,local,checkpoint 1500
+PPO training,T1,16,29,False,18000000,1731.0421786999796,local,optimizer and rollout wall time through checkpoint
+PPO validation,T1,16,29,False,10000,2.1358501999638975,local,checkpoint 0
+PPO validation,T1,16,29,False,10000,2.1188634000718594,local,checkpoint 84
+PPO validation,T1,16,29,False,10000,2.1290694000199437,local,checkpoint 250
+PPO validation,T1,16,29,False,10000,2.163468100130558,local,checkpoint 500
+PPO validation,T1,16,29,False,10000,2.216747799888253,local,checkpoint 750
+PPO validation,T1,16,29,False,10000,2.319090300006792,local,checkpoint 1000
+PPO validation,T1,16,29,False,10000,2.1717550000175834,local,checkpoint 1250
+PPO validation,T1,16,29,False,10000,2.1327665001153946,local,checkpoint 1500
+PPO test,T1,16,29,False,10000,2.192051599966362,local,checkpoint 1500
+PPO training,T1,16,47,False,18000000,1729.1597357001156,local,optimizer and rollout wall time through checkpoint
+PPO validation,T1,16,47,False,10000,2.168694900115952,local,checkpoint 0
+PPO validation,T1,16,47,False,10000,2.1282742999028414,local,checkpoint 84
+PPO validation,T1,16,47,False,10000,2.182885800022632,local,checkpoint 250
+PPO validation,T1,16,47,False,10000,2.1817221001256257,local,checkpoint 500
+PPO validation,T1,16,47,False,10000,2.1896661000791937,local,checkpoint 750
+PPO validation,T1,16,47,False,10000,2.269348599947989,local,checkpoint 1000
+PPO validation,T1,16,47,False,10000,2.199085700092837,local,checkpoint 1250
+PPO validation,T1,16,47,False,10000,2.1392971000168473,local,checkpoint 1500
+PPO test,T1,16,47,False,10000,2.24268259992823,local,checkpoint 1500
+PPO training,T2,39,11,False,18000000,2027.7862844001502,local,optimizer and rollout wall time through checkpoint
+PPO validation,T2,39,11,False,10000,2.284507100004703,local,checkpoint 0
+PPO validation,T2,39,11,False,10000,2.2235498998779804,local,checkpoint 84
+PPO validation,T2,39,11,False,10000,2.156102699926123,local,checkpoint 250
+PPO validation,T2,39,11,False,10000,2.189919500146061,local,checkpoint 500
+PPO validation,T2,39,11,False,10000,2.3216645000502467,local,checkpoint 750
+PPO validation,T2,39,11,False,10000,2.3801528001204133,local,checkpoint 1000
+PPO validation,T2,39,11,False,10000,2.4134819000028074,local,checkpoint 1250
+PPO validation,T2,39,11,False,10000,2.1284053998533636,local,checkpoint 1500
+PPO test,T2,39,11,False,10000,2.441379100084305,local,checkpoint 1500
+PPO training,T2,39,29,False,18000000,2019.1146368999034,local,optimizer and rollout wall time through checkpoint
+PPO validation,T2,39,29,False,10000,2.3232191998977214,local,checkpoint 0
+PPO validation,T2,39,29,False,10000,2.03532260004431,local,checkpoint 84
+PPO validation,T2,39,29,False,10000,2.3253885000012815,local,checkpoint 250
+PPO validation,T2,39,29,False,10000,2.2582439000252634,local,checkpoint 500
+PPO validation,T2,39,29,False,10000,2.368559699971229,local,checkpoint 750
+PPO validation,T2,39,29,False,10000,2.045612500049174,local,checkpoint 1000
+PPO validation,T2,39,29,False,10000,2.4339851001277566,local,checkpoint 1250
+PPO validation,T2,39,29,False,10000,2.353936400031671,local,checkpoint 1500
+PPO test,T2,39,29,False,10000,2.414658800000325,local,checkpoint 1500
+PPO training,T2,39,47,False,18000000,2032.3978834999725,local,optimizer and rollout wall time through checkpoint
+PPO validation,T2,39,47,False,10000,2.3430035000201315,local,checkpoint 0
+PPO validation,T2,39,47,False,10000,2.273047799943015,local,checkpoint 84
+PPO validation,T2,39,47,False,10000,2.2954841000027955,local,checkpoint 250
+PPO validation,T2,39,47,False,10000,2.155597399920225,local,checkpoint 500
+PPO validation,T2,39,47,False,10000,2.215484700165689,local,checkpoint 750
+PPO validation,T2,39,47,False,10000,2.2289172001183033,local,checkpoint 1000
+PPO validation,T2,39,47,False,10000,2.4526101001538336,local,checkpoint 1250
+PPO validation,T2,39,47,False,10000,2.2687405000906438,local,checkpoint 1500
+PPO test,T2,39,47,False,10000,2.428485799813643,local,checkpoint 1500
+PPO training,T2,8,11,False,18000000,2024.249498900026,local,optimizer and rollout wall time through checkpoint
+PPO validation,T2,8,11,False,10000,2.399425599956885,local,checkpoint 0
+PPO validation,T2,8,11,False,10000,2.142714000074193,local,checkpoint 84
+PPO validation,T2,8,11,False,10000,2.285808000015095,local,checkpoint 250
+PPO validation,T2,8,11,False,10000,2.188965299865231,local,checkpoint 500
+PPO validation,T2,8,11,False,10000,2.3061971000861377,local,checkpoint 750
+PPO validation,T2,8,11,False,10000,2.2112698999699205,local,checkpoint 1000
+PPO validation,T2,8,11,False,10000,2.3639618000015616,local,checkpoint 1250
+PPO validation,T2,8,11,False,10000,2.337777999928221,local,checkpoint 1500
+PPO test,T2,8,11,False,10000,2.23693470004946,local,checkpoint 1500
+PPO training,T2,8,29,False,18000000,2020.5746603000443,local,optimizer and rollout wall time through checkpoint
+PPO validation,T2,8,29,False,10000,2.2827862999401987,local,checkpoint 0
+PPO validation,T2,8,29,False,10000,2.3607985000126064,local,checkpoint 84
+PPO validation,T2,8,29,False,10000,2.4887379999272525,local,checkpoint 250
+PPO validation,T2,8,29,False,10000,2.384150000056252,local,checkpoint 500
+PPO validation,T2,8,29,False,10000,2.3298996000085026,local,checkpoint 750
+PPO validation,T2,8,29,False,10000,2.2844142001122236,local,checkpoint 1000
+PPO validation,T2,8,29,False,10000,2.3381467999424785,local,checkpoint 1250
+PPO validation,T2,8,29,False,10000,2.3146645000670105,local,checkpoint 1500
+PPO test,T2,8,29,False,10000,2.381093200063333,local,checkpoint 1500
+PPO training,T2,8,47,False,18000000,2027.120073299855,local,optimizer and rollout wall time through checkpoint
+PPO validation,T2,8,47,False,10000,2.2277253000065684,local,checkpoint 0
+PPO validation,T2,8,47,False,10000,2.134552099974826,local,checkpoint 84
+PPO validation,T2,8,47,False,10000,2.371405600104481,local,checkpoint 250
+PPO validation,T2,8,47,False,10000,2.204224399989471,local,checkpoint 500
+PPO validation,T2,8,47,False,10000,2.232011599931866,local,checkpoint 750
+PPO validation,T2,8,47,False,10000,2.230699500069022,local,checkpoint 1000
+PPO validation,T2,8,47,False,10000,2.2885666000656784,local,checkpoint 1250
+PPO validation,T2,8,47,False,10000,2.479196900036186,local,checkpoint 1500
+PPO test,T2,8,47,False,10000,2.3219539001584053,local,checkpoint 1500
+PPO training,T2,16,11,False,18000000,2051.947024999885,local,optimizer and rollout wall time through checkpoint
+PPO validation,T2,16,11,False,10000,2.302876500179991,local,checkpoint 0
+PPO validation,T2,16,11,False,10000,2.243090899894014,local,checkpoint 84
+PPO validation,T2,16,11,False,10000,2.183713800041005,local,checkpoint 250
+PPO validation,T2,16,11,False,10000,2.400114099960774,local,checkpoint 500
+PPO validation,T2,16,11,False,10000,2.3213892998173833,local,checkpoint 750
+PPO validation,T2,16,11,False,10000,2.161779700079933,local,checkpoint 1000
+PPO validation,T2,16,11,False,10000,2.4076789999380708,local,checkpoint 1250
+PPO validation,T2,16,11,False,10000,2.2902977999765426,local,checkpoint 1500
+PPO test,T2,16,11,False,10000,2.2625354998745024,local,checkpoint 1500
+PPO training,T2,16,29,False,18000000,2021.831210799748,local,optimizer and rollout wall time through checkpoint
+PPO validation,T2,16,29,False,10000,2.1830619000829756,local,checkpoint 0
+PPO validation,T2,16,29,False,10000,2.225595299853012,local,checkpoint 84
+PPO validation,T2,16,29,False,10000,2.2610322998370975,local,checkpoint 250
+PPO validation,T2,16,29,False,10000,2.2204847999382764,local,checkpoint 500
+PPO validation,T2,16,29,False,10000,2.2364483000710607,local,checkpoint 750
+PPO validation,T2,16,29,False,10000,2.347570899873972,local,checkpoint 1000
+PPO validation,T2,16,29,False,10000,2.3948850999586284,local,checkpoint 1250
+PPO validation,T2,16,29,False,10000,2.4247972001321614,local,checkpoint 1500
+PPO test,T2,16,29,False,10000,2.3714995000045747,local,checkpoint 1500
+PPO training,T2,16,47,False,18000000,2028.4969000001438,local,optimizer and rollout wall time through checkpoint
+PPO validation,T2,16,47,False,10000,2.198184700217098,local,checkpoint 0
+PPO validation,T2,16,47,False,10000,2.0903683998622,local,checkpoint 84
+PPO validation,T2,16,47,False,10000,2.3279538000933826,local,checkpoint 250
+PPO validation,T2,16,47,False,10000,2.3131646998226643,local,checkpoint 500
+PPO validation,T2,16,47,False,10000,2.2569333999417722,local,checkpoint 750
+PPO validation,T2,16,47,False,10000,2.1646449000108987,local,checkpoint 1000
+PPO validation,T2,16,47,False,10000,2.100389000028372,local,checkpoint 1250
+PPO validation,T2,16,47,False,10000,2.31589199998416,local,checkpoint 1500
+PPO test,T2,16,47,False,10000,2.2968580999877304,local,checkpoint 1500
+Excluded interrupted training,T2,39,11,True,12000000,1085.4458558000624,local,Lower-bound cost; excluded from core PPO budget.
+Excluded checkpoint evaluation,T2,39,11,True,10000,2.2598300999961793,local,Archived and excluded from outcomes.
+Excluded checkpoint evaluation,T2,39,11,True,10000,2.148734299931675,local,Archived and excluded from outcomes.
+Excluded checkpoint evaluation,T2,39,11,True,10000,2.155823400011286,local,Archived and excluded from outcomes.
+Excluded checkpoint evaluation,T2,39,11,True,10000,2.235099700046703,local,Archived and excluded from outcomes.
+Excluded checkpoint evaluation,T2,39,11,True,10000,2.1273670999798924,local,Archived and excluded from outcomes.
+Excluded checkpoint evaluation,T2,39,11,True,10000,2.3551715000066906,local,Archived and excluded from outcomes.
+Teacher demonstration collection,T1,,,True,100000,33.21095020021312,v0.1r reused,Shared across NMF banks; zero recollection in this experiment
+External teacher pretraining,T1,,,True,,,upstream unknown,External compute not reported
+NMF fit and offline metrics,T1,8,11,True,0,1.2175807000603527,v0.1r reused,CPU timer coverage can differ across studies
+NMF fit and offline metrics,T1,8,29,True,0,0.6329415999352932,v0.1r reused,CPU timer coverage can differ across studies
+NMF fit and offline metrics,T1,8,47,True,0,0.7171966000460088,v0.1r reused,CPU timer coverage can differ across studies
+NMF fit and offline metrics,T1,16,11,True,0,5.800529999891296,v0.1r reused,CPU timer coverage can differ across studies
+NMF fit and offline metrics,T1,16,29,True,0,6.268425000132993,v0.1r reused,CPU timer coverage can differ across studies
+NMF fit and offline metrics,T1,16,47,True,0,3.9470492000691593,v0.1r reused,CPU timer coverage can differ across studies
+NMF fit and offline metrics,T1,24,11,True,0,8.121376299997792,local,CPU timer coverage can differ across studies
+NMF fit and offline metrics,T1,24,29,True,0,11.024959200061858,local,CPU timer coverage can differ across studies
+NMF fit and offline metrics,T1,24,47,True,0,11.325121099827811,local,CPU timer coverage can differ across studies
+NMF fit and offline metrics,T1,32,11,True,0,17.795340199954808,local,CPU timer coverage can differ across studies
+NMF fit and offline metrics,T1,32,29,True,0,18.652250200044364,local,CPU timer coverage can differ across studies
+NMF fit and offline metrics,T1,32,47,True,0,18.645856000017375,local,CPU timer coverage can differ across studies
+identity Teacher,T1,0,0,True,10000,2.364492299966514,local,Closed-loop costs include projection solver
+identity TeacherRepeat,T1,0,0,True,10000,2.2006369999144226,local,Closed-loop costs include projection solver
+identity Identity,T1,39,0,True,10000,2.377022299915552,local,Closed-loop costs include projection solver
+capacity_projection_dev Teacher,T1,0,0,True,10000,2.8120817998424172,local,Closed-loop costs include projection solver
+capacity_projection_dev TeacherRepeat,T1,0,0,True,10000,2.394267600029707,local,Closed-loop costs include projection solver
+capacity_projection_dev Identity,T1,39,0,True,10000,2.644311900017783,local,Closed-loop costs include projection solver
+capacity_projection_dev NMF,T1,8,11,True,10000,5.840462099993601,local,Closed-loop costs include projection solver
+capacity_projection_dev NMF,T1,8,29,True,10000,6.696680600056425,local,Closed-loop costs include projection solver
+capacity_projection_dev NMF,T1,8,47,True,10000,6.695255200145766,local,Closed-loop costs include projection solver
+capacity_projection_dev NMF,T1,16,11,True,10000,6.7345235999673605,local,Closed-loop costs include projection solver
+capacity_projection_dev NMF,T1,16,29,True,10000,6.8184589999727905,local,Closed-loop costs include projection solver
+capacity_projection_dev NMF,T1,16,47,True,10000,6.808962600072846,local,Closed-loop costs include projection solver
+capacity_projection_dev NMF,T1,24,11,True,10000,6.806724200025201,local,Closed-loop costs include projection solver
+capacity_projection_dev NMF,T1,24,29,True,10000,6.786667000036687,local,Closed-loop costs include projection solver
+capacity_projection_dev NMF,T1,24,47,True,10000,6.880891100037843,local,Closed-loop costs include projection solver
+capacity_projection_dev NMF,T1,32,11,True,10000,6.933400199981406,local,Closed-loop costs include projection solver
+capacity_projection_dev NMF,T1,32,29,True,10000,6.936678800033405,local,Closed-loop costs include projection solver
+capacity_projection_dev NMF,T1,32,47,True,10000,6.926555200014263,local,Closed-loop costs include projection solver
+capacity_test Teacher,T1,0,0,True,10000,4.803117600036785,local,Closed-loop costs include projection solver
+capacity_test TeacherRepeat,T1,0,0,True,10000,4.553769499994814,local,Closed-loop costs include projection solver
+capacity_test Identity,T1,39,0,True,10000,4.649029399966821,local,Closed-loop costs include projection solver
+capacity_test NMF,T1,8,11,True,10000,5.589041100116447,local,Closed-loop costs include projection solver
+capacity_test NMF,T1,8,29,True,10000,5.524094299878925,local,Closed-loop costs include projection solver
+capacity_test NMF,T1,8,47,True,10000,5.551119299838319,local,Closed-loop costs include projection solver
+capacity_test NMF,T1,16,11,True,10000,5.766150399809703,local,Closed-loop costs include projection solver
+capacity_test NMF,T1,16,29,True,10000,5.741719000041485,local,Closed-loop costs include projection solver
+capacity_test NMF,T1,16,47,True,10000,5.698646400123835,local,Closed-loop costs include projection solver
+capacity_test NMF,T1,24,11,True,10000,5.97506309999153,local,Closed-loop costs include projection solver
+capacity_test NMF,T1,24,29,True,10000,5.921006300020963,local,Closed-loop costs include projection solver
+capacity_test NMF,T1,24,47,True,10000,5.9336242999415845,local,Closed-loop costs include projection solver
+capacity_test NMF,T1,32,11,True,10000,6.079292600043118,local,Closed-loop costs include projection solver
+capacity_test NMF,T1,32,29,True,10000,6.121094099944457,local,Closed-loop costs include projection solver
+capacity_test NMF,T1,32,47,True,10000,6.265105800004676,local,Closed-loop costs include projection solver
+pose_projection_test Teacher,T2,0,0,True,10000,2.4126770000439137,local,Closed-loop costs include projection solver
+pose_projection_test Identity,T2,39,0,True,10000,3.1396081000566483,local,Closed-loop costs include projection solver
+pose_projection_test NMF,T2,8,11,True,10000,2.832031999947503,local,Closed-loop costs include projection solver
+pose_projection_test NMF,T2,16,11,True,10000,7.306826200103387,local,Closed-loop costs include projection solver
+pose_projection_test NMF,T2,24,11,True,10000,10.776172199985012,local,Closed-loop costs include projection solver
+pose_projection_test NMF,T2,32,11,True,10000,12.208932399982587,local,Closed-loop costs include projection solver
+Divergence localization,T1,0,11,True,10000,5.366076099919155,local,Additional paired trajectories
+Divergence localization,T1,8,11,True,10000,6.606154900044203,local,Additional paired trajectories
+Divergence localization,T1,16,11,True,10000,6.750439400086179,local,Additional paired trajectories
+Divergence localization,T1,24,11,True,10000,6.8353589999023825,local,Additional paired trajectories
+Divergence localization,T1,32,11,True,10000,6.888173700077459,local,Additional paired trajectories
+Offline identity test,T1,39,,True,0,0.18403259990736842,local,"20,000 held-out real demonstration frames"
+Behavioral cloning,,,,True,0,0,not run,From-scratch primary study

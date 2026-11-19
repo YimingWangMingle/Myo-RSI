@@ -1,0 +1,8 @@
+{
+  "off_schedule_resets": [
+    500
+  ],
+  "kept_out_of_primary": true,
+  "reason": "Host session interruption before the common extension boundary",
+  "cost_note": "Saved checkpoint counters give a lower bound; work after the last checkpoint before interruption is unknown."
+}

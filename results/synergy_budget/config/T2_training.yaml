@@ -1,0 +1,1575 @@
+decimation: 10
+scene:
+  num_envs: 500
+  env_spacing: 2.0
+  terrain: null
+  entities:
+    robot:
+      init_state:
+        pos: !!python/tuple
+        - 0.0
+        - 0.0
+        - 0.0
+        rot: !!python/tuple
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        lin_vel: !!python/tuple
+        - 0.0
+        - 0.0
+        - 0.0
+        ang_vel: !!python/tuple
+        - 0.0
+        - 0.0
+        - 0.0
+        joint_pos:
+          ^pro_sup_r$: 0.0
+          ^deviation_r$: 0.0
+          ^flexion_r$: 0.0
+          ^cmc_flexion_r$: 0.0
+          ^cmc_abduction_r$: 0.0
+          ^mp_flexion_r$: 0.0
+          ^ip_flexion_r$: 0.0
+          ^mcp2_flexion_r$: 0.0
+          ^mcp2_abduction_r$: 0.0
+          ^pm2_flexion_r$: 0.0
+          ^md2_flexion_r$: 0.0
+          ^mcp3_flexion_r$: 0.0
+          ^mcp3_abduction_r$: 0.0
+          ^pm3_flexion_r$: 0.0
+          ^md3_flexion_r$: 0.0
+          ^mcp4_flexion_r$: 0.0
+          ^mcp4_abduction_r$: 0.0
+          ^pm4_flexion_r$: 0.0
+          ^md4_flexion_r$: 0.0
+          ^mcp5_flexion_r$: 0.0
+          ^mcp5_abduction_r$: 0.0
+          ^pm5_flexion_r$: 0.0
+          ^md5_flexion_r$: 0.0
+        joint_vel:
+          .*: 0.0
+      spec_fn: !!python/object/apply:functools.partial
+        args:
+        - &id001 !!python/name:myosuite.envs.myo.backends.mjlab.tasks.cpu_reference._entity_spec ''
+        state: !!python/tuple
+        - *id001
+        - !!python/tuple
+          - !!python/object:myosuite.envs.myo.backends.mjlab.tasks.cpu_reference.CpuTaskSpec
+            env_id: myoHandPoseRandom-v0
+            kwargs:
+              model_recipe: hand_pose
+              viz_site_targets: !!python/tuple
+              - THtip_r
+              - IFtip_r
+              - MFtip_r
+              - RFtip_r
+              - LFtip_r
+              target_jnt_range:
+                pro_sup_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - &id002 !!python/object/apply:numpy.dtype
+                    args:
+                    - f8
+                    - false
+                    - true
+                    state: !!python/tuple
+                    - 3
+                    - <
+                    - null
+                    - null
+                    - null
+                    - -1
+                    - -1
+                    - 0
+                  - !!binary |
+                    AAAAAAAAAAA=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    AAAAAAAAAAA=
+                deviation_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    AAAAAAAAAAA=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    AAAAAAAAAAA=
+                flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    AAAAAAAAAAA=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    AAAAAAAAAAA=
+                cmc_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    GmmpvB3hwr8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    KzV7oBUY0j8=
+                cmc_abduction_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    E2HD0ytlmT8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    ak3zjlN05D8=
+                mp_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    p+hILv8h6b8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    xTh/EwoRkD8=
+                ip_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    i2zn+6nx9L8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    ijkIOlrVmr8=
+                mcp2_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    gzRj0XR21z8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    ylTBqKTO9D8=
+                mcp2_abduction_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    zhySWiiZfL8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    mpXtQ95yhT8=
+                pm2_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    XOZ0WUxswD8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    ur2kMVpH9z8=
+                md2_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    6WM+INCZvD8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    BVJi1/b27z8=
+                mcp3_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    iUFg5dAi2T8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    jX+fceHA9z8=
+                mcp3_abduction_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    AAAAAAAAAAA=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    AAAAAAAAAAA=
+                pm3_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    bypSYWwhyD8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    cTjzqzlA9z8=
+                md3_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    C7Wmeccpvj8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    VRNE3Qcg9z8=
+                mcp4_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    esISDyib0z8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    iUFg5dAi+T8=
+                mcp4_abduction_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    Zi/bTlsjyr8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    648wDFhyhb8=
+                pm4_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    AAAAAAAAAAA=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    NrBVgsVh+D8=
+                md4_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    n3HhQEgWsD8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    cTjzqzlA9z8=
+                mcp5_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    14aKcf4mzD8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    jX+fceHA9z8=
+                mcp5_abduction_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    b/CFyVTB0L8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    73Tniedssb8=
+                pm5_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    bypSYWwhyD8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    iUFg5dAi+T8=
+                md5_flexion_r: !!python/tuple
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    n3HhQEgWkD8=
+                - !!python/object/apply:numpy._core.multiarray.scalar
+                  - *id002
+                  - !!binary |
+                    iUFg5dAi+T8=
+              normalize_act: true
+              pose_thd: 0.7
+              reset_type: random
+              target_type: generate
+            max_episode_steps: 100
+            wrappers: !!python/tuple
+            - !!python/object:gymnasium.envs.registration.WrapperSpec
+              name: MjInstabilityTerminationWrapper
+              entry_point: myosuite.envs.wrappers:MjInstabilityTerminationWrapper
+              kwargs: {}
+          - !!python/tuple
+            - !!python/name:myosuite.envs.myo.backends.mjlab.tasks.cpu_reference.demote_extra_freejoints ''
+        - {}
+        - null
+      articulation:
+        actuators: !!python/tuple
+        - target_names_expr: !!python/tuple
+          - ^ECRL_tendon_r$
+          - ^ECRB_tendon_r$
+          - ^ECU_tendon_r$
+          - ^FCR_tendon_r$
+          - ^FCU_tendon_r$
+          - ^PL_tendon_r$
+          - ^PT_tendon_r$
+          - ^PQ_tendon_r$
+          - ^FDS5_tendon_r$
+          - ^FDS4_tendon_r$
+          - ^FDS3_tendon_r$
+          - ^FDS2_tendon_r$
+          - ^FDP5_tendon_r$
+          - ^FDP4_tendon_r$
+          - ^FDP3_tendon_r$
+          - ^FDP2_tendon_r$
+          - ^EDC5_tendon_r$
+          - ^EDC4_tendon_r$
+          - ^EDC3_tendon_r$
+          - ^EDC2_tendon_r$
+          - ^EDM_tendon_r$
+          - ^EIP_tendon_r$
+          - ^EPL_tendon_r$
+          - ^EPB_tendon_r$
+          - ^FPL_tendon_r$
+          - ^APL_tendon_r$
+          - ^OP_tendon_r$
+          - ^RI2_tendon_r$
+          - ^LU_RB2_tendon_r$
+          - ^UI_UB2_tendon_r$
+          - ^RI3_tendon_r$
+          - ^LU_RB3_tendon_r$
+          - ^UI_UB3_tendon_r$
+          - ^RI4_tendon_r$
+          - ^LU_RB4_tendon_r$
+          - ^UI_UB4_tendon_r$
+          - ^RI5_tendon_r$
+          - ^LU_RB5_tendon_r$
+          - ^UI_UB5_tendon_r$
+          transmission_type: !!python/object/apply:mjlab.actuator.actuator.TransmissionType
+          - tendon
+          armature: null
+          frictionloss: null
+          viscous_damping: null
+          delay_min_lag: 0
+          delay_max_lag: 0
+          delay_hold_prob: 0.0
+          delay_update_period: 0
+          delay_per_env_phase: true
+          command_field: null
+        soft_joint_pos_limit_factor: 1.0
+      sort_actuators: false
+      lights: !!python/tuple []
+      cameras: !!python/tuple []
+      textures: !!python/tuple []
+      materials: !!python/tuple []
+      meshes: !!python/tuple []
+      geoms: !!python/tuple []
+      collisions: !!python/tuple []
+  sensors: !!python/tuple []
+  extent: null
+  spec_fn: null
+observations:
+  actor:
+    terms:
+      qpos:
+        func: &id003 !!python/name:myosuite.envs.myo.backends.mjlab.tasks.mdp.observations.qpos ''
+        params:
+          asset_cfg:
+            name: robot
+            joint_names: null
+            joint_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            body_names: null
+            body_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            geom_names: null
+            geom_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            site_names: null
+            site_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            actuator_names: null
+            actuator_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            tendon_names: null
+            tendon_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            camera_names: null
+            camera_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            light_names: null
+            light_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            material_names: null
+            material_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            texture_names: null
+            texture_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            pair_names: null
+            pair_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            preserve_order: false
+        noise: null
+        clip: null
+        scale: null
+        delay_min_lag: 0
+        delay_max_lag: 0
+        delay_per_env: true
+        delay_hold_prob: 0.0
+        delay_update_period: 0
+        delay_per_env_phase: true
+        history_length: 0
+        flatten_history_dim: true
+      qvel:
+        func: &id004 !!python/name:myosuite.envs.myo.backends.mjlab.tasks.mdp.observations.qvel ''
+        params:
+          asset_cfg:
+            name: robot
+            joint_names: null
+            joint_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            body_names: null
+            body_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            geom_names: null
+            geom_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            site_names: null
+            site_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            actuator_names: null
+            actuator_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            tendon_names: null
+            tendon_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            camera_names: null
+            camera_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            light_names: null
+            light_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            material_names: null
+            material_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            texture_names: null
+            texture_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            pair_names: null
+            pair_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            preserve_order: false
+        noise: null
+        clip: null
+        scale: null
+        delay_min_lag: 0
+        delay_max_lag: 0
+        delay_per_env: true
+        delay_hold_prob: 0.0
+        delay_update_period: 0
+        delay_per_env_phase: true
+        history_length: 0
+        flatten_history_dim: true
+      pose_err:
+        func: &id005 !!python/name:myosuite.envs.myo.backends.mjlab.tasks.pose.mdp.observations.pose_err ''
+        params:
+          command_name: pose
+          asset_cfg:
+            name: robot
+            joint_names: null
+            joint_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            body_names: null
+            body_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            geom_names: null
+            geom_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            site_names: null
+            site_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            actuator_names: null
+            actuator_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            tendon_names: null
+            tendon_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            camera_names: null
+            camera_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            light_names: null
+            light_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            material_names: null
+            material_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            texture_names: null
+            texture_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            pair_names: null
+            pair_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            preserve_order: false
+        noise: null
+        clip: null
+        scale: null
+        delay_min_lag: 0
+        delay_max_lag: 0
+        delay_per_env: true
+        delay_hold_prob: 0.0
+        delay_update_period: 0
+        delay_per_env_phase: true
+        history_length: 0
+        flatten_history_dim: true
+      act:
+        func: &id006 !!python/name:myosuite.envs.myo.backends.mjlab.tasks.mdp.observations.act ''
+        params:
+          asset_cfg:
+            name: robot
+            joint_names: null
+            joint_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            body_names: null
+            body_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            geom_names: null
+            geom_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            site_names: null
+            site_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            actuator_names: null
+            actuator_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            tendon_names: null
+            tendon_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            camera_names: null
+            camera_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            light_names: null
+            light_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            material_names: null
+            material_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            texture_names: null
+            texture_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            pair_names: null
+            pair_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            preserve_order: false
+        noise: null
+        clip: null
+        scale: null
+        delay_min_lag: 0
+        delay_max_lag: 0
+        delay_per_env: true
+        delay_hold_prob: 0.0
+        delay_update_period: 0
+        delay_per_env_phase: true
+        history_length: 0
+        flatten_history_dim: true
+    concatenate_terms: true
+    concatenate_dim: -1
+    enable_corruption: false
+    history_length: null
+    flatten_history_dim: true
+    nan_policy: disabled
+    nan_check_per_term: true
+  critic:
+    terms:
+      qpos:
+        func: *id003
+        params:
+          asset_cfg:
+            name: robot
+            joint_names: null
+            joint_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            body_names: null
+            body_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            geom_names: null
+            geom_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            site_names: null
+            site_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            actuator_names: null
+            actuator_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            tendon_names: null
+            tendon_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            camera_names: null
+            camera_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            light_names: null
+            light_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            material_names: null
+            material_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            texture_names: null
+            texture_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            pair_names: null
+            pair_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            preserve_order: false
+        noise: null
+        clip: null
+        scale: null
+        delay_min_lag: 0
+        delay_max_lag: 0
+        delay_per_env: true
+        delay_hold_prob: 0.0
+        delay_update_period: 0
+        delay_per_env_phase: true
+        history_length: 0
+        flatten_history_dim: true
+      qvel:
+        func: *id004
+        params:
+          asset_cfg:
+            name: robot
+            joint_names: null
+            joint_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            body_names: null
+            body_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            geom_names: null
+            geom_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            site_names: null
+            site_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            actuator_names: null
+            actuator_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            tendon_names: null
+            tendon_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            camera_names: null
+            camera_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            light_names: null
+            light_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            material_names: null
+            material_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            texture_names: null
+            texture_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            pair_names: null
+            pair_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            preserve_order: false
+        noise: null
+        clip: null
+        scale: null
+        delay_min_lag: 0
+        delay_max_lag: 0
+        delay_per_env: true
+        delay_hold_prob: 0.0
+        delay_update_period: 0
+        delay_per_env_phase: true
+        history_length: 0
+        flatten_history_dim: true
+      pose_err:
+        func: *id005
+        params:
+          command_name: pose
+          asset_cfg:
+            name: robot
+            joint_names: null
+            joint_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            body_names: null
+            body_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            geom_names: null
+            geom_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            site_names: null
+            site_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            actuator_names: null
+            actuator_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            tendon_names: null
+            tendon_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            camera_names: null
+            camera_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            light_names: null
+            light_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            material_names: null
+            material_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            texture_names: null
+            texture_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            pair_names: null
+            pair_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            preserve_order: false
+        noise: null
+        clip: null
+        scale: null
+        delay_min_lag: 0
+        delay_max_lag: 0
+        delay_per_env: true
+        delay_hold_prob: 0.0
+        delay_update_period: 0
+        delay_per_env_phase: true
+        history_length: 0
+        flatten_history_dim: true
+      act:
+        func: *id006
+        params:
+          asset_cfg:
+            name: robot
+            joint_names: null
+            joint_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            body_names: null
+            body_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            geom_names: null
+            geom_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            site_names: null
+            site_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            actuator_names: null
+            actuator_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            tendon_names: null
+            tendon_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            camera_names: null
+            camera_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            light_names: null
+            light_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            material_names: null
+            material_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            texture_names: null
+            texture_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            pair_names: null
+            pair_ids: !!python/object/apply:builtins.slice
+            - null
+            - null
+            - null
+            preserve_order: false
+        noise: null
+        clip: null
+        scale: null
+        delay_min_lag: 0
+        delay_max_lag: 0
+        delay_per_env: true
+        delay_hold_prob: 0.0
+        delay_update_period: 0
+        delay_per_env_phase: true
+        history_length: 0
+        flatten_history_dim: true
+    concatenate_terms: true
+    concatenate_dim: -1
+    enable_corruption: false
+    history_length: null
+    flatten_history_dim: true
+    nan_policy: disabled
+    nan_check_per_term: true
+actions:
+  muscles:
+    entity_name: robot
+    clip: null
+    normalize_act: true
+    action_range: !!python/tuple
+    - -1.0
+    - 1.0
+    muscle_sigmoid: true
+    muscle_fatigue: false
+    fatigue_reset_vec: null
+    fatigue_reset_random: false
+    fatigue_muscles: null
+    reroute: null
+    motor_noise:
+      signal_dependent_std: 0.0
+      constant_std: 0.0
+    excitation_stages: !!python/tuple []
+events:
+  reset_scene_to_default:
+    func: !!python/name:mjlab.envs.mdp.events.reset_scene_to_default ''
+    params: {}
+    mode: reset
+    interval_range_s: null
+    is_global_time: false
+    min_step_count_between_reset: 0
+  reset_joints_random:
+    func: !!python/name:myosuite.envs.myo.backends.mjlab.tasks.mdp.events.reset_joints_uniform_in_range ''
+    params:
+      asset_cfg:
+        name: robot
+        joint_names: null
+        joint_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        body_names: null
+        body_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        geom_names: null
+        geom_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        site_names: null
+        site_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        actuator_names: null
+        actuator_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        tendon_names: null
+        tendon_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        camera_names: null
+        camera_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        light_names: null
+        light_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        material_names: null
+        material_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        texture_names: null
+        texture_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        pair_names: null
+        pair_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        preserve_order: false
+    mode: reset
+    interval_range_s: null
+    is_global_time: false
+    min_step_count_between_reset: 0
+seed: 11
+sim:
+  nconmax: null
+  njmax: null
+  contact_sensor_maxmatch: 64
+  broadphase: null
+  broadphase_filter: null
+  ls_parallel: null
+  mujoco:
+    timestep: 0.002
+    integrator: euler
+    impratio: 1.0
+    cone: pyramidal
+    jacobian: auto
+    solver: newton
+    iterations: 100
+    tolerance: 1.0e-08
+    ls_iterations: 50
+    ls_tolerance: 0.01
+    ccd_iterations: 35
+    gravity: !!python/tuple
+    - 0.0
+    - 0.0
+    - -9.81
+    disableflags: !!python/tuple []
+    enableflags: !!python/tuple []
+  nan_guard:
+    enabled: false
+    buffer_size: 100
+    output_dir: /tmp/mjlab/nan_dumps
+    max_envs_to_dump: 5
+viewer:
+  origin_type: !!python/object/apply:mjlab.viewer.viewer_config.OriginType
+  - 1
+  height: 240
+  width: 320
+  enable_reflections: true
+  enable_shadows: true
+  geom_group: !!python/tuple
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  site_group: !!python/tuple
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  env_idx: 0
+  max_extra_envs: 2
+  reward_bar_max_terms: 20
+  distance: 5.0
+  elevation: -45.0
+  azimuth: 90.0
+  fovy: null
+  lookat: !!python/tuple
+  - 0.0
+  - 0.0
+  - 0.0
+  entity_name: null
+  body_name: null
+episode_length_s: 1.99
+rewards:
+  pose:
+    func: !!python/name:myosuite.envs.myo.backends.mjlab.tasks.pose.mdp.rewards.pose_dist ''
+    params:
+      command_name: pose
+      pose_thd: 0.7
+      far_thd: 6.283185307179586
+      asset_cfg:
+        name: robot
+        joint_names: null
+        joint_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        body_names: null
+        body_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        geom_names: null
+        geom_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        site_names: null
+        site_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        actuator_names: null
+        actuator_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        tendon_names: null
+        tendon_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        camera_names: null
+        camera_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        light_names: null
+        light_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        material_names: null
+        material_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        texture_names: null
+        texture_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        pair_names: null
+        pair_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        preserve_order: false
+    weight: 1.0
+  bonus:
+    func: !!python/name:myosuite.envs.myo.backends.mjlab.tasks.pose.mdp.rewards.pose_bonus ''
+    params:
+      command_name: pose
+      pose_thd: 0.7
+      far_thd: 6.283185307179586
+      asset_cfg:
+        name: robot
+        joint_names: null
+        joint_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        body_names: null
+        body_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        geom_names: null
+        geom_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        site_names: null
+        site_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        actuator_names: null
+        actuator_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        tendon_names: null
+        tendon_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        camera_names: null
+        camera_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        light_names: null
+        light_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        material_names: null
+        material_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        texture_names: null
+        texture_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        pair_names: null
+        pair_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        preserve_order: false
+    weight: 4.0
+  act_reg:
+    func: !!python/name:myosuite.envs.myo.backends.mjlab.tasks.pose.mdp.rewards.act_norm ''
+    params:
+      asset_cfg:
+        name: robot
+        joint_names: null
+        joint_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        body_names: null
+        body_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        geom_names: null
+        geom_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        site_names: null
+        site_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        actuator_names: null
+        actuator_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        tendon_names: null
+        tendon_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        camera_names: null
+        camera_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        light_names: null
+        light_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        material_names: null
+        material_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        texture_names: null
+        texture_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        pair_names: null
+        pair_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        preserve_order: false
+    weight: 1.0
+  penalty:
+    func: !!python/name:myosuite.envs.myo.backends.mjlab.tasks.pose.mdp.rewards.pose_penalty ''
+    params:
+      command_name: pose
+      pose_thd: 0.7
+      far_thd: 6.283185307179586
+      asset_cfg:
+        name: robot
+        joint_names: null
+        joint_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        body_names: null
+        body_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        geom_names: null
+        geom_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        site_names: null
+        site_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        actuator_names: null
+        actuator_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        tendon_names: null
+        tendon_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        camera_names: null
+        camera_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        light_names: null
+        light_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        material_names: null
+        material_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        texture_names: null
+        texture_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        pair_names: null
+        pair_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        preserve_order: false
+    weight: 50.0
+terminations:
+  time_out:
+    func: !!python/name:mjlab.envs.mdp.terminations.time_out ''
+    params: {}
+    time_out: true
+  pose_diverged:
+    func: !!python/name:myosuite.envs.myo.backends.mjlab.tasks.pose.mdp.terminations.pose_diverged ''
+    params:
+      command_name: pose
+      far_thd: 6.283185307179586
+      asset_cfg:
+        name: robot
+        joint_names: null
+        joint_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        body_names: null
+        body_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        geom_names: null
+        geom_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        site_names: null
+        site_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        actuator_names: null
+        actuator_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        tendon_names: null
+        tendon_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        camera_names: null
+        camera_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        light_names: null
+        light_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        material_names: null
+        material_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        texture_names: null
+        texture_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        pair_names: null
+        pair_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        preserve_order: false
+    time_out: false
+commands:
+  pose:
+    resampling_time_range: !!python/tuple
+    - 1000000000.0
+    - 1000000000.0
+    debug_vis: false
+    entity_name: robot
+    low: !!python/tuple
+    - 0.0
+    - 0.0
+    - 0.0
+    - -0.147495
+    - 0.0248
+    - -0.7854
+    - -1.309
+    - 0.366605
+    - -0.006982
+    - 0.128305
+    - 0.111722
+    - 0.39275
+    - 0.0
+    - 0.18852
+    - 0.117825
+    - 0.306345
+    - -0.204204
+    - 0.0
+    - 0.06284
+    - 0.21994
+    - -0.2618
+    - 0.18852
+    - 0.01571
+    high: !!python/tuple
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.28272
+    - 0.6392
+    - 0.01569
+    - -0.0262045
+    - 1.30045
+    - 0.010473
+    - 1.45492
+    - 0.998897
+    - 1.48459
+    - 0.0
+    - 1.45318
+    - 1.44532
+    - 1.571
+    - -0.010472
+    - 1.52387
+    - 1.45318
+    - 1.48459
+    - -0.068068
+    - 1.571
+    - 1.571
+curriculum: {}
+metrics:
+  success:
+    func: !!python/name:myosuite.envs.myo.backends.mjlab.tasks.pose.mdp.rewards.pose_solved ''
+    params:
+      command_name: pose
+      pose_thd: 0.7
+      far_thd: 6.283185307179586
+      asset_cfg:
+        name: robot
+        joint_names: null
+        joint_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        body_names: null
+        body_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        geom_names: null
+        geom_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        site_names: null
+        site_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        actuator_names: null
+        actuator_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        tendon_names: null
+        tendon_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        camera_names: null
+        camera_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        light_names: null
+        light_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        material_names: null
+        material_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        texture_names: null
+        texture_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        pair_names: null
+        pair_ids: !!python/object/apply:builtins.slice
+        - null
+        - null
+        - null
+        preserve_order: false
+    per_substep: false
+    reduce: last
+recorders: {}
+is_finite_horizon: false
+auto_reset: true
+scale_rewards_by_dt: false

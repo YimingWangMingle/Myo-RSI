@@ -1,0 +1,16 @@
+{
+  "task": "T1",
+  "K": 8,
+  "seed": 47,
+  "group": "validation",
+  "iteration": 1250,
+  "training_steps": 15000000,
+  "checkpoint_sha256": "11111c22fc09c328b2b2a6d7a70d2617d7627da828877eeb2c42ef32cca3c1ef",
+  "bank_hash": "1ff413cd27cbc1a7b0dafdd12f1433f3a144f910784332fe605fdbecb458a542",
+  "episodes": 100,
+  "successes": 51,
+  "mean_terminal_error": 0.06347504995763302,
+  "mean_return": 593.700910140872,
+  "eval_steps": 10000,
+  "eval_wall_s": 2.209033800056204
+}

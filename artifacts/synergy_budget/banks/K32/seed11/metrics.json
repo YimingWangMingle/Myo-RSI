@@ -1,0 +1,20 @@
+{
+  "reconstruction": {
+    "K": 32,
+    "nmf_seed": 11,
+    "bank_hash": "c1b6bb3d74f5ad85aab7c1b93e3a5fc926e25480484a05d0d97618128293d452",
+    "file_sha256": "12cb8355002e166e7e6bbedb42620e15b06d22a6f58fcda796ab5ca642532c09",
+    "fit_frames": 64000,
+    "holdout_frames": 20000,
+    "fit_relative": 0.04131733998656273,
+    "holdout_relative": 0.044446177780628204,
+    "holdout_mae": 0.005370740778744221,
+    "nmf_iter": 600,
+    "warnings": [
+      "Maximum number of iterations 600 reached. Increase it to improve convergence."
+    ],
+    "fit_wall_s": 17.795340199954808,
+    "source_sha256": "7268818df55aa885ade5904659dd6dbbc44d9ad8b75c35b262c9f0bfa7b44ef2",
+    "data_train_sha256": "2cd873aabe0824549124d05b3f7dc06db62a05ad948a67765edc8fb646dc5a58"
+  }
+}

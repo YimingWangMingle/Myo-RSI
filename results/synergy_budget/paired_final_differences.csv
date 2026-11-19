@@ -1,0 +1,5 @@
+task,K,delta_pp,discordant_runs_targets,crossed_ci95_low,crossed_ci95_high,lower_one_sided_95,within_5pp_exploratory,three_seed_deltas
+T1,8,-19.333333333333332,66,-27.0,-12.0,-25.666666666666664,False,-18/-21/-19
+T1,16,-3.3333333333333335,42,-10.0,3.6666666666666665,-9.0,False,1/-7/-4
+T2,8,0.0,0,,,,,0/0/0
+T2,16,0.0,0,,,,,0/0/0

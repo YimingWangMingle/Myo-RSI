@@ -1,0 +1,58 @@
+[
+  {
+    "iteration": 0,
+    "transitions": 0,
+    "train_wall_s": 0.005235800053924322,
+    "sha256": "44c89d8221343856ba8650864a02c273586b634abc4cbdc77f8f41f7cfbac53a",
+    "segment_start_iteration": 0
+  },
+  {
+    "iteration": 84,
+    "transitions": 1008000,
+    "train_wall_s": 131.35680930013768,
+    "sha256": "00bf07ab520917c1b1d0637b9938daebbb2d5c8ab7a544b53abf8ef8c5f81c8f",
+    "segment_start_iteration": 0
+  },
+  {
+    "iteration": 250,
+    "transitions": 3000000,
+    "train_wall_s": 330.24948530015536,
+    "sha256": "bb85b3ed3ad2c6b740f4c10ab1420e4e0043ba7ebedda93106a8ca69c3e6a3d5",
+    "segment_start_iteration": 0
+  },
+  {
+    "iteration": 500,
+    "transitions": 6000000,
+    "train_wall_s": 628.9881686000153,
+    "sha256": "8b27074ac25b2aa31b10ec7cda5619d32b112705598a5cff7bc69f6d2866d528",
+    "segment_start_iteration": 0
+  },
+  {
+    "iteration": 750,
+    "transitions": 9000000,
+    "train_wall_s": 921.2502517001703,
+    "sha256": "7918615af6eb4598ecdab6d016bb3d64e8bd2657952675deb2c2c4759cac1d8c",
+    "segment_start_iteration": 0
+  },
+  {
+    "iteration": 1000,
+    "transitions": 12000000,
+    "train_wall_s": 1211.3116083000787,
+    "sha256": "9df91bd0fecc5f830f42cb603759bd13d6e36baf04da337c0a2d6bc8a2eef2ad",
+    "segment_start_iteration": 0
+  },
+  {
+    "iteration": 1250,
+    "transitions": 15000000,
+    "train_wall_s": 1503.2413027002476,
+    "sha256": "07d959e56efe7a668990e9f6724d1558a18d6ad3a7bc40e3d7e053823ba6dfe6",
+    "segment_start_iteration": 1000
+  },
+  {
+    "iteration": 1500,
+    "transitions": 18000000,
+    "train_wall_s": 1794.1968903001398,
+    "sha256": "d1bec4fdb78cd9175061a5730fdc13d81394eeedda93811196c04ab0ee01ff02",
+    "segment_start_iteration": 1000
+  }
+]

@@ -1,0 +1,4 @@
+controller,K,nmf_seed,bank_hash,heldout_relative,successes,episodes,mean_error_m,terminal_disagreements,projected_command_max_abs,projected_command_rmse,trajectory_excitation_rmse,trajectory_joint_rmse_rad,joint_diverged,median_first_joint_step,simulated_steps,wall_s
+Teacher,0,0,,,95,100,0.04549241624772549,0,0.0,0.0,0.0,0.0,0,,10000,2.364492299966514
+TeacherRepeat,0,0,,,95,100,0.0454707695543766,0,0.0,0.0,0.009929010644555092,0.004286176525056362,2,66.0,10000,2.2006369999144226
+Identity,39,0,identity39,0.0,95,100,0.04549508130177855,0,5.960464477539063e-08,6.938166929870704e-09,0.011826070956885815,0.004829151090234518,2,62.0,10000,2.377022299915552
