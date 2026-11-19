@@ -1,0 +1,11 @@
+{
+  "control_dt_s": 0.02,
+  "observation": "115D actor obs before control, unnormalized",
+  "muscle_signals": "native signed action; physical excitation ctrl; muscle activation act; raw recruitment and scaled post-ReLU coefficients",
+  "recorded_trajectories": "failure_traces.npz includes 100 complete goals per seed; arrays (time,goal,channel); tip coordinates and all five errors; joint positions, velocities, warmstart, actuator length/velocity and reward terms",
+  "contacts": "No contact-state trajectory was recorded; no contact-specific diagnosis is made.",
+  "tip_channels": "five sites in the native Reach command order",
+  "search": "Search arrays include replay match flags, candidate noise and complete post-branch error trajectories. corrections.npz contains only qualified fixed-bank training pairs and available full-muscle witness directions.",
+  "matching": "Per-lane physical tolerances checked before branching; unchanged reference in each 200-lane block must also match and reproduce the original outcome and terminal error to 1 mm. Candidate counts are correlated within goal.",
+  "prior": "Frozen v0.1r official teacher 100000 historical interactions; 18M source PPO transitions per seed. External teacher compute unavailable."
+}

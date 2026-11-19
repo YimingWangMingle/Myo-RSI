@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "study_id": "rsi_v02a",
+  "run_id": "v02a-T3-screen-K16-s11-r01",
+  "method": "screen",
+  "train_seed": 11,
+  "status": "FAILED",
+  "git_commit": "6e3c12a7941a5d74e0c8b84023801ee2a9eb24ff",
+  "git_dirty": false,
+  "config_sha256": "b4f2f56a409c1106df1a695dfa61a100bfb8893be1712b42dcc801799dd023a6",
+  "protocol_sha256": "94a1995b63f1fbf173dd5b1403d9a8f48b54d519cb12a45474e1269f406e72dc",
+  "cohorts": {
+    "screen": [
+      80000,
+      80099
+    ],
+    "diagnosis": [
+      81000,
+      81099
+    ],
+    "validation": [
+      82000,
+      82099
+    ],
+    "final": [
+      93000,
+      93199
+    ]
+  },
+  "source_checkpoint": {
+    "uri": "checkpoints/synergy_budget/T1-K16-s11/policy_1500.pt",
+    "sha256": "5fade8dfdadbacb60c16f13b82448af49ecb8e1758313ac576f9388c7ff4fe17"
+  },
+  "synergy_bank": {
+    "uri": "artifacts/v0_1r/banks/reach_only/K16/seed11/bank.npz",
+    "sha256": "90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2"
+  },
+  "environment": null,
+  "final_checkpoint": null,
+  "failure_or_exclusion_reason": "TypeError(\"No comparison pair was able to handle inputs of type <class 'mjlab.sim.sim_data.TorchArray'> and <class 'torch.Tensor'>.\")",
+  "budget": {
+    "T1": 100
+  },
+  "wall_s": 16.15345129999332
+}

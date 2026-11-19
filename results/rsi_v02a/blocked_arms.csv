@@ -1,0 +1,4 @@
+method,seed,status,diagnostic_run,diagnostic_transitions,ppo_transitions,bc_updates,eligible_bc_goals,required_distinct_goals,reason
+B3,11,BLOCKED_BEFORE_TRAINING,v02a-T3-diagnose-K16-s11-r01,240000,0,0,0,2,No independent training and validation cases under registered matching and improvement rules
+B3,29,BLOCKED_BEFORE_TRAINING,v02a-T3-diagnose-K16-s29-r01,240000,0,0,0,2,No independent training and validation cases under registered matching and improvement rules
+B3,47,BLOCKED_BEFORE_TRAINING,v02a-T3-diagnose-K16-s47-r01,240000,0,0,0,2,No independent training and validation cases under registered matching and improvement rules

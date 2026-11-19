@@ -1,0 +1,28 @@
+{"stage": "start", "transitions": 0, "wall_s": null, "time_unix": 1795080227.7110846}
+{"stage": "failure_traces", "transitions": 10000, "wall_s": 4.0119838998652995, "time_unix": 1795080234.6612015, "device": "cuda:0"}
+{"stage": "profile_prefix", "transitions": 3000, "wall_s": null, "time_unix": 1795080237.6140606}
+{"stage": "functional_profile", "transitions": 1000, "wall_s": 2.432148599997163, "time_unix": 1795080237.6141827}
+{"stage": "profile_prefix", "transitions": 4000, "wall_s": null, "time_unix": 1795080240.0637248}
+{"stage": "functional_profile", "transitions": 1000, "wall_s": 2.449565399903804, "time_unix": 1795080240.063947}
+{"stage": "profile_prefix", "transitions": 5000, "wall_s": null, "time_unix": 1795080242.858384}
+{"stage": "functional_profile", "transitions": 1000, "wall_s": 2.7946216000709683, "time_unix": 1795080242.8588777}
+{"stage": "profile_prefix", "transitions": 6000, "wall_s": null, "time_unix": 1795080245.7950451}
+{"stage": "functional_profile", "transitions": 1000, "wall_s": 2.9360752999782562, "time_unix": 1795080245.7951663}
+{"stage": "profile_prefix", "transitions": 7000, "wall_s": null, "time_unix": 1795080249.1710284}
+{"stage": "functional_profile", "transitions": 1000, "wall_s": 3.3765984000638127, "time_unix": 1795080249.172154}
+{"stage": "search_prefix", "transitions": 12000, "wall_s": null, "time_unix": 1795080259.0697782}
+{"stage": "search_candidates", "transitions": 4000, "wall_s": null, "time_unix": 1795080259.070034}
+{"stage": "search_continuation", "transitions": 24000, "wall_s": 9.29913099994883, "time_unix": 1795080259.0701978}
+{"stage": "search_prefix", "transitions": 16000, "wall_s": null, "time_unix": 1795080268.3498573}
+{"stage": "search_candidates", "transitions": 4000, "wall_s": null, "time_unix": 1795080268.3501847}
+{"stage": "search_continuation", "transitions": 20000, "wall_s": 9.280010799877346, "time_unix": 1795080268.350592}
+{"stage": "search_prefix", "transitions": 20000, "wall_s": null, "time_unix": 1795080277.4296427}
+{"stage": "search_candidates", "transitions": 4000, "wall_s": null, "time_unix": 1795080277.4297452}
+{"stage": "search_continuation", "transitions": 16000, "wall_s": 9.078828800003976, "time_unix": 1795080277.4298162}
+{"stage": "search_prefix", "transitions": 24000, "wall_s": null, "time_unix": 1795080286.5510027}
+{"stage": "search_candidates", "transitions": 4000, "wall_s": null, "time_unix": 1795080286.5511343}
+{"stage": "search_continuation", "transitions": 12000, "wall_s": 9.121242900146171, "time_unix": 1795080286.5512035}
+{"stage": "search_prefix", "transitions": 28000, "wall_s": null, "time_unix": 1795080295.6018758}
+{"stage": "search_candidates", "transitions": 4000, "wall_s": null, "time_unix": 1795080295.60202}
+{"stage": "search_continuation", "transitions": 8000, "wall_s": 9.050740200094879, "time_unix": 1795080295.6022341}
+{"stage": "end", "transitions": 0, "wall_s": 68.03097289986908, "time_unix": 1795080295.6749976, "status": "COMPLETED"}
