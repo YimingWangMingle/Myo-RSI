@@ -1,7 +1,37 @@
-# V0.2a diagnosis and repair
+# V0.2a diagnosis and recruitment repair
 
-The source is the Synergy Budget release at 6456b680f379c197c80cd80845b330414a99e104. Run from this worktree root in its pinned Windows GPU environment after `git lfs pull`. Source checkpoints, frozen banks and target sets are checked before use. The study uses the development guideline's directory spelling `rsi_v02a`.
+Three K=16 Reach policies from the [matched-budget study](../../results/synergy_budget/RESULTS_REPORT.md) are the parents of every primary arm. The source is commit `6456b680f379c197c80cd80845b330414a99e104`. The new study follows the development guidelines' directory spelling `rsi_v02a`.
 
-H1 asks whether the same target becomes harder when hand force changes and whether full-action control can still solve failures. H2 asks whether matched-state correction using the original bank can produce a native terminal success. H3 compares adaptation and old-body retention under a common physical-interaction budget. H4 checks if a same-rank change and a new column can be saved, reloaded and controlled.
+| Question | Registered comparison |
+|---|---|
+| Can body weakness cause a recoverable loss? | Same 100 targets on normal Reach, native sarcopenic Reach and conditional S2. Full-muscle witnesses use the same body. |
+| Can the frozen 16D bank correct individual failures? | Reset, replay and verify the physical state. Compare two equal-sized pools of 10-step corrections, then continue to native episode termination. |
+| Does diagnosis improve adaptation at matched cost? | Frozen B0, full PPO B1, residual PPO B2 and conditional search–BC–residual PPO B3. Hold out 200 shared targets for both weak-body performance and normal-body retention. |
+| Can the bank be edited safely? | Reload, gradient, action and old-skill tests on a 16D reshaped bank and a 17D expanded bank. |
 
-The existing repository already has task contracts, per-checkpoint hashes, immutable Reach banks and explicitly tracked LFS inputs. This study adds separate protocol, collision-safe attempt records, simulation accounting and a new study index. Historical experiment directories are read-only inputs. Search candidates and PPO runs use distinct random streams. The official phase order starts with `python -m experiments.rsi_v02a.screen`. Repeated invocations reuse completed stages; a new attempt receives a different ID. Interrupted PPO training starts a fresh attempt and keeps prior records.
+## Running the study
+
+Use a fresh worktree of the feature branch and the pinned Windows GPU environment described in the [upstream setup](../../results/v0_1r/preflight.md). From the repository root run `git lfs pull`. Restore the source checkpoints and banks before training. The [source manifest](../../results/rsi_v02a/source_manifest.json) names all source policies and hashes.
+
+```powershell
+python -X utf8 -m unittest discover -s tests
+python -X utf8 -m experiments.rsi_v02a.screen
+# Run the registered contingency when native T3 has insufficient degradation.
+python -X utf8 -m experiments.rsi_v02a.weakness
+python -X utf8 -m experiments.rsi_v02a.diagnosis
+python -X utf8 -m experiments.rsi_v02a.adapt train
+python -X utf8 -m experiments.rsi_v02a.structure
+python -X utf8 -m experiments.rsi_v02a.adapt validation
+python -X utf8 -m experiments.rsi_v02a.adapt final
+python -X utf8 -m experiments.rsi_v02a.publish
+```
+
+The release includes all completed and failed attempts. Repeating a stage in its published folder reuses completed attempts. To run a fresh repetition, start from an isolated checkout of the same code with a new empty `results/rsi_v02a` and `checkpoints/rsi_v02a` output location. The input directories in the previous studies must stay accessible. A new attempt receives the next available ID within the output root. A failed PPO process restarts as a new attempt with a fresh simulator and optimizer. The archived attempt remains in the cost ledger.
+
+The weak-body ID T3 in the run names identifies the task family. Each screen and measurement explicitly records the environment or compiled body. The active adaptation site in this release is S2. It uses the native weak configuration with a further force multiplier of 0.75 applied before compiling. All three seeds have the same 39 ordered actuators and a distinct body from normal Reach.
+
+## Evidence and storage
+
+The [result report](../../results/rsi_v02a/RESULTS_REPORT.md) is derived from per-target records. The [registry](../../results/rsi_v02a/runs.csv) includes failures. The [replay audit](../../results/rsi_v02a/replay_audit.csv) distinguishes candidate-state matches from matches that also pass the registered control. Search candidates from the same goal are correlated. The phase that assembles the locked final set checks source hashes, target identifiers and budgets. B3 requires at least two distinct verified cases so BC can be tested on a held-out goal. Unavailable arms have a separate [gate record](../../results/rsi_v02a/blocked_arms.csv).
+
+The historical repository already supplies pinned programs, checkpoints, bank checksums, per-target results, and a Git LFS store. This study adds an indexed run registry, immutable attempts, coupled physical-interaction accounting and cross-body retention. Git LFS stores selected adaptation model/optimizer checkpoints and the three complete diagnostic trajectory archives. Small derived files, figures, protocols and metadata are ordinary Git. Each checksum in the inventory refers to restored bytes. The historical studies are unchanged.

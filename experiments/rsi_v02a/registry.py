@@ -1,4 +1,5 @@
 """Immutable attempts, atomic metadata and append-only event accounting."""
+
 import csv
 import hashlib
 import json
@@ -47,7 +48,9 @@ def git(*args):
 
 
 def cohorts():
-    splits = {k: list(range(a, b + 1)) for k, (a, b) in read(PROTOCOL)["cohorts"].items()}
+    splits = {
+        k: list(range(a, b + 1)) for k, (a, b) in read(PROTOCOL)["cohorts"].items()
+    }
     if sum(map(len, splits.values())) != len(set().union(*splits.values())):
         raise ValueError("Cohorts overlap")
     return splits
@@ -57,7 +60,10 @@ def allocate(method, seed, root=ROOT):
     base = root / "runs"
     base.mkdir(parents=True, exist_ok=True)
     for i in range(1, 10000):
-        loc = base / f"v02a-T3-{method}-K16-s{seed}-r{i:02d}"
+        prefix = f"v02a-T3-{method}-K16-s{seed}-r{i:02d}"
+        if (base / prefix).exists() or any(base.glob(prefix + "-*")):
+            continue
+        loc = base / (prefix + "-" + uuid4().hex)
         try:
             loc.mkdir()
             return loc
@@ -74,13 +80,24 @@ def source(seed, k=16):
     pin = read(Path("results/synergy_budget/cells") / key / "points.json")[-1]
     if pin["iteration"] != 1500 or sha(f) != pin["sha256"]:
         raise ValueError(f"Parent policy checksum mismatch {key}")
-    return {"uri":f.as_posix(),"sha256":pin["sha256"]}
+    return {"uri": f.as_posix(), "sha256": pin["sha256"]}
 
 
 def event(loc, stage, transitions=0, wall_s=None, **info):
     with (loc / "events.jsonl").open("a", encoding="utf8") as f:
-        f.write(json.dumps(dict(stage=stage, transitions=int(transitions),wall_s=wall_s,
-                                time_unix=time.time(),**info),allow_nan=False)+"\n")
+        f.write(
+            json.dumps(
+                dict(
+                    stage=stage,
+                    transitions=int(transitions),
+                    wall_s=wall_s,
+                    time_unix=time.time(),
+                    **info,
+                ),
+                allow_nan=False,
+            )
+            + "\n"
+        )
 
 
 @contextmanager
@@ -90,38 +107,60 @@ def attempt(method, seed, config=None):
     write(loc / "config.json", cfg)
     bank = Path("artifacts/v0_1r/banks/reach_only/K16/seed11/bank.npz")
     now = time.perf_counter()
-    m = dict(schema_version="1.0",study_id="rsi_v02a",run_id=loc.name, method=method,
-             train_seed=seed, status="RUNNING",git_commit=git("rev-parse","HEAD"),
-             git_dirty=bool(git("status","--porcelain","--","experiments","myo_rsi","tests")),
-             config_sha256=sha(loc/"config.json"),protocol_sha256=sha(PROTOCOL),
-             cohorts=read(PROTOCOL)["cohorts"],source_checkpoint=None,synergy_bank=None,
-             environment=None,final_checkpoint=None,failure_or_exclusion_reason=None)
-    write(loc/"manifest.json",m)
-    event(loc,"start")
+    m = dict(
+        schema_version="1.0",
+        study_id="rsi_v02a",
+        run_id=loc.name,
+        method=method,
+        train_seed=seed,
+        status="RUNNING",
+        git_commit=git("rev-parse", "HEAD"),
+        git_dirty=bool(
+            git("status", "--porcelain", "--", "experiments", "myo_rsi", "tests")
+        ),
+        config_sha256=sha(loc / "config.json"),
+        protocol_sha256=sha(PROTOCOL),
+        cohorts=read(PROTOCOL)["cohorts"],
+        source_checkpoint=None,
+        synergy_bank=None,
+        environment=None,
+        final_checkpoint=None,
+        failure_or_exclusion_reason=None,
+    )
+    write(loc / "manifest.json", m)
+    event(loc, "start")
     try:
         if m["git_dirty"]:
             raise ValueError("Uncommitted study code")
-        m["source_checkpoint"]=source(seed)
-        m["synergy_bank"]={"uri":bank.as_posix(),"sha256":sha(bank)}
-        write(loc/"manifest.json",m)
-        yield loc,m
+        m["source_checkpoint"] = source(seed)
+        m["synergy_bank"] = {"uri": bank.as_posix(), "sha256": sha(bank)}
+        write(loc / "manifest.json", m)
+        yield loc, m
     except BaseException as exc:
-        m["status"]="INTERRUPTED" if isinstance(exc,KeyboardInterrupt) else "FAILED"
-        m["failure_or_exclusion_reason"]=repr(exc)
+        m["status"] = "INTERRUPTED" if isinstance(exc, KeyboardInterrupt) else "FAILED"
+        m["failure_or_exclusion_reason"] = repr(exc)
         raise
     else:
-        m["status"]="COMPLETED"
+        m["status"] = "COMPLETED"
     finally:
-        event(loc,"end",wall_s=time.perf_counter()-now,status=m["status"])
-        events=[json.loads(s) for s in (loc/"events.jsonl").read_text().splitlines()]
-        m["budget"]={k:sum(e["transitions"] for e in events if e["stage"]==k) for k in {e["stage"] for e in events} if k not in {"start","end"}}
-        m["wall_s"]=time.perf_counter()-now
-        write(loc/"manifest.json",m)
+        event(loc, "end", wall_s=time.perf_counter() - now, status=m["status"])
+        events = [
+            json.loads(s) for s in (loc / "events.jsonl").read_text().splitlines()
+        ]
+        m["budget"] = {
+            k: sum(e["transitions"] for e in events if e["stage"] == k)
+            for k in {e["stage"] for e in events}
+            if k not in {"start", "end"}
+        }
+        m["wall_s"] = time.perf_counter() - now
+        write(loc / "manifest.json", m)
 
 
-def completed(method,seed):
-    paths=sorted((ROOT/"runs").glob(f"v02a-T3-{method}-K16-s{seed}-r*/manifest.json"))
-    valid=[p.parent for p in paths if read(p)["status"]=="COMPLETED"]
+def completed(method, seed):
+    paths = sorted(
+        (ROOT / "runs").glob(f"v02a-T3-{method}-K16-s{seed}-r*/manifest.json")
+    )
+    valid = [p.parent for p in paths if read(p)["status"] == "COMPLETED"]
     if not valid:
         raise FileNotFoundError(f"No successful {method} seed {seed}")
     return valid[-1]
