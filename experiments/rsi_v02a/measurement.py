@@ -86,7 +86,7 @@ def episodes(env,runner,goals,loc,tag,record=False,exemplar=False):
             if bool((term|trunc).any()) != (t==100) or (t==100 and not bool((term|trunc).all())):
                 raise ValueError("Unexpected episode termination")
             rewards+=cpu(r)
-            ctrl=raw.sim.data.ctrl
+            ctrl=raw.sim.data.ctrl[:]
             expected=torch.sigmoid(5*(native-.5))
             torch.testing.assert_close(ctrl,expected,rtol=0,atol=2e-6)
             sat+=cpu(((native.abs()>=0.99999).float()).mean(1))
@@ -103,7 +103,7 @@ def episodes(env,runner,goals,loc,tag,record=False,exemplar=False):
                         vals["recruitment"]=act.relu()*env.scale
                     for name in ("actuator_length","actuator_velocity","qacc_warmstart","time"):
                         value=getattr(raw.sim.data,name,None)
-                        if torch.is_tensor(value) and value.ndim and len(value)==len(goals):
+                        if value is not None and hasattr(value,"shape") and value.ndim and value.shape[0]==len(goals):
                             vals[name]=value
                     for name,val in vals.items():
                         trace.setdefault(name,[]).append(cpu(val[take]))
