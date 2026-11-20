@@ -19,17 +19,27 @@ def excitation(native):
     return torch.sigmoid(5 * (native - 0.5))
 
 
-def muscle_proposal(native, template, direction):
+def muscle_proposal(native, template, direction, measured_target=None):
     """Choose bounded coordinates in 39D, then match the template's physical norm."""
     base = excitation(native)
     desired = (excitation(template) - base).norm(dim=1, keepdim=True)
     count = (template.abs() >= 0.99999).sum(1, keepdim=True)
+    if measured_target is not None:
+        desired, count = measured_target
     low, high = excitation(base.new_tensor([-1.0, 1.0]))
     margin = 0.00002
     upper = high - base - (base - low) < 0.18 * direction
     edge = torch.where(upper, high, low)
     score = (edge - base).abs() - 0.035 * direction.abs()
     fixed = score.argsort(dim=1).argsort(dim=1) < count
+    if measured_target is not None:
+        too_large = (
+            torch.where(fixed, edge - base, 0.0).norm(dim=1, keepdim=True) > desired
+        )
+        nearest = torch.where(base - low < high - base, low, high)
+        cheapest = (nearest - base).abs().argsort(dim=1).argsort(dim=1) < count
+        edge = torch.where(too_large, nearest, edge)
+        fixed = torch.where(too_large, cheapest, fixed)
     interior = base.clamp(low + margin, high - margin)
     lo, hi = torch.zeros_like(desired), torch.full_like(desired, 8.0)
     for _ in range(15):
@@ -80,7 +90,7 @@ def search(
                 for k in (16, 39)
             )
             scale = [0.25, 0.5, 0.8, 1.1][candidate % 4]
-            records, stored = {}, {}
+            records, stored, measured_targets = {}, {}, {}
             for space in ("K16", "muscle39"):
                 for rep in range(p["independent_repeats"]):
                     trace = []
@@ -120,7 +130,10 @@ def search(
                                     cmd = env.native(corrected)
                                 else:
                                     full = muscle_proposal(
-                                        native, env.native(target), direction[j // 5]
+                                        native,
+                                        env.native(target),
+                                        direction[j // 5],
+                                        measured_targets.get((rep, j)),
                                     )
                                     cmd = torch.where(active[:, None], full, native)
                             if space == "K16" and rep == 0:
@@ -150,30 +163,39 @@ def search(
                                 torch.testing.assert_close(
                                     measured, excitation(cmd), rtol=0, atol=2e-6
                                 )
+                                if space == "K16" and p.get(
+                                    "match_recorded_excitation"
+                                ):
+                                    measured_targets[rep, j] = (
+                                        (measured - excitation(native)).norm(
+                                            dim=1, keepdim=True
+                                        ),
+                                        (cmd.abs() >= 0.99999).sum(1, keepdim=True),
+                                    )
                                 rms += (measured - excitation(native)).square().mean(
                                     1
                                 ).sqrt() / 10
                                 sat += (cmd.abs() >= 0.99999).float().mean(1) / 10
                         hit, err = native_result(raw)
                         for m, i in enumerate(lanes):
-                            records[space, rep, i] = dict(
-                                seed=seed,
-                                goal=goals[i],
-                                goal_hash=hashes[i],
-                                lane=i,
-                                source_success=int(base_hit[i]),
-                                route=route,
-                                candidate=candidate,
-                                space=space,
-                                repeat=rep,
-                                branch_valid=int(valid[i]),
-                                native_success=int(hit[i]),
-                                source_error_m=float(base_err[i]),
-                                terminal_error_m=float(err[i]),
-                                improvement_m=float(base_err[i] - float(err[i])),
-                                excitation_rms=float(rms[i]),
-                                saturation=float(sat[i]),
-                            )
+                            records[space, rep, i] = {
+                                "seed": seed,
+                                "goal": goals[i],
+                                "goal_hash": hashes[i],
+                                "lane": i,
+                                "source_success": int(base_hit[i]),
+                                "route": route,
+                                "candidate": candidate,
+                                "space": space,
+                                "repeat": rep,
+                                "branch_valid": int(valid[i]),
+                                "native_success": int(hit[i]),
+                                "source_error_m": float(base_err[i]),
+                                "terminal_error_m": float(err[i]),
+                                "improvement_m": float(base_err[i] - float(err[i])),
+                                "excitation_rms": float(rms[i]),
+                                "saturation": float(sat[i]),
+                            }
                             if trace and bool(hit[i]) and not base_hit[i]:
                                 stored[i] = {
                                     k: np.stack([v[k][m] for v in trace])
@@ -223,16 +245,16 @@ def search(
                             )
                             uri, digest = path.as_posix(), sha(path)
                         witnesses.append(
-                            dict(
-                                seed=seed,
-                                goal=goals[i],
-                                goal_hash=hashes[i],
-                                space=space,
-                                candidate=candidate,
-                                terminal_error_m=a["terminal_error_m"],
-                                trajectory=uri,
-                                trajectory_sha256=digest,
-                            )
+                            {
+                                "seed": seed,
+                                "goal": goals[i],
+                                "goal_hash": hashes[i],
+                                "space": space,
+                                "candidate": candidate,
+                                "terminal_error_m": a["terminal_error_m"],
+                                "trajectory": uri,
+                                "trajectory_sha256": digest,
+                            }
                         )
             append(loc, "counterfactual_trials", list(records.values()))
             append(loc, "verified_witnesses", witnesses)

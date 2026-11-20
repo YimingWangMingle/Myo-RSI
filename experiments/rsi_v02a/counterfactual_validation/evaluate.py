@@ -54,13 +54,13 @@ def cost(loc, stage, seed, counter, **extra):
             loc,
             "resource_ledger",
             [
-                dict(
-                    seed=seed,
-                    stage=stage,
-                    transitions=counter[0] - start,
-                    wall_s=time.perf_counter() - begin,
-                    details=json.dumps(extra, sort_keys=True),
-                )
+                {
+                    "seed": seed,
+                    "stage": stage,
+                    "transitions": counter[0] - start,
+                    "wall_s": time.perf_counter() - begin,
+                    "details": json.dumps(extra, sort_keys=True),
+                }
             ],
         )
 
@@ -82,32 +82,34 @@ def panel(success, hashes, failures, controls):
     return sorted(selected)
 
 
-def run(seed, pilot=False):
-    p = read(PLAN)
+def run(seed, pilot=False, paired=False):
+    plan = HERE / "protocol_paired.json" if paired else PLAN
+    root = ROOT / "paired_excitation" if paired else ROOT
+    p = read(plan)
     n = 4 if pilot else p["worlds"]
     start = 109000 if pilot else p["goals"][str(seed)]
     goals = list(range(start, start + n))
     loc = (
-        ROOT
+        root
         / "runs"
         / (("pilot" if pilot else "validation") + f"-s{seed}-" + uuid4().hex)
     )
     loc.mkdir(parents=True, exist_ok=False)
     cnt = [0]
-    manifest = dict(
-        run_id=loc.name,
-        seed=seed,
-        pilot=pilot,
-        status="RUNNING",
-        commit=git("rev-parse", "HEAD"),
-        source=source(seed),
-        bank_sha256=sha(BANK),
-        protocol_sha256=sha(PLAN),
-        code_sha256={f.name: sha(f) for f in sorted(HERE.glob("*.py"))},
-        goal_first=start,
-        worlds=n,
-        configuration=p,
-    )
+    manifest = {
+        "run_id": loc.name,
+        "seed": seed,
+        "pilot": pilot,
+        "status": "RUNNING",
+        "commit": git("rev-parse", "HEAD"),
+        "source": source(seed),
+        "bank_sha256": sha(BANK),
+        "protocol_sha256": sha(plan),
+        "code_sha256": {f.name: sha(f) for f in sorted(HERE.glob("*.py"))},
+        "goal_first": start,
+        "worlds": n,
+        "configuration": p,
+    }
     write(loc / "manifest.json", manifest)
     print("RUN", loc, flush=True)
     try:
@@ -140,15 +142,15 @@ def run(seed, pilot=False):
                 loc,
                 "source_episodes",
                 [
-                    dict(
-                        seed=seed,
-                        goal=g,
-                        goal_hash=hashes[i],
-                        lane=i,
-                        terminal_error_m=float(base_err[i]),
-                        success=int(base_hit[i]),
-                        selected=int(i in lanes),
-                    )
+                    {
+                        "seed": seed,
+                        "goal": g,
+                        "goal_hash": hashes[i],
+                        "lane": i,
+                        "terminal_error_m": float(base_err[i]),
+                        "success": int(base_hit[i]),
+                        "selected": int(i in lanes),
+                    }
                     for i, g in enumerate(goals)
                 ],
             )
@@ -262,5 +264,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--seed", type=int, choices=[11, 29, 47], required=True)
     parser.add_argument("--pilot", action="store_true")
+    parser.add_argument("--paired", action="store_true")
     args = parser.parse_args()
-    run(args.seed, args.pilot)
+    run(args.seed, args.pilot, args.paired)

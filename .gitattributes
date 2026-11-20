@@ -9,3 +9,5 @@ results/rsi_v02a/**/*.csv -text
 results/rsi_v02a/**/*.jsonl -text
 experiments/rsi_v02a/counterfactual_validation/protocol.json -text
 results/rsi_v02a/counterfactual_validation/runs/**/trajectory-*.npz filter=lfs diff=lfs merge=lfs -text
+experiments/rsi_v02a/counterfactual_validation/protocol_paired.json -text
+results/rsi_v02a/counterfactual_validation/paired_excitation/runs/**/trajectory-*.npz filter=lfs diff=lfs merge=lfs -text
