@@ -1,0 +1,9 @@
+[
+  {
+    "iteration": 0,
+    "ppo": 0,
+    "total": 0,
+    "uri": "checkpoints/synergy_budget/T1-K16-s47/policy_1500.pt",
+    "sha256": "6ed5df35e06e95b8fe2da06b2cb00c26236278804915012b4d7b2393b75c073b"
+  }
+]

@@ -1,0 +1,37 @@
+run_id,seed,status,pilot,included,transitions,commit,protocol_sha256,checkpoint_sha256,bank_sha256,failure,design,run_directory
+pilot-s11-71318848bd47421d9a0e1cbdedf8ce51,11,REPLAY_BLOCKED,True,False,1400,39fe40fd5e26a07fdba14e58835030ae1570d66c,947301a688c1c73cb508059a24f7847c0a8a9d15f353e595bab7cf3274e1ee89,5fade8dfdadbacb60c16f13b82448af49ecb8e1758313ac576f9388c7ff4fe17,90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2,,initial_search,runs/pilot-s11-71318848bd47421d9a0e1cbdedf8ce51
+pilot-s11-92bf9e69a3db4b6a94d818e9a735fdb4,11,COMPLETED,True,False,1400,39fe40fd5e26a07fdba14e58835030ae1570d66c,947301a688c1c73cb508059a24f7847c0a8a9d15f353e595bab7cf3274e1ee89,5fade8dfdadbacb60c16f13b82448af49ecb8e1758313ac576f9388c7ff4fe17,90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2,,initial_search,runs/pilot-s11-92bf9e69a3db4b6a94d818e9a735fdb4
+validation-s11-9dcbcfbc8383449d93ee9df491e30315,11,FAILED,False,False,42120,56c037e6eeb93e706da836ba6e93f844089dd9b4,947301a688c1c73cb508059a24f7847c0a8a9d15f353e595bab7cf3274e1ee89,5fade8dfdadbacb60c16f13b82448af49ecb8e1758313ac576f9388c7ff4fe17,90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2,"Traceback (most recent call last):
+  File ""D:\myo-rsi\.runtime\v02a\experiments\rsi_v02a\counterfactual_validation\evaluate.py"", line 234, in run
+    search(
+    ~~~~~~^
+        env,
+        ^^^^
+    ...<13 lines>...
+        base_err,
+        ^^^^^^^^^
+    )
+    ^
+  File ""D:\myo-rsi\.runtime\v02a\experiments\rsi_v02a\counterfactual_validation\search.py"", line 150, in search
+    torch.testing.assert_close(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        measured, excitation(cmd), rtol=0, atol=2e-6
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File ""D:\myo-rsi\.venv-gpu\Lib\site-packages\torch\testing\_comparison.py"", line 1667, in assert_close
+    error_metas = not_close_error_metas(
+        actual,
+    ...<15 lines>...
+        msg=msg,
+    )
+  File ""D:\myo-rsi\.venv-gpu\Lib\site-packages\torch\testing\_comparison.py"", line 1380, in not_close_error_metas
+    raise error_meta.to_error() from None
+TypeError: No comparison pair was able to handle inputs of type <class 'mjlab.sim.sim_data.TorchArray'> and <class 'torch.Tensor'>.
+",initial_search,runs/validation-s11-9dcbcfbc8383449d93ee9df491e30315
+validation-s11-f8260025e5b94f3c89e475a7a1f53219,11,COMPLETED,False,True,234000,a3729cfec8198af8d3357d92d78acccbccf04486,947301a688c1c73cb508059a24f7847c0a8a9d15f353e595bab7cf3274e1ee89,5fade8dfdadbacb60c16f13b82448af49ecb8e1758313ac576f9388c7ff4fe17,90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2,,initial_search,runs/validation-s11-f8260025e5b94f3c89e475a7a1f53219
+validation-s29-de72f84ed45b4f80884e1bf8bb42ec2d,29,COMPLETED,False,True,234000,a3729cfec8198af8d3357d92d78acccbccf04486,947301a688c1c73cb508059a24f7847c0a8a9d15f353e595bab7cf3274e1ee89,70a16c782e8d4aa43d08b8d325403d551661ffa6fb0adc1d58eb457b99a806ef,90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2,,initial_search,runs/validation-s29-de72f84ed45b4f80884e1bf8bb42ec2d
+validation-s47-70d1b195a6ad4404914d126d1cf6e469,47,COMPLETED,False,True,234000,a3729cfec8198af8d3357d92d78acccbccf04486,947301a688c1c73cb508059a24f7847c0a8a9d15f353e595bab7cf3274e1ee89,6ed5df35e06e95b8fe2da06b2cb00c26236278804915012b4d7b2393b75c073b,90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2,,initial_search,runs/validation-s47-70d1b195a6ad4404914d126d1cf6e469
+validation-s11-2e22c33e4dab4e049d1ffedc3d8f15bd,11,COMPLETED,False,True,234000,64f642996979834285983e075fd1461a241e78b1,6bb3e10c7416f7a40fb061d9039d10c7cd882ec879c92a0be419d65fd2abd700,5fade8dfdadbacb60c16f13b82448af49ecb8e1758313ac576f9388c7ff4fe17,90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2,,paired_excitation,paired_excitation/runs/validation-s11-2e22c33e4dab4e049d1ffedc3d8f15bd
+validation-s29-565c9cf6c6204d5da9af30ee5a61e6ad,29,COMPLETED,False,True,234000,64f642996979834285983e075fd1461a241e78b1,6bb3e10c7416f7a40fb061d9039d10c7cd882ec879c92a0be419d65fd2abd700,70a16c782e8d4aa43d08b8d325403d551661ffa6fb0adc1d58eb457b99a806ef,90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2,,paired_excitation,paired_excitation/runs/validation-s29-565c9cf6c6204d5da9af30ee5a61e6ad
+validation-s47-749846f449ba428d89848310b8c94a95,47,COMPLETED,False,True,234000,64f642996979834285983e075fd1461a241e78b1,6bb3e10c7416f7a40fb061d9039d10c7cd882ec879c92a0be419d65fd2abd700,6ed5df35e06e95b8fe2da06b2cb00c26236278804915012b4d7b2393b75c073b,90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2,,paired_excitation,paired_excitation/runs/validation-s47-749846f449ba428d89848310b8c94a95

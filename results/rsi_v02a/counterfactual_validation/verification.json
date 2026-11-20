@@ -1,0 +1,106 @@
+{
+  "protocols": {
+    "initial_search": {
+      "sha256": "947301a688c1c73cb508059a24f7847c0a8a9d15f353e595bab7cf3274e1ee89",
+      "included": [
+        "validation-s11-f8260025e5b94f3c89e475a7a1f53219",
+        "validation-s29-de72f84ed45b4f80884e1bf8bb42ec2d",
+        "validation-s47-70d1b195a6ad4404914d126d1cf6e469"
+      ],
+      "verification": "initial_search/verification.json"
+    },
+    "paired_excitation": {
+      "sha256": "6bb3e10c7416f7a40fb061d9039d10c7cd882ec879c92a0be419d65fd2abd700",
+      "included": [
+        "validation-s11-2e22c33e4dab4e049d1ffedc3d8f15bd",
+        "validation-s29-565c9cf6c6204d5da9af30ee5a61e6ad",
+        "validation-s47-749846f449ba428d89848310b8c94a95"
+      ],
+      "verification": "paired_excitation/verification.json"
+    }
+  },
+  "source_checkpoints": {
+    "11": {
+      "uri": "checkpoints/synergy_budget/T1-K16-s11/policy_1500.pt",
+      "sha256": "5fade8dfdadbacb60c16f13b82448af49ecb8e1758313ac576f9388c7ff4fe17"
+    },
+    "29": {
+      "uri": "checkpoints/synergy_budget/T1-K16-s29/policy_1500.pt",
+      "sha256": "70a16c782e8d4aa43d08b8d325403d551661ffa6fb0adc1d58eb457b99a806ef"
+    },
+    "47": {
+      "uri": "checkpoints/synergy_budget/T1-K16-s47/policy_1500.pt",
+      "sha256": "6ed5df35e06e95b8fe2da06b2cb00c26236278804915012b4d7b2393b75c073b"
+    }
+  },
+  "bank_file_sha256": "90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2",
+  "historical_report_sha256": "a28746de6705d56d9ea5340f415de0e96e6a24f2c449a9549b275c5d77bf7f07",
+  "attempts": 9,
+  "analysis_runs": 6,
+  "independent_failures": 60,
+  "per_seed": {
+    "11": {
+      "failures": 20,
+      "passed_replay": 9,
+      "calibrated_goals": 9,
+      "k16_repaired": 0,
+      "muscle39_repaired": 3,
+      "full_only": 3
+    },
+    "29": {
+      "failures": 20,
+      "passed_replay": 11,
+      "calibrated_goals": 11,
+      "k16_repaired": 2,
+      "muscle39_repaired": 2,
+      "full_only": 0
+    },
+    "47": {
+      "failures": 20,
+      "passed_replay": 3,
+      "calibrated_goals": 3,
+      "k16_repaired": 0,
+      "muscle39_repaired": 1,
+      "full_only": 1
+    }
+  },
+  "goal_counts": {
+    "Replay failed": 37,
+    "No calibrated pair": 0,
+    "No witness": 17,
+    "K16 only": 0,
+    "39D only": 4,
+    "Both": 2
+  },
+  "b3_gate": "BLOCKED",
+  "minimum_verified_k16_targets_per_seed": 2,
+  "bc_partition_unit": "physical goal SHA256",
+  "formal_search_transitions": {
+    "K16": 576000,
+    "muscle39": 576000
+  },
+  "formal_transitions": 1404000,
+  "all_transitions": 1448920,
+  "paired_budget_verified": true,
+  "bc_goal_leakage": false,
+  "artifact_sha256": {
+    "bc_dataset.csv": "3da8067643c150d9f09caaecbf6b2b49c823a4cff3a342609a73dcbc6f895f7d",
+    "counterfactual_trials.csv": "84ec206df94d4299222a44a696c6bddafe615d71a3cb53c814bb8dd90ed12927",
+    "figures/goal_repairs.png": "71d1ab76fdbf68b821ee0ae009d89deea9c4e6c289935a4868e395b060c750b8",
+    "figures/replay_state_error.png": "a1433af22cd6826ed2ecaa1d9e6773957886d17bfa7e3b32b7a7a30acf41a701",
+    "figures/replay_validity_rate.png": "ae7c8b6039b87c7e5a33c8a7426333b57d5e0e65d771ba560b4d400adee89148",
+    "figures/search_success.png": "cfaf0fc415b738011d426ad39b7d695f4b51b5170d98456c56c9ce2ca24e922d",
+    "figures/simulation_cost.png": "94993b064d5107f222b563d0e080b1b812760036cd4143896b5261c8f9a0b735",
+    "figures/terminal_improvement.png": "50ec0f67e098dce1658cfc9cdfc76b6c58f350556a3ee75c81e8b8afa4b7e53a",
+    "figures/validation_overview.png": "7a6a59acc321d2df27e98763b2b209012edcda243a1a2f2b8f3ef388b071c196",
+    "functional_gap_summary.csv": "085d12e99ca966da92053c89bc9e8256e65ed26c81814dd4164de2a41fd3276a",
+    "protocol_comparison.csv": "8ef86bfd05279ff4f2647c2cae0342c0039417cd95b1081c7965781910d91e73",
+    "replay_audit.csv": "733568ab2b0fcdd1a84157c0ed4138a234b48990c702b91b4f5e2bece1f47db8",
+    "replay_error_summary.csv": "5ac3ad95087bebd06368b6d3f0d37d717c7da6880ab95d43af1332f3a3b5cb7a",
+    "resource_ledger.csv": "9a6b95f3a0993cc7f1634ad65ecba88b2ffd2ff24208d656180dfe44de02449d",
+    "runs.csv": "e8f760394d8d04961123173b87019af6b8e67207b9bf6be6beb7bb4964db93aa",
+    "search_summary.csv": "2aeb9dfc217ac76bdec6b3f44b00a6fe5668aec6812090d5fa729b12570ea83c",
+    "selected_goals.csv": "80b7cdd3e004828931a7ee7a146dc26ee8c72f5f131c55b7c98b676f340c7a89",
+    "verified_witnesses.csv": "ff28cdd99294e4bae94b8edb5118927b9f6b978faf7103b18fe570ffb2974cfb"
+  }
+}

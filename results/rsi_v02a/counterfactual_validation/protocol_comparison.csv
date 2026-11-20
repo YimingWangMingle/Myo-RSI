@@ -1,0 +1,3 @@
+design,failures,replay,calibrated_goals,pairs,proposed_pairs,k16_repairs,muscle39_repairs,formal_transitions,all_transitions
+initial_search,60,20,19,46,320,2,1,702000,746920
+paired_excitation,60,22,22,352,352,2,6,702000,702000

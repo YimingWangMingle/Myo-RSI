@@ -1,0 +1,69 @@
+{
+  "protocol_sha256": "947301a688c1c73cb508059a24f7847c0a8a9d15f353e595bab7cf3274e1ee89",
+  "historical_report_sha256": "a28746de6705d56d9ea5340f415de0e96e6a24f2c449a9549b275c5d77bf7f07",
+  "source_checkpoints": {
+    "11": {
+      "uri": "checkpoints/synergy_budget/T1-K16-s11/policy_1500.pt",
+      "sha256": "5fade8dfdadbacb60c16f13b82448af49ecb8e1758313ac576f9388c7ff4fe17"
+    },
+    "29": {
+      "uri": "checkpoints/synergy_budget/T1-K16-s29/policy_1500.pt",
+      "sha256": "70a16c782e8d4aa43d08b8d325403d551661ffa6fb0adc1d58eb457b99a806ef"
+    },
+    "47": {
+      "uri": "checkpoints/synergy_budget/T1-K16-s47/policy_1500.pt",
+      "sha256": "6ed5df35e06e95b8fe2da06b2cb00c26236278804915012b4d7b2393b75c073b"
+    }
+  },
+  "bank_file_sha256": "90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2",
+  "included_run_ids": [
+    "validation-s11-f8260025e5b94f3c89e475a7a1f53219",
+    "validation-s29-de72f84ed45b4f80884e1bf8bb42ec2d",
+    "validation-s47-70d1b195a6ad4404914d126d1cf6e469"
+  ],
+  "attempts": 6,
+  "completed_analysis_runs": 3,
+  "original_selected_failures": 60,
+  "replay_valid_failures": 20,
+  "with_calibrated_pair": 19,
+  "goal_counts": {
+    "Replay failed": 40,
+    "No calibrated pair": 1,
+    "No witness": 17,
+    "K16 only": 1,
+    "39D only": 0,
+    "Both": 1
+  },
+  "k16_distinct_bc_goals_by_seed": {
+    "11": 0,
+    "29": 2,
+    "47": 0
+  },
+  "b3_gate": "BLOCKED",
+  "b3_minimum_per_seed": 2,
+  "b3_reason": "At least two distinct verified K16 repairs are required in every policy seed.",
+  "analysis_transitions": 702000,
+  "all_transitions": 746920,
+  "runwise_replay_gate_recomputed": true,
+  "checkpoint_hashes_checked": true,
+  "budgets_paired": true,
+  "trajectory_hashes_checked": true,
+  "unique_physical_goal_hashes": true,
+  "artifact_sha256": {
+    "counterfactual_trials.csv": "f07d41e2957412a7c77e68023b87c6cbc7153f26a0cf9b17ad6853b629994188",
+    "figures/goal_repairs.png": "52a0bb399d39b48db49d2fed656c8ecf1133be44303edf636740769bd38f895e",
+    "figures/replay_state_error.png": "a4bb1d2ced9cab85c96ee61d983a7ed784b556f82957461dd78777abbb4f263b",
+    "figures/replay_validity_rate.png": "b1f01d7f6a10b0adbe2343f72997b78406470dffaa7aecc380f74d254bdbc0cb",
+    "figures/search_success.png": "82c19b6e338357ab81bb3e566dc9b08317e81eebf45448fc4ce0e3b81a67c603",
+    "figures/simulation_cost.png": "d0e2dd2f2d73ce152b788a1e211c9b6aef01f4a9c888f794716751fdbac345c7",
+    "figures/terminal_improvement.png": "d50c225610294002f6307b5596f67ea855d3dd295d9f9cf452c0a37f3ed2c320",
+    "functional_gap_summary.csv": "afde156236be926baa9c4c2a30a18f4493891b635652eb44afaebea3c13a0e4d",
+    "replay_audit.csv": "dc5341482a8f46c8358ccc21b4e30a892013e62f5667c5269235504b4eac6c1d",
+    "replay_error_summary.csv": "3c80d3212b5f19f0bba37337252bed46fddee827d8f0c12a41dc098a35d1d746",
+    "resource_ledger.csv": "4f5197f8bead9c0f5079eb335442cfa7187c68a26e14b6bafa77aeee4ab5e285",
+    "runs.csv": "925b1c235d06c2e932bba598a06d19b8a10a29a612a29892af4899d44e900db2",
+    "search_summary.csv": "baf3368a625b7997982eab9c309b0044f78616b28bb6c15234388911e621b9f2",
+    "selected_goals.csv": "f5faf5d527ba043990c39116aa3b06965230f089f77cd6931de276a9d85b7e43",
+    "verified_witnesses.csv": "e372ce38c564d2b10a6fac2710df6fb391b687a2f1dd6a6ef8399fb4609efd3a"
+  }
+}

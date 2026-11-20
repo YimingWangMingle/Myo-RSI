@@ -1,0 +1,87 @@
+{
+  "study_id": "rsi_v02a",
+  "source_release": "6456b680f379c197c80cd80845b330414a99e104",
+  "source_seeds": [
+    11,
+    29,
+    47
+  ],
+  "source_iteration": 1500,
+  "bank_seed": 11,
+  "bank_k": 16,
+  "sites": {
+    "T1": "myoHandReachRandom-v0",
+    "T3": "myoSarcHandReachRandom-v0"
+  },
+  "cohorts": {
+    "screen": [
+      80000,
+      80099
+    ],
+    "diagnosis": [
+      81000,
+      81099
+    ],
+    "validation": [
+      82000,
+      82099
+    ],
+    "final": [
+      93000,
+      93199
+    ]
+  },
+  "native_success": "terminal official success; Reach L2 < 0.0625 m",
+  "gate": {
+    "min_normal": 0.7,
+    "mean_gap_pp": 10,
+    "relative_error_increase": 0.1,
+    "minimum_seeds_worse": 2,
+    "viability": "Direct 39D reference reaches at least one failed K16 target on the weak body. If none, use limited direct FT probe before concluding inconclusive.",
+    "fallback": "If S1 degradation insufficient, test S2 using 0.75 times the S1 peak force in all 39 muscles. Register and verify effective force before using S2."
+  },
+  "diagnosis": {
+    "selection": "Four failures closest to distinct quartile centers of terminal error, plus one median successful control per source; ties by goal. Prefix lengths 30,40,50,60,70 steps across those ordered cases. If a class missing, report limitation.",
+    "horizons": [
+      1,
+      5,
+      10
+    ],
+    "delta_q95": [
+      0.1,
+      0.25
+    ],
+    "match": "reset and replay saved native prefix; same goal, qpos/act/ctrl atol 1e-4, qvel 1e-3; control must reproduce native outcome. Reject invalid branches.",
+    "profile_lanes": 100,
+    "search_lanes": 400,
+    "chunk_steps": 10,
+    "method": "Independent seeded Gaussian random shooting around feedback mean in K16 or native action in 39D, 200 lanes each incl unchanged control and zero-perturbation repeats. Two 5-step blocks. Record all outcomes. Select best verified trial per case by native success then terminal error, subject to better short-horizon score or native success.",
+    "promising": "at least 0.001 m lower terminal AND short-horizon error relative to same-space control",
+    "rng_offset": 400000,
+    "bc": "On fixed-bank failed cases only, train raw-action residual. Require at least 2 distinct qualifying cases. Hold out last eligible goal, MSE Adam 0.001 for 200 full-batch updates. No fallback imitation of unverified proposals."
+  },
+  "training": {
+    "methods": [
+      "B0",
+      "B1",
+      "B2",
+      "B3"
+    ],
+    "envs": 500,
+    "horizon": 24,
+    "budget": 1200000,
+    "search_cap": 240000,
+    "checkpoints": [
+      0,
+      240000,
+      600000,
+      1200000
+    ],
+    "residual_hidden": 32,
+    "optimizer": "fresh task-native PPO optimizer and adaptive LR; freeze source actor normalization in all adapting arms. Freeze actor variance/weights for residual arms.",
+    "rng_offset": 200000,
+    "extension": "None; finite engineering budget, no convergence claim."
+  },
+  "structure": "Independent functional smoke; bounded 2% single-column reshape with recruitment re-fit, expand with a verified full-action witness residual direction, exact-zero initialization, check gradient, reload and old-body smoke. No witness => candidate unavailable; test mechanics independently.",
+  "cost": "B3 physical budget includes 10000 monitoring, 30000 prefix+profile, 200000 paired search incl prefix and continuation. Equal sites/validation cost separately; all screening incl 39D viability is shared. Attribution by actual steps. Shared historical teacher 100000 steps and 18M source PPO per seed reported separately."
+}

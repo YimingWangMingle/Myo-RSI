@@ -1,0 +1,62 @@
+{
+  "id": "V0.2a-CF-1",
+  "seeds": [
+    11,
+    29,
+    47
+  ],
+  "backend": "published S2 CUDA MuJoCo Warp",
+  "goals": {
+    "11": 101000,
+    "29": 102000,
+    "47": 103000
+  },
+  "worlds": 120,
+  "failures": 20,
+  "controls": 4,
+  "branch": 75,
+  "horizon": 100,
+  "chunks": [
+    5,
+    5
+  ],
+  "candidates": 16,
+  "independent_repeats": 2,
+  "replay_routes": [
+    "integration",
+    "prefix"
+  ],
+  "noop_repeats": 2,
+  "selection": "First 20 native failures and first 4 native successes in ascending goal id, unique physical goal digest, before inspecting repeat outcomes. One same lane per goal throughout.",
+  "state_atol": {
+    "qpos": 0.0001,
+    "qvel": 0.001,
+    "act": 0.0001,
+    "ctrl": 0.0001,
+    "time": 0.00001,
+    "qacc_warmstart": 0.1,
+    "actuator_length": 0.0001,
+    "actuator_velocity": 0.001,
+    "goal": 0,
+    "obs": 0.001,
+    "tips": 0.001,
+    "qfrc_applied": 0,
+    "xfrc_applied": 0,
+    "episode_length": 0,
+    "command_counter": 0,
+    "command_time_left": 0,
+    "history": 0,
+    "eq_active": 0,
+    "mocap_pos": 0,
+    "mocap_quat": 0,
+    "userdata": 0
+  },
+  "terminal_error_atol_m": 0.001,
+  "native_success": "terminal reach metric; agreement with 15D fingertip L2 < 0.0625 m",
+  "gate": "For each lane, two complete no-intervention continuations on one route must each reproduce every nonempty field at the branch AND every suffix step, same RNG at branch, native binary outcome and terminal error. First try complete integration snapshot then fixed original native action prefix from same initialization in same lane. Search only for independently qualified physical goals; no transfer of control validity between lanes. Check branch again at each trial.",
+  "search": "Matched independent random shooting; Gaussian latent offsets at 0.25, 0.5, 0.8, 1.1 raw units cyclically, two fixed directions across 5-step chunks; full-muscle directions in physical excitation space. Per tick match K16 induced physical RMS and saturation count of same-state comparison, conditioned on local policy. Require achieved mean RMS between arms within 0.01 absolute excitation and mean bound fraction within 0.05. Unmatched trials never establish gaps.",
+  "b3": "Require independently repeated native successful K16 corrections on at least two different failed goals per seed and train/validation goal separation. All simulator interactions including diagnostics must fit within historical 1200000 per seed for any separate matched training.",
+  "splits": "Sort qualified distinct goal hashes within each seed; reserve first ceil(25%) for validation; all candidates for that goal in one partition.",
+  "historical_report": "results/rsi_v02a/RESULTS_REPORT.md",
+  "pilot": "Engineering-only goal IDs 109000 onward; no pilot data enter capability estimates."
+}

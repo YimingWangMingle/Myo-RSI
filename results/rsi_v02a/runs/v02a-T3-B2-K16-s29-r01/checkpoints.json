@@ -1,0 +1,34 @@
+[
+  {
+    "iteration": 0,
+    "ppo": 0,
+    "diagnosis": 0,
+    "total": 0,
+    "uri": "checkpoints/rsi_v02a/v02a-T3-B2-K16-s29-r01/policy_0.pt",
+    "sha256": "add2cd61e1dd24cc02a6804fdbe484104e5e9f1c8b301e8ee7c2bba21aae4b62"
+  },
+  {
+    "iteration": 20,
+    "ppo": 240000,
+    "diagnosis": 0,
+    "total": 240000,
+    "uri": "checkpoints/rsi_v02a/v02a-T3-B2-K16-s29-r01/policy_20.pt",
+    "sha256": "fe9676e85c6ea3ece5f3e8befb28e9a8b97b289da36e32e1bf06a385d2e083c5"
+  },
+  {
+    "iteration": 50,
+    "ppo": 600000,
+    "diagnosis": 0,
+    "total": 600000,
+    "uri": "checkpoints/rsi_v02a/v02a-T3-B2-K16-s29-r01/policy_50.pt",
+    "sha256": "9470ca124ef89d46c60f53d6483930e0aec7c978c819f4806da26c338dae5a73"
+  },
+  {
+    "iteration": 100,
+    "ppo": 1200000,
+    "diagnosis": 0,
+    "total": 1200000,
+    "uri": "checkpoints/rsi_v02a/v02a-T3-B2-K16-s29-r01/policy_100.pt",
+    "sha256": "9bbf24168d71d16b70eafc37503692d302df1910ce54e6a74c6d572df91b02fe"
+  }
+]

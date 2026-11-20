@@ -1,0 +1,7 @@
+seed,stage,transitions,wall_s,details
+11,source_episode,12000,4.384395400062203,{}
+11,no_op,3000,0.8382890000939369,"{""repeat"": 0, ""route"": ""integration""}"
+11,no_op,3000,0.7642596999648958,"{""repeat"": 1, ""route"": ""integration""}"
+11,no_op,12000,4.3503254998940974,"{""repeat"": 0, ""route"": ""prefix""}"
+11,no_op,12000,4.0902841000352055,"{""repeat"": 1, ""route"": ""prefix""}"
+11,candidate,120,0.23413969995453954,"{""candidate"": 0, ""repeat"": 0, ""route"": ""integration"", ""space"": ""K16""}"

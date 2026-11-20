@@ -1,0 +1,7 @@
+seed,site,goal,frames,contact_frames,max_contacts,geoms,explicit_pairs,mask_pairs_possible
+11,T1,93000,100,0,0,91,0,False
+11,S2,93000,100,0,0,91,0,False
+29,T1,93000,100,0,0,91,0,False
+29,S2,93000,100,0,0,91,0,False
+47,T1,93000,100,0,0,91,0,False
+47,S2,93000,100,0,0,91,0,False

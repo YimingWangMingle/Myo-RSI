@@ -1,0 +1,339 @@
+{
+  "schema_version": "1.0",
+  "study_id": "rsi_v02a",
+  "run_id": "v02a-T3-B1-final-K16-s29-r01-9f5aa31625064844acebb0ad77828362",
+  "method": "B1-final",
+  "train_seed": 29,
+  "status": "COMPLETED",
+  "git_commit": "9d5d8d15bc2d189d9d923d140124f7f002873b55",
+  "git_dirty": false,
+  "config_sha256": "fecc48ae2dc4e8f5fda7f179471746af86bf885d8a144576f733d341e1ba39df",
+  "protocol_sha256": "94a1995b63f1fbf173dd5b1403d9a8f48b54d519cb12a45474e1269f406e72dc",
+  "cohorts": {
+    "screen": [
+      80000,
+      80099
+    ],
+    "diagnosis": [
+      81000,
+      81099
+    ],
+    "validation": [
+      82000,
+      82099
+    ],
+    "final": [
+      93000,
+      93199
+    ]
+  },
+  "source_checkpoint": {
+    "uri": "checkpoints/synergy_budget/T1-K16-s29/policy_1500.pt",
+    "sha256": "70a16c782e8d4aa43d08b8d325403d551661ffa6fb0adc1d58eb457b99a806ef"
+  },
+  "synergy_bank": {
+    "uri": "artifacts/v0_1r/banks/reach_only/K16/seed11/bank.npz",
+    "sha256": "90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2"
+  },
+  "environment": {
+    "T1": {
+      "device": "NVIDIA GeForce RTX 4060",
+      "versions": {
+        "myosuite": "3.1.0",
+        "myo-sim": "0.2.5",
+        "gymnasium": "1.2.3",
+        "numpy": "2.5.5",
+        "mujoco": "3.11.0",
+        "mjlab": "1.6.1",
+        "mujoco-warp": "3.11.0",
+        "warp-lang": "1.19.0",
+        "rsl-rl-lib": "5.4.2",
+        "torch": "2.14.1+cu130"
+      },
+      "model": {
+        "model_hash": "578a80d2bcf1959f6e91132445a93675370772bfe26a7e77c08f5f5f8c2dd6c1",
+        "hand_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+        "actuator_order": [
+          "ECRL_r",
+          "ECRB_r",
+          "ECU_r",
+          "FCR_r",
+          "FCU_r",
+          "PL_r",
+          "PT_r",
+          "PQ_r",
+          "FDS5_r",
+          "FDS4_r",
+          "FDS3_r",
+          "FDS2_r",
+          "FDP5_r",
+          "FDP4_r",
+          "FDP3_r",
+          "FDP2_r",
+          "EDC5_r",
+          "EDC4_r",
+          "EDC3_r",
+          "EDC2_r",
+          "EDM_r",
+          "EIP_r",
+          "EPL_r",
+          "EPB_r",
+          "FPL_r",
+          "APL_r",
+          "OP_r",
+          "RI2_r",
+          "LU_RB2_r",
+          "UI_UB2_r",
+          "RI3_r",
+          "LU_RB3_r",
+          "UI_UB3_r",
+          "RI4_r",
+          "LU_RB4_r",
+          "UI_UB4_r",
+          "RI5_r",
+          "LU_RB5_r",
+          "UI_UB5_r"
+        ],
+        "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+        "native_action_dim": 39,
+        "policy_action_dim": 39,
+        "nq": 23,
+        "nv": 23,
+        "na": 39,
+        "physics_dt": 0.002,
+        "peak_force": [
+          337.3,
+          252.2,
+          192.9,
+          407.9,
+          479.8,
+          101.0,
+          557.2,
+          284.7,
+          75.3,
+          171.2,
+          258.8,
+          162.5,
+          236.8,
+          172.9,
+          212.4,
+          197.3,
+          139.4,
+          109.2,
+          94.4,
+          48.8,
+          72.4,
+          47.3,
+          88.3,
+          46.0,
+          201.0,
+          116.7,
+          180.0,
+          61.2,
+          61.2,
+          61.2,
+          61.2,
+          98.0,
+          98.0,
+          97.0,
+          76.9,
+          76.9,
+          59.9,
+          47.9,
+          47.9
+        ]
+      },
+      "observation": {
+        "actor": [
+          115
+        ],
+        "critic": [
+          115
+        ]
+      },
+      "term_names": [
+        "reach",
+        "bonus",
+        "penalty"
+      ],
+      "reward_weights": {
+        "reach": 1.0,
+        "bonus": 4.0,
+        "penalty": 50.0
+      },
+      "success": "native terminal metric",
+      "horizon": 100,
+      "termination": [
+        "sync_forward",
+        "time_out",
+        "reach_failed"
+      ],
+      "contact_contract": {
+        "geoms": 91,
+        "explicit_pairs": 0,
+        "mask_pairs_possible": false
+      },
+      "gpu_peak_force_verified": true,
+      "tip_sites": [
+        "THtip_r",
+        "IFtip_r",
+        "MFtip_r",
+        "RFtip_r",
+        "LFtip_r"
+      ]
+    },
+    "S2": {
+      "device": "NVIDIA GeForce RTX 4060",
+      "versions": {
+        "myosuite": "3.1.0",
+        "myo-sim": "0.2.5",
+        "gymnasium": "1.2.3",
+        "numpy": "2.5.5",
+        "mujoco": "3.11.0",
+        "mjlab": "1.6.1",
+        "mujoco-warp": "3.11.0",
+        "warp-lang": "1.19.0",
+        "rsl-rl-lib": "5.4.2",
+        "torch": "2.14.1+cu130"
+      },
+      "model": {
+        "model_hash": "71b9d99bf6ae84b0955d52220e4e5fb7bc8f92b2745a0d52ea484fa764269ea7",
+        "hand_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+        "actuator_order": [
+          "ECRL_r",
+          "ECRB_r",
+          "ECU_r",
+          "FCR_r",
+          "FCU_r",
+          "PL_r",
+          "PT_r",
+          "PQ_r",
+          "FDS5_r",
+          "FDS4_r",
+          "FDS3_r",
+          "FDS2_r",
+          "FDP5_r",
+          "FDP4_r",
+          "FDP3_r",
+          "FDP2_r",
+          "EDC5_r",
+          "EDC4_r",
+          "EDC3_r",
+          "EDC2_r",
+          "EDM_r",
+          "EIP_r",
+          "EPL_r",
+          "EPB_r",
+          "FPL_r",
+          "APL_r",
+          "OP_r",
+          "RI2_r",
+          "LU_RB2_r",
+          "UI_UB2_r",
+          "RI3_r",
+          "LU_RB3_r",
+          "UI_UB3_r",
+          "RI4_r",
+          "LU_RB4_r",
+          "UI_UB4_r",
+          "RI5_r",
+          "LU_RB5_r",
+          "UI_UB5_r"
+        ],
+        "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+        "native_action_dim": 39,
+        "policy_action_dim": 39,
+        "nq": 23,
+        "nv": 23,
+        "na": 39,
+        "physics_dt": 0.002,
+        "peak_force": [
+          126.48750000000001,
+          94.57499999999999,
+          72.3375,
+          152.96249999999998,
+          179.925,
+          37.875,
+          208.95000000000002,
+          106.76249999999999,
+          28.237499999999997,
+          64.19999999999999,
+          97.05000000000001,
+          60.9375,
+          88.80000000000001,
+          64.8375,
+          79.65,
+          73.98750000000001,
+          52.275000000000006,
+          40.95,
+          35.400000000000006,
+          18.299999999999997,
+          27.150000000000002,
+          17.737499999999997,
+          33.1125,
+          17.25,
+          75.375,
+          43.7625,
+          67.5,
+          22.950000000000003,
+          22.950000000000003,
+          22.950000000000003,
+          22.950000000000003,
+          36.75,
+          36.75,
+          36.375,
+          28.837500000000002,
+          28.837500000000002,
+          22.4625,
+          17.9625,
+          17.9625
+        ]
+      },
+      "observation": {
+        "actor": [
+          115
+        ],
+        "critic": [
+          115
+        ]
+      },
+      "term_names": [
+        "reach",
+        "bonus",
+        "penalty"
+      ],
+      "reward_weights": {
+        "reach": 1.0,
+        "bonus": 4.0,
+        "penalty": 50.0
+      },
+      "success": "native terminal metric",
+      "horizon": 100,
+      "termination": [
+        "sync_forward",
+        "time_out",
+        "reach_failed"
+      ],
+      "contact_contract": {
+        "geoms": 91,
+        "explicit_pairs": 0,
+        "mask_pairs_possible": false
+      },
+      "gpu_peak_force_verified": true,
+      "tip_sites": [
+        "THtip_r",
+        "IFtip_r",
+        "MFtip_r",
+        "RFtip_r",
+        "LFtip_r"
+      ]
+    }
+  },
+  "final_checkpoint": null,
+  "failure_or_exclusion_reason": null,
+  "budget": {
+    "S2_1200000": 20000,
+    "T1_1200000": 20000
+  },
+  "wall_s": 11.767115900060162
+}

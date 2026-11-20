@@ -1,0 +1,6 @@
+{"stage": "start", "transitions": 0, "wall_s": null, "time_unix": 1795081946.5487754}
+{"stage": "normal_source", "transitions": 2000, "wall_s": 2.4956841999664903, "time_unix": 1795081949.6474688, "device": "cuda:0"}
+{"stage": "calibration", "transitions": 2000, "wall_s": 2.7033970998600125, "time_unix": 1795081952.6457562, "device": "cuda:0"}
+{"stage": "reshape_normal", "transitions": 2000, "wall_s": 2.5148080000653863, "time_unix": 1795081955.6117437, "device": "cuda:0"}
+{"stage": "expand_normal", "transitions": 2000, "wall_s": 2.4658254999667406, "time_unix": 1795081958.597499, "device": "cuda:0"}
+{"stage": "end", "transitions": 0, "wall_s": 12.163074700161815, "time_unix": 1795081958.5989075, "status": "COMPLETED"}

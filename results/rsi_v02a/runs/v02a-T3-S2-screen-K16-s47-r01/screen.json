@@ -1,0 +1,8 @@
+{
+  "seed": 47,
+  "normal": 0.82,
+  "weak": 0.6,
+  "normal_error": 0.05355836980044842,
+  "weak_error": 0.05821782831102609,
+  "direct_witness": 21
+}

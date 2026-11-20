@@ -1,0 +1,237 @@
+{
+  "run_id": "pilot-s11-71318848bd47421d9a0e1cbdedf8ce51",
+  "seed": 11,
+  "pilot": true,
+  "status": "REPLAY_BLOCKED",
+  "commit": "39fe40fd5e26a07fdba14e58835030ae1570d66c",
+  "source": {
+    "uri": "checkpoints/synergy_budget/T1-K16-s11/policy_1500.pt",
+    "sha256": "5fade8dfdadbacb60c16f13b82448af49ecb8e1758313ac576f9388c7ff4fe17"
+  },
+  "bank_sha256": "90c6fd50f0bdd517686f0fb5994a6fef6565f0683f5b987fe20352b4dc2da2c2",
+  "protocol_sha256": "947301a688c1c73cb508059a24f7847c0a8a9d15f353e595bab7cf3274e1ee89",
+  "code_sha256": {
+    "__init__.py": "d46227b7e47ef245759d9bb6f3f3778301ae53c869e12a6a21dabd3300cf2d05",
+    "evaluate.py": "c3cd0dc6215916966f005d089778bfe0bf867f73f5aa2489098a2b76bc2279b2",
+    "replay.py": "3318235b004f993427793860482f081a5880390eb6c7b372b3fe4d8efa29ad47"
+  },
+  "goal_first": 109000,
+  "worlds": 4,
+  "configuration": {
+    "id": "V0.2a-CF-1",
+    "seeds": [
+      11,
+      29,
+      47
+    ],
+    "backend": "published S2 CUDA MuJoCo Warp",
+    "goals": {
+      "11": 101000,
+      "29": 102000,
+      "47": 103000
+    },
+    "worlds": 120,
+    "failures": 20,
+    "controls": 4,
+    "branch": 75,
+    "horizon": 100,
+    "chunks": [
+      5,
+      5
+    ],
+    "candidates": 16,
+    "independent_repeats": 2,
+    "replay_routes": [
+      "integration",
+      "prefix"
+    ],
+    "noop_repeats": 2,
+    "selection": "First 20 native failures and first 4 native successes in ascending goal id, unique physical goal digest, before inspecting repeat outcomes. One same lane per goal throughout.",
+    "state_atol": {
+      "qpos": 0.0001,
+      "qvel": 0.001,
+      "act": 0.0001,
+      "ctrl": 0.0001,
+      "time": 1e-05,
+      "qacc_warmstart": 0.1,
+      "actuator_length": 0.0001,
+      "actuator_velocity": 0.001,
+      "goal": 0,
+      "obs": 0.001,
+      "tips": 0.001,
+      "qfrc_applied": 0,
+      "xfrc_applied": 0,
+      "episode_length": 0,
+      "command_counter": 0,
+      "command_time_left": 0,
+      "history": 0,
+      "eq_active": 0,
+      "mocap_pos": 0,
+      "mocap_quat": 0,
+      "userdata": 0
+    },
+    "terminal_error_atol_m": 0.001,
+    "native_success": "terminal reach metric; agreement with 15D fingertip L2 < 0.0625 m",
+    "gate": "For each lane, two complete no-intervention continuations on one route must each reproduce every nonempty field at the branch AND every suffix step, same RNG at branch, native binary outcome and terminal error. First try complete integration snapshot then fixed original native action prefix from same initialization in same lane. Search only for independently qualified physical goals; no transfer of control validity between lanes. Check branch again at each trial.",
+    "search": "Matched independent random shooting; Gaussian latent offsets at 0.25, 0.5, 0.8, 1.1 raw units cyclically, two fixed directions across 5-step chunks; full-muscle directions in physical excitation space. Per tick match K16 induced physical RMS and saturation count of same-state comparison, conditioned on local policy. Require achieved mean RMS between arms within 0.01 absolute excitation and mean bound fraction within 0.05. Unmatched trials never establish gaps.",
+    "b3": "Require independently repeated native successful K16 corrections on at least two different failed goals per seed and train/validation goal separation. All simulator interactions including diagnostics must fit within historical 1200000 per seed for any separate matched training.",
+    "splits": "Sort qualified distinct goal hashes within each seed; reserve first ceil(25%) for validation; all candidates for that goal in one partition.",
+    "historical_report": "results/rsi_v02a/RESULTS_REPORT.md",
+    "pilot": "Engineering-only goal IDs 109000 onward; no pilot data enter capability estimates."
+  },
+  "environment": {
+    "device": "NVIDIA GeForce RTX 4060",
+    "versions": {
+      "myosuite": "3.1.0",
+      "myo-sim": "0.2.5",
+      "gymnasium": "1.2.3",
+      "numpy": "2.5.5",
+      "mujoco": "3.11.0",
+      "mjlab": "1.6.1",
+      "mujoco-warp": "3.11.0",
+      "warp-lang": "1.19.0",
+      "rsl-rl-lib": "5.4.2",
+      "torch": "2.14.1+cu130"
+    },
+    "model": {
+      "model_hash": "71b9d99bf6ae84b0955d52220e4e5fb7bc8f92b2745a0d52ea484fa764269ea7",
+      "hand_contract_hash": "5bf6d836fc93ded674c0a01aec640ec67445f7f60c63387b550aebe5269bcd0d",
+      "actuator_order": [
+        "ECRL_r",
+        "ECRB_r",
+        "ECU_r",
+        "FCR_r",
+        "FCU_r",
+        "PL_r",
+        "PT_r",
+        "PQ_r",
+        "FDS5_r",
+        "FDS4_r",
+        "FDS3_r",
+        "FDS2_r",
+        "FDP5_r",
+        "FDP4_r",
+        "FDP3_r",
+        "FDP2_r",
+        "EDC5_r",
+        "EDC4_r",
+        "EDC3_r",
+        "EDC2_r",
+        "EDM_r",
+        "EIP_r",
+        "EPL_r",
+        "EPB_r",
+        "FPL_r",
+        "APL_r",
+        "OP_r",
+        "RI2_r",
+        "LU_RB2_r",
+        "UI_UB2_r",
+        "RI3_r",
+        "LU_RB3_r",
+        "UI_UB3_r",
+        "RI4_r",
+        "LU_RB4_r",
+        "UI_UB4_r",
+        "RI5_r",
+        "LU_RB5_r",
+        "UI_UB5_r"
+      ],
+      "actuator_order_hash": "6746b2dc840dd947434cc16108f8523a7b0e58dbe7b387a6dd6c73ec74bee3bd",
+      "native_action_dim": 39,
+      "policy_action_dim": 39,
+      "nq": 23,
+      "nv": 23,
+      "na": 39,
+      "physics_dt": 0.002,
+      "peak_force": [
+        126.48750000000001,
+        94.57499999999999,
+        72.3375,
+        152.96249999999998,
+        179.925,
+        37.875,
+        208.95000000000002,
+        106.76249999999999,
+        28.237499999999997,
+        64.19999999999999,
+        97.05000000000001,
+        60.9375,
+        88.80000000000001,
+        64.8375,
+        79.65,
+        73.98750000000001,
+        52.275000000000006,
+        40.95,
+        35.400000000000006,
+        18.299999999999997,
+        27.150000000000002,
+        17.737499999999997,
+        33.1125,
+        17.25,
+        75.375,
+        43.7625,
+        67.5,
+        22.950000000000003,
+        22.950000000000003,
+        22.950000000000003,
+        22.950000000000003,
+        36.75,
+        36.75,
+        36.375,
+        28.837500000000002,
+        28.837500000000002,
+        22.4625,
+        17.9625,
+        17.9625
+      ]
+    },
+    "observation": {
+      "actor": [
+        115
+      ],
+      "critic": [
+        115
+      ]
+    },
+    "term_names": [
+      "reach",
+      "bonus",
+      "penalty"
+    ],
+    "reward_weights": {
+      "reach": 1.0,
+      "bonus": 4.0,
+      "penalty": 50.0
+    },
+    "success": "native terminal metric",
+    "horizon": 100,
+    "termination": [
+      "sync_forward",
+      "time_out",
+      "reach_failed"
+    ],
+    "contact_contract": {
+      "geoms": 91,
+      "explicit_pairs": 0,
+      "mask_pairs_possible": false
+    },
+    "gpu_peak_force_verified": true,
+    "tip_sites": [
+      "THtip_r",
+      "IFtip_r",
+      "MFtip_r",
+      "RFtip_r",
+      "LFtip_r"
+    ]
+  },
+  "bank_decoder_hash": "66ff8406b7f9e54b12af525cc23862521a269e03f4d6c0956716ad9e13647e8a",
+  "absent_zero_width_fields": [
+    "eq_active",
+    "history",
+    "userdata"
+  ],
+  "integration_state_width": 412,
+  "verified_lanes": {},
+  "transitions": 1400
+}

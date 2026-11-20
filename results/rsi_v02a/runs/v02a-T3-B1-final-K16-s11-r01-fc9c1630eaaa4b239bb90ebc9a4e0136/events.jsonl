@@ -1,0 +1,4 @@
+{"stage": "start", "transitions": 0, "wall_s": null, "time_unix": 1795082150.9657655}
+{"stage": "T1_1200000", "transitions": 20000, "wall_s": 2.956418300047517, "time_unix": 1795082156.7658179, "device": "cuda:0"}
+{"stage": "S2_1200000", "transitions": 20000, "wall_s": 2.931895700050518, "time_unix": 1795082162.6000192, "device": "cuda:0"}
+{"stage": "end", "transitions": 0, "wall_s": 11.803814300103113, "time_unix": 1795082162.6022964, "status": "COMPLETED"}
