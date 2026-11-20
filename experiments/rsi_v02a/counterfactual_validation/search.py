@@ -146,7 +146,7 @@ def search(
                                 )
                             obs = step(raw, cmd, start + j + 1, counter)
                             if j < 10:
-                                measured = raw.sim.data.ctrl
+                                measured = raw.sim.data.ctrl[:]
                                 torch.testing.assert_close(
                                     measured, excitation(cmd), rtol=0, atol=2e-6
                                 )
