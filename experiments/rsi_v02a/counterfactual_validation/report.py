@@ -3,6 +3,7 @@
 import argparse
 import json
 import math
+import os
 from pathlib import Path
 
 import matplotlib
@@ -14,6 +15,8 @@ import pandas as pd
 
 from ..registry import read, sha, source, write
 from .evaluate import BANK, PLAN, ROOT
+
+RUN_ROOT = ROOT / "runs"
 
 TRIAL = [
     "seed",
@@ -75,7 +78,7 @@ def save(frame, name):
 def tables(run_ids=None):
     p = read(PLAN)
     ledger, audits, episodes, trials, witnesses, records = [], [], [], [], [], []
-    for loc in sorted((ROOT / "runs").iterdir()):
+    for loc in sorted(RUN_ROOT.iterdir()):
         m = read(loc / "manifest.json")
         assert (
             m["run_id"] == loc.name
@@ -492,6 +495,7 @@ def plots(a, e, t, g, s, l):
 
 
 def publish(run_ids=None):
+    ROOT.mkdir(parents=True, exist_ok=True)
     reg, l, a, e, t, w, g, s = tables(run_ids)
     p = read(PLAN)
     agg = []
@@ -683,7 +687,7 @@ def publish(run_ids=None):
         "",
         "## 数据与复现",
         "",
-        "[冻结协议](../../../experiments/rsi_v02a/counterfactual_validation/protocol.json) · [全部运行、代码 Commit 与模型哈希](runs.csv) · [运行清单与原始记录](runs/) · [机器核验](verification.json)",
+        f"[冻结协议]({Path(os.path.relpath(PLAN, ROOT)).as_posix()}) · [全部运行、代码 Commit 与模型哈希](runs.csv) · [运行清单与原始记录]({Path(os.path.relpath(RUN_ROOT, ROOT)).as_posix()}/) · [机器核验](verification.json)",
         "",
         "[逐次回放](replay_audit.csv) · [逐变量误差及通过率](replay_error_summary.csv) · [逐候选终局](counterfactual_trials.csv) · [按种子搜索](search_summary.csv) · [按目标判别](functional_gap_summary.csv) · [已验证修正及 BC 分区](verified_witnesses.csv) · [资源账本](resource_ledger.csv)",
     ]
@@ -720,4 +724,7 @@ if __name__ == "__main__":
     if args.paired:
         ROOT = ROOT / "paired_excitation"
         PLAN = PLAN.with_name("protocol_paired.json")
+        RUN_ROOT = ROOT / "runs"
+    else:
+        ROOT = ROOT / "initial_search"
     publish(args.run)

@@ -35,3 +35,21 @@ The weak-body ID T3 in the run names identifies the task family. Each screen and
 The [result report](../../results/rsi_v02a/RESULTS_REPORT.md) is derived from per-target records. The [registry](../../results/rsi_v02a/runs.csv) includes failures. The [replay audit](../../results/rsi_v02a/replay_audit.csv) distinguishes candidate-state matches from matches that also pass the registered control. Search candidates from the same goal are correlated. The phase that assembles the locked final set checks source hashes, target identifiers and budgets. B3 requires at least two distinct verified cases so BC can be tested on a held-out goal. Unavailable arms have a separate [gate record](../../results/rsi_v02a/blocked_arms.csv).
 
 The historical repository already supplies pinned programs, checkpoints, bank checksums, per-target results, and a Git LFS store. This study adds an indexed run registry, immutable attempts, coupled physical-interaction accounting and cross-body retention. Git LFS stores selected adaptation model/optimizer checkpoints and the three complete diagnostic trajectory archives. Small derived files, figures, protocols and metadata are ordinary Git. Each checksum in the inventory refers to restored bytes. The historical studies are unchanged.
+
+## Counterfactual search validation
+
+Three frozen K16 checkpoints were evaluated on independent S2 development goals. The [counterfactual report](../../results/rsi_v02a/counterfactual_validation/RESULTS_REPORT.md) counts unique physical targets across two registered designs. The [first protocol](counterfactual_validation/protocol.json) checks full MuJoCo state restoration, same-lane action-prefix replay and native no-op continuations. The [calibration replication](counterfactual_validation/protocol_paired.json) gives the 39D controller the measured K16 excitation amplitude and number of saturated muscles at each intervention tick. The original V0.2a diagnostic remains reproducible from its published commit.
+
+From the repository root, using the pinned GPU Python environment with Git LFS inputs restored:
+
+```powershell
+foreach ($policySeed in 11,29,47) {
+    python -m experiments.rsi_v02a.counterfactual_validation.evaluate --seed $policySeed
+    python -m experiments.rsi_v02a.counterfactual_validation.evaluate --seed $policySeed --paired
+}
+python -m experiments.rsi_v02a.counterfactual_validation.report
+python -m experiments.rsi_v02a.counterfactual_validation.report --paired
+python -m experiments.rsi_v02a.counterfactual_validation.publish
+```
+
+Each simulator execution creates a fresh run ID. When a checkout already has multiple completed runs per design and seed, pass three explicit `--run RUN_ID` arguments to each report command to select a release. The [run registry](../../results/rsi_v02a/counterfactual_validation/runs.csv) identifies the six included runs and excluded engineering attempts. The [BC dataset index](../../results/rsi_v02a/counterfactual_validation/bc_dataset.csv) defines the shared physical-goal split across both designs.
