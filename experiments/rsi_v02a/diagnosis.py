@@ -74,6 +74,8 @@ def fulltrace(loc, seed):
 @torch.inference_mode()
 def prefix(env, goal, data, lane, start, n):
     raw = env.unwrapped
+    # Historical cross-lane diagnostic. New capability and BC evidence uses the
+    # same-lane no-op gate in counterfactual_validation/evaluate.py.
     obs = reset(raw, [goal] * n)
     for t in range(start):
         cmd = (
@@ -96,7 +98,7 @@ def prefix(env, goal, data, lane, start, n):
         ("actuator_velocity", 1e-3),
     ):
         if name not in data:
-            continue
+            raise ValueError(f"Missing required archived replay field {name}")
         actual = (
             raw.command_manager.get_command("reach")
             if name == "goal"
@@ -184,6 +186,8 @@ def profile(env, runner, seed, goal, data, lane, start, loc):
 def shooting(env, runner, goal, seed, data, lane, start, loc, source_success):
     tic = time.perf_counter()
     n = env.num_envs
+    # Preserve the published group-control estimator for historical reproduction.
+    # Its proposals do not qualify for the CF verified correction dataset.
     half = n // 2
     rng = np.random.default_rng(np.random.SeedSequence([400000, seed, goal]))
     raw = env.unwrapped
